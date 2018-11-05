@@ -1,5 +1,7 @@
 package seguro.view;
 
+import java.io.IOException;
+import java.util.Scanner;
 import seguro.DAO.Conexao;
 import seguro.DAO.DAOUsuario;
 import seguro.model.Usuario;
@@ -19,8 +21,22 @@ public class ControlLogin {
    }
 
 
+   public void testePing() throws IOException{
+      
+      Scanner scanner = new Scanner( Runtime.getRuntime().exec("cmd /c ping localhost").getInputStream());
+   }
 
-
+   public static void main(String[] args) throws IOException {
+      /* FUNCIONANDO */      
+      String ip = "www.iwts.com.br";
+	String resposta="";
+		Scanner scanner = new Scanner( Runtime.getRuntime().exec("cmd /c ping " + ip).getInputStream() );
+		while(scanner.hasNextLine()){
+			resposta += scanner.nextLine() + "\n";
+		}	
+		System.out.print(resposta);
+      
+   }
 
 
 

@@ -16,6 +16,7 @@ public class Gerenciador extends javax.swing.JInternalFrame {
     */
    public Gerenciador() {
       initComponents();
+      this.getRootPane().setDefaultButton(btTeste);
    }
 
    /**
@@ -44,11 +45,15 @@ public class Gerenciador extends javax.swing.JInternalFrame {
       jLabel4 = new javax.swing.JLabel();
       jScrollPane1 = new javax.swing.JScrollPane();
       jTextArea1 = new javax.swing.JTextArea();
-      rSButtonMetro1 = new rsbuttom.RSButtonMetro();
+      btTeste = new rsbuttom.RSButtonMetro();
       jTextField1 = new javax.swing.JTextField();
       jTextField2 = new javax.swing.JTextField();
       jTextField3 = new javax.swing.JTextField();
       label_status = new javax.swing.JLabel();
+
+      setClosable(true);
+      setIconifiable(true);
+      setTitle("Dados do meu Dispositivo");
 
       jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -85,6 +90,7 @@ public class Gerenciador extends javax.swing.JInternalFrame {
       rSButtonMetro2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
       rSButtonMetro2.setMnemonic('s');
       rSButtonMetro2.setText("Salvar");
+      rSButtonMetro2.setToolTipText("Salvar Alterações");
       rSButtonMetro2.setColorBorde(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
       rSButtonMetro2.setColorHover(new java.awt.Color(0, 102, 153));
       rSButtonMetro2.setColorNormal(new java.awt.Color(0, 204, 51));
@@ -93,6 +99,7 @@ public class Gerenciador extends javax.swing.JInternalFrame {
       rSButtonMetro3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
       rSButtonMetro3.setMnemonic('c');
       rSButtonMetro3.setText("Cancelar");
+      rSButtonMetro3.setToolTipText("Sair sem salvar");
       rSButtonMetro3.setColorBorde(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
       rSButtonMetro3.setColorHover(new java.awt.Color(0, 153, 204));
       rSButtonMetro3.setColorNormal(new java.awt.Color(204, 51, 0));
@@ -159,7 +166,11 @@ public class Gerenciador extends javax.swing.JInternalFrame {
       jTextArea1.setRows(5);
       jScrollPane1.setViewportView(jTextArea1);
 
-      rSButtonMetro1.setText("Checar Status");
+      btTeste.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+      btTeste.setMnemonic('h');
+      btTeste.setText("Checar Status");
+      btTeste.setToolTipText("Verifica a conectividade com o dispositivo");
+      btTeste.setColorBorde(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
       javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
       jPanel7.setLayout(jPanel7Layout);
@@ -182,7 +193,7 @@ public class Gerenciador extends javax.swing.JInternalFrame {
             .addGap(18, 18, 18))
          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
             .addGap(69, 69, 69)
-            .addComponent(rSButtonMetro1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btTeste, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGap(70, 70, 70))
       );
       jPanel7Layout.setVerticalGroup(
@@ -203,7 +214,7 @@ public class Gerenciador extends javax.swing.JInternalFrame {
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(rSButtonMetro1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btTeste, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addContainerGap())
       );
 
@@ -292,6 +303,7 @@ public class Gerenciador extends javax.swing.JInternalFrame {
 
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
+   private rsbuttom.RSButtonMetro btTeste;
    private javax.swing.JLabel jLabel1;
    private javax.swing.JLabel jLabel2;
    private javax.swing.JLabel jLabel3;
@@ -311,7 +323,6 @@ public class Gerenciador extends javax.swing.JInternalFrame {
    private javax.swing.JTextField jTextField2;
    private javax.swing.JTextField jTextField3;
    private javax.swing.JLabel label_status;
-   private rsbuttom.RSButtonMetro rSButtonMetro1;
    private rsbuttom.RSButtonMetro rSButtonMetro2;
    private rsbuttom.RSButtonMetro rSButtonMetro3;
    // End of variables declaration//GEN-END:variables
