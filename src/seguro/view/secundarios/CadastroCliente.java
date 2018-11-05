@@ -85,18 +85,14 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
       jPanel2Layout.setHorizontalGroup(
          jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(jPanel2Layout.createSequentialGroup()
-            .addContainerGap()
-            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
       );
       jPanel2Layout.setVerticalGroup(
          jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-         .addGroup(jPanel2Layout.createSequentialGroup()
-            .addContainerGap()
-            .addComponent(jLabel11)
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+         .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
       );
 
       jPanel3.setBackground(new java.awt.Color(0, 143, 143));
@@ -107,33 +103,33 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
       rSButtonMetro1.setMnemonic('s');
       rSButtonMetro1.setText("Salvar");
       rSButtonMetro1.setColorBorde(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-      rSButtonMetro1.setColorHover(new java.awt.Color(0, 204, 51));
+      rSButtonMetro1.setColorHover(new java.awt.Color(0, 153, 204));
+      rSButtonMetro1.setColorNormal(new java.awt.Color(0, 204, 51));
 
       rSButtonMetro2.setBackground(new java.awt.Color(204, 51, 0));
       rSButtonMetro2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
       rSButtonMetro2.setMnemonic('c');
       rSButtonMetro2.setText("Cancelar");
-      rSButtonMetro2.setColorHover(new java.awt.Color(204, 51, 0));
+      rSButtonMetro2.setColorHover(new java.awt.Color(0, 153, 204));
+      rSButtonMetro2.setColorNormal(new java.awt.Color(204, 51, 0));
 
       javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
       jPanel3.setLayout(jPanel3Layout);
       jPanel3Layout.setHorizontalGroup(
          jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-            .addGap(5, 5, 5)
-            .addComponent(rSButtonMetro2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-            .addGap(5, 5, 5))
          .addGroup(jPanel3Layout.createSequentialGroup()
             .addContainerGap()
-            .addComponent(rSButtonMetro1, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+               .addComponent(rSButtonMetro2, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
+               .addComponent(rSButtonMetro1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
             .addContainerGap())
       );
       jPanel3Layout.setVerticalGroup(
          jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(jPanel3Layout.createSequentialGroup()
-            .addContainerGap()
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(rSButtonMetro1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(109, 109, 109)
+            .addGap(18, 18, 18)
             .addComponent(rSButtonMetro2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
       );
@@ -206,10 +202,9 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
                .addGroup(jPanel8Layout.createSequentialGroup()
                   .addGap(10, 10, 10)
                   .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-               .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                  .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
-                  .addComponent(jTextField2)
-                  .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING)))
+               .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
+               .addComponent(jTextField2)
+               .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING))
             .addContainerGap())
       );
       jPanel8Layout.setVerticalGroup(
