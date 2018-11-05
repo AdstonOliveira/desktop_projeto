@@ -5,7 +5,7 @@
  */
 package seguro;
 
-import seguro.view.Login;
+import seguro.view.login;
 
 /**
  *
@@ -18,7 +18,7 @@ public class Seguro {
      */
     public static void main(String[] args) {
         
-        Login login = new Login();
+        login login = new login();
         login.setVisible( true );
     }
     
