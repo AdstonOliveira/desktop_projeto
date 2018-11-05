@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
  */
 public class MySQL {
    
-   private final Conexao conexao;
+   private Conexao conexao;
    
    public MySQL( Conexao conexao ){
       this.conexao = conexao;
@@ -21,7 +21,7 @@ public class MySQL {
       
       if( conn != null ){
             try {
-              conn.setAutoCommit( true );
+              //conn.setAutoCommit( true );
                stmt = conn.prepareStatement( comando );
                stmt.execute( comando );
                this.conexao.fechar();
@@ -36,13 +36,14 @@ public class MySQL {
       return false;
    }
 
-public ResultSet pegarResultadoSQL( String sql ) {
+public ResultSet pegarResultadoSQL( String SQL ) {
        Connection conn = this.conexao.abrir();
        ResultSet rs = null;
        Statement stmt;
+       
             try {
                stmt = conn.createStatement();
-               rs = stmt.executeQuery( sql );
+               rs = stmt.executeQuery( SQL );
                //this.conexao.fechar();
                
             } catch (SQLException ex) {

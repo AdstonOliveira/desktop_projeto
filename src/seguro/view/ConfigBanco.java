@@ -16,19 +16,17 @@ public class ConfigBanco extends javax.swing.JFrame {
         initComponents();
     }
 
-    public void defineConexao(Conexao conexao){
+    public void defineConexao( Conexao conexao ){
         this.conexao = conexao;
     }
     
     public void configura(){
-        if( conexao == null )
-            conexao = new Conexao( this.JTextIP.getText(),this.JTextPorta.getText(),this.JTextBanco.getText() );
-        else{
-           this.conexao.setIP( this.JTextIP.getText() );
+        
+           this.conexao.getConfig().setIpBanco( this.JTextIP.getText() );
            this.conexao.getConfig().setPorta( this.JTextPorta.getText() );
            this.conexao.getConfig().setNome_banco( this.JTextBanco.getText() );     
-        }
         
+        this.conexao.getConfig().defineURL();
         JOptionPane.showMessageDialog(null, "Configurado","Executado",1);
     }
     

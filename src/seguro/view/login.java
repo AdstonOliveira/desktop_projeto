@@ -2,18 +2,20 @@ package seguro.view;
 
 import javax.swing.JOptionPane;
 import seguro.DAO.Conexao;
+import seguro.DAO.DAOUsuario;
 
 /**
  * @author root
  */
 public class login extends javax.swing.JFrame {
 
-    Conexao conexao = new Conexao();
-    ControlLogin control = new ControlLogin();
+    private Conexao conexao;
+    private ControlLogin control = new ControlLogin();
     
     public login() {
         initComponents();
-        this.getRootPane().setDefaultButton(this.btConecta);
+        this.conexao = new DAOUsuario();
+        this.getRootPane().setDefaultButton( this.btConecta );
     }
 
  
@@ -200,7 +202,7 @@ public class login extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         ConfigBanco config = new ConfigBanco();
-        config.defineConexao(this.conexao);
+        config.defineConexao( this.conexao );
         config.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
@@ -214,9 +216,9 @@ public class login extends javax.swing.JFrame {
       dadosLogin[1] = new String (this.textSenha.getPassword() );
       
          if(this.control.Login(conexao, dadosLogin))
-            JOptionPane.showMessageDialog(this,"Sucesso!!!","Logado",1);
+            JOptionPane.showMessageDialog(this, "Sucesso!!!", "Logado",1);
          else
-            JOptionPane.showMessageDialog(this,"Falhou!!!","NãoLogado",0);
+            JOptionPane.showMessageDialog(this, "Falhou!!!","NãoLogado",0);
    }//GEN-LAST:event_btConectaActionPerformed
 
     /**

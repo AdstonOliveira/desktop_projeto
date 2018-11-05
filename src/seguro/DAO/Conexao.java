@@ -27,25 +27,26 @@ public class Conexao {
     
     // Conectar ao banco
     public Connection abrir() {
-        System.out.println("Abrir");
        try {
           Class.forName( this.config.getDRIVER() );
-          JOptionPane.showMessageDialog(null, this.config.getDRIVER());
+          JOptionPane.showMessageDialog( null, this.config.getDRIVER() );
+          
        } catch (ClassNotFoundException ex) {
-          JOptionPane.showMessageDialog( null, ex,"1",0 );
+          JOptionPane.showMessageDialog( null, ex,this.config.getURL(),0 );
        }
+       
        try {
           conn = DriverManager.getConnection( this.config.getURL(), this.config.getUSUARIO(), this.config.getSENHA() );
           JOptionPane.showMessageDialog(null,this.config.getURL());
+          
        } catch (SQLException ex) {
-          JOptionPane.showMessageDialog( null,ex,"2",0 );
+          JOptionPane.showMessageDialog( null,ex,this.config.getURL(),0 );
        }
        
       return conn;
     }
     
     public boolean fechar(){
-        System.out.println("Fechar");
        if( this.conn != null ){
           try {
              this.conn.close();
