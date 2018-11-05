@@ -1,4 +1,3 @@
-
 package seguro.configuracoes;
 /**
  *
@@ -6,7 +5,11 @@ package seguro.configuracoes;
  */
 public class Config {
     /** CONFIGS PADRAO */
-    public Config(){}
+    public Config(){
+       this.URL = "jdbc:mysql://"+IpBanco+":"+porta+"/"+nome_banco;
+    }
+
+
     /** Alterar Configs
      * @param IPBanco
      * @param porta
@@ -17,7 +20,8 @@ public class Config {
         this.nome_banco = nome_banco;
         this.URL = "jdbc:mysql://"+IPBanco+":"+porta+"/"+nome_banco;
     }
-
+    
+    private String URL;
     private String IpBanco = "localhost";
     private String porta = "3306";
     private String nome_banco = "gerenciador";
@@ -25,22 +29,17 @@ public class Config {
     private String USUARIO = "adm";
     private String SENHA = "kpm0605";
     
-    private String URL = "jdbc:mysql://"+IpBanco+":"+porta+"/"+nome_banco;
-    
     private final String DRIVER = "com.mysql.jdbc.Driver";
     
-    
-    
-    
-    
-    
-    
+    public void defineURL(){
+       this.URL = "jdbc:mysql://"+IpBanco+":"+porta+"/"+nome_banco;
+    }
     
     public String getIpBanco() {
        return IpBanco;
     }
 
-    public void setIpBanco(String IpBanco) {
+    public void setIpBanco( String IpBanco ) {
         this.IpBanco = IpBanco;
     }
 
