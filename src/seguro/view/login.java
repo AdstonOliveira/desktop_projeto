@@ -213,9 +213,10 @@ public class login extends javax.swing.JFrame {
    private void btConectaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConectaActionPerformed
       String[] dadosLogin = new String[2];
       dadosLogin[0] = this.textLogin.getText();
-      dadosLogin[1] = new String (this.textSenha.getPassword() );
+      dadosLogin[1] = new String( this.textSenha.getPassword() );
       
-         if(this.control.Login(conexao, dadosLogin))
+         if( this.control.Login(conexao, dadosLogin) )
+            
             JOptionPane.showMessageDialog(this, "Sucesso!!!", "Logado",1);
          else
             JOptionPane.showMessageDialog(this, "Falhou!!!","NãoLogado",0);
