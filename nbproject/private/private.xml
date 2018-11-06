@@ -3,13 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/adston/desktop_projeto/src/seguro/model/Usuario.java</file>
-            <file>file:/D:/adston/desktop_projeto/src/seguro/view/ConfigBanco.java</file>
-            <file>file:/D:/adston/desktop_projeto/src/seguro/configuracoes/Config.java</file>
-            <file>file:/D:/adston/desktop_projeto/src/seguro/Seguro.java</file>
-            <file>file:/D:/adston/desktop_projeto/src/seguro/view/Login.java</file>
+            <file>file:/D:/adston/desktop_projeto/src/seguro/view/login.java</file>
+            <file>file:/D:/adston/desktop_projeto/src/seguro/view/secundarios/Gerenciador.java</file>
+            <file>file:/D:/adston/desktop_projeto/src/seguro/view/TelaPrincipal.java</file>
             <file>file:/D:/adston/desktop_projeto/src/seguro/view/ControlLogin.java</file>
-            <file>file:/D:/adston/desktop_projeto/src/seguro/DAO/DAOUsuario.java</file>
         </group>
     </open-files>
 </project-private>

@@ -27,7 +27,7 @@ public class ControlLogin {
    }
 
    public static void main(String[] args) throws IOException {
-      /* FUNCIONANDO */      
+      /* FUNCIONANDO   http://www.guj.com.br/t/pingando-em-java/112337/4 */      
       String ip = "www.iwts.com.br";
 	String resposta="";
 		Scanner scanner = new Scanner( Runtime.getRuntime().exec("cmd /c ping " + ip).getInputStream() );
