@@ -141,6 +141,7 @@ public class login extends javax.swing.JFrame {
       btCancela.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
       btCancela.setMnemonic('n');
       btCancela.setText("Cancelar");
+      btCancela.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
       btCancela.addMouseListener(new java.awt.event.MouseAdapter() {
          public void mouseEntered(java.awt.event.MouseEvent evt) {
             btCancelaMouseEntered(evt);

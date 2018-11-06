@@ -28,10 +28,10 @@ public class RSButtonMetro extends JButton implements MouseListener, MouseMotion
      * Color para el fondo del boton
      */
     private Color colorNormal = new Color(0, 139, 139);
-    private Color colorPressed = new Color(0, 0, 0);   
+    private Color colorPressed = new Color(0, 51, 51);   
     private Color colorHover = new Color(38, 86, 186);
     
-    private Border bordeMoved = javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 0, new java.awt.Color(255, 255, 255));
+    private Border bordeMoved = new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
     /**
      * Color para el texto
      */
@@ -51,12 +51,12 @@ public class RSButtonMetro extends JButton implements MouseListener, MouseMotion
         this.setSize(new Dimension(150, 35));
         this.setBorder(null);
 //        this.setBorderPainted(false);
-        this.setContentAreaFilled(true);
+        this.setContentAreaFilled(false);
         this.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         this.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         this.setBackground(this.colorNormal);
         this.setForeground(this.colorTextNormal);
-        this.setOpaque(false);
+        this.setOpaque(true);
         this.setVisible(true);
         this.addMouseListener(this);
         this.addMouseMotionListener(this);
@@ -91,10 +91,12 @@ public class RSButtonMetro extends JButton implements MouseListener, MouseMotion
     }
 
     public void mouseEntered(MouseEvent e) {
+        this.setBackground(this.colorNormal);
+        this.setForeground(this.colorTextNormal);
     }
 
     public void mouseExited(MouseEvent e) {
-        this.setBorder(null);
+        //this.setBorder(null);
         this.setBackground(this.colorNormal);
         this.setForeground(this.colorTextNormal);
     }

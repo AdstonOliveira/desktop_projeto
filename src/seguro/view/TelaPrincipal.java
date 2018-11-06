@@ -1,5 +1,4 @@
 package seguro.view;
-import java.awt.Color;
 import seguro.DAO.Conexao;
 import seguro.configuracoes.ConfigBotao;
 import seguro.model.Usuario;
@@ -96,6 +95,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
       btDados.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
       btDados.setText("Meus Dados");
       btDados.setColorBorde(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+      btDados.setFocusPainted(false);
       btDados.addActionListener(new java.awt.event.ActionListener() {
          public void actionPerformed(java.awt.event.ActionEvent evt) {
             btDadosActionPerformed(evt);
@@ -273,11 +273,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
    private void btDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDadosActionPerformed
       CadastroCliente c = new CadastroCliente();
       this.desktop.add(c);
-      c.setVisible(rootPaneCheckingEnabled);
+      c.setVisible(true);
    }//GEN-LAST:event_btDadosActionPerformed
 
    private void formMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseEntered
-      ConfigBotao.evtEntered(btDados);
+      
    }//GEN-LAST:event_formMouseEntered
 
 
