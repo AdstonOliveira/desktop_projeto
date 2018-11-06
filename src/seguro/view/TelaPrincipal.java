@@ -1,22 +1,26 @@
 package seguro.view;
+import javax.swing.JDesktopPane;
 import seguro.DAO.Conexao;
-import seguro.configuracoes.ConfigBotao;
 import seguro.model.Usuario;
-import seguro.view.secundarios.CadastroCliente;
+import seguro.view.control.ControlTelaInicial;
 /**
  * @author Adston at self
  */
 public class TelaPrincipal extends javax.swing.JFrame {
    public static Conexao conexao;
    public static Usuario usuario;
+   private ControlTelaInicial control;
+   
    /**
     * Creates new form TelaPrincipal
     */
    public TelaPrincipal() {
       initComponents();
+      this.control = new ControlTelaInicial();
       this.setLocationRelativeTo(null);
    }
 
+   
 
 
 
@@ -34,7 +38,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
       btDados = new seguro.resources.RSButtonMetro();
       jPanel2 = new javax.swing.JPanel();
       jLabel2 = new javax.swing.JLabel();
-      rSButtonMetro2 = new seguro.resources.RSButtonMetro();
+      btDispositivo = new seguro.resources.RSButtonMetro();
       pnRelatorios = new javax.swing.JPanel();
       jPanel3 = new javax.swing.JPanel();
       jLabel3 = new javax.swing.JLabel();
@@ -123,9 +127,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
          .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
       );
 
-      rSButtonMetro2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-      rSButtonMetro2.setText("Dispositivo");
-      rSButtonMetro2.setColorBorde(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+      btDispositivo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+      btDispositivo.setText("Dispositivo");
+      btDispositivo.setColorBorde(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+      btDispositivo.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btDispositivoActionPerformed(evt);
+         }
+      });
 
       javax.swing.GroupLayout painelCadastrosLayout = new javax.swing.GroupLayout(painelCadastros);
       painelCadastros.setLayout(painelCadastrosLayout);
@@ -133,7 +142,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
          painelCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addComponent(btDados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
          .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-         .addComponent(rSButtonMetro2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+         .addComponent(btDispositivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
       );
       painelCadastrosLayout.setVerticalGroup(
          painelCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,7 +151,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGap(0, 0, 0)
             .addComponent(btDados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(1, 1, 1)
-            .addComponent(rSButtonMetro2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(btDispositivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
       );
 
       pnRelatorios.setBackground(new java.awt.Color(51, 51, 51));
@@ -271,14 +280,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
    }//GEN-LAST:event_rSButtonMetro3ActionPerformed
 
    private void btDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDadosActionPerformed
-      CadastroCliente c = new CadastroCliente();
-      this.desktop.add(c);
-      c.setVisible(true);
+      this.control.cad_cliente();
    }//GEN-LAST:event_btDadosActionPerformed
 
    private void formMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseEntered
       
    }//GEN-LAST:event_formMouseEntered
+
+   private void btDispositivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDispositivoActionPerformed
+      this.control.dispositivo();
+   }//GEN-LAST:event_btDispositivoActionPerformed
 
 
 
@@ -317,7 +328,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
    private seguro.resources.RSButtonMetro btDados;
-   private javax.swing.JDesktopPane desktop;
+   private seguro.resources.RSButtonMetro btDispositivo;
+   public static javax.swing.JDesktopPane desktop;
    private javax.swing.JLabel jLabel1;
    private javax.swing.JLabel jLabel2;
    private javax.swing.JLabel jLabel3;
@@ -328,10 +340,30 @@ public class TelaPrincipal extends javax.swing.JFrame {
    private javax.swing.JPanel painelLateral;
    private javax.swing.JPanel painel_Topo;
    private javax.swing.JPanel pnRelatorios;
-   private seguro.resources.RSButtonMetro rSButtonMetro2;
    private seguro.resources.RSButtonMetro rSButtonMetro3;
    private seguro.resources.RSButtonMetro rSButtonMetro4;
    private seguro.resources.RSButtonMetro rSButtonMetro5;
    private seguro.resources.RSButtonMetro rSButtonMetro6;
    // End of variables declaration//GEN-END:variables
+
+   public static Conexao getConexao() {
+      return conexao;
+   }
+
+   public static void setConexao(Conexao conexao) {
+      TelaPrincipal.conexao = conexao;
+   }
+
+   public JDesktopPane getDesktop() {
+      return desktop;
+   }
+
+   public void setDesktop(JDesktopPane desktop) {
+      this.desktop = desktop;
+   }
+
+
+
+
+
 }
