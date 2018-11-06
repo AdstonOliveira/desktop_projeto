@@ -29,8 +29,8 @@ public class CadastroEquipamento extends javax.swing.JInternalFrame {
 
       jPanel1 = new javax.swing.JPanel();
       jPanel3 = new javax.swing.JPanel();
-      rSButtonMetro1 = new rsbuttom.RSButtonMetro();
-      rSButtonMetro2 = new rsbuttom.RSButtonMetro();
+      rSButtonMetro1 = new seguro.resources.RSButtonMetro();
+      rSButtonMetro2 = new seguro.resources.RSButtonMetro();
       jPanel4 = new javax.swing.JPanel();
       jPanel5 = new javax.swing.JPanel();
       jLabel2 = new javax.swing.JLabel();
@@ -219,8 +219,8 @@ public class CadastroEquipamento extends javax.swing.JInternalFrame {
    private javax.swing.JPanel jPanel5;
    private javax.swing.JPanel jPanel6;
    private javax.swing.JComboBox<String> listaTipo;
-   private rsbuttom.RSButtonMetro rSButtonMetro1;
-   private rsbuttom.RSButtonMetro rSButtonMetro2;
+   private seguro.resources.RSButtonMetro rSButtonMetro1;
+   private seguro.resources.RSButtonMetro rSButtonMetro2;
    private javax.swing.JTextField textConsumo;
    private javax.swing.JTextField textNome;
    // End of variables declaration//GEN-END:variables

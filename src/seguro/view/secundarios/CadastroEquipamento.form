@@ -102,7 +102,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="rsbuttom.RSButtonMetro" name="rSButtonMetro1">
+            <Component class="seguro.resources.RSButtonMetro" name="rSButtonMetro1">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
@@ -120,7 +120,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="rsbuttom.RSButtonMetro" name="rSButtonMetro2">
+            <Component class="seguro.resources.RSButtonMetro" name="rSButtonMetro2">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">

@@ -1,6 +1,9 @@
 package seguro.view;
+import java.awt.Color;
 import seguro.DAO.Conexao;
+import seguro.configuracoes.ConfigBotao;
 import seguro.model.Usuario;
+import seguro.view.secundarios.CadastroCliente;
 /**
  * @author Adston at self
  */
@@ -29,19 +32,25 @@ public class TelaPrincipal extends javax.swing.JFrame {
       desktop = new javax.swing.JDesktopPane();
       painelLateral = new javax.swing.JPanel();
       painelCadastros = new javax.swing.JPanel();
-      rSButtonMetro1 = new rsbuttom.RSButtonMetro();
+      btDados = new seguro.resources.RSButtonMetro();
       jPanel2 = new javax.swing.JPanel();
       jLabel2 = new javax.swing.JLabel();
-      rSButtonMetro2 = new rsbuttom.RSButtonMetro();
+      rSButtonMetro2 = new seguro.resources.RSButtonMetro();
       pnRelatorios = new javax.swing.JPanel();
       jPanel3 = new javax.swing.JPanel();
       jLabel3 = new javax.swing.JLabel();
-      rSButtonMetro3 = new rsbuttom.RSButtonMetro();
-      rSButtonMetro4 = new rsbuttom.RSButtonMetro();
-      rSButtonMetro5 = new rsbuttom.RSButtonMetro();
-      rSButtonMetro6 = new rsbuttom.RSButtonMetro();
+      rSButtonMetro3 = new seguro.resources.RSButtonMetro();
+      rSButtonMetro4 = new seguro.resources.RSButtonMetro();
+      rSButtonMetro5 = new seguro.resources.RSButtonMetro();
+      rSButtonMetro6 = new seguro.resources.RSButtonMetro();
 
       setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+      setTitle("Software de Gerenciador de Consumo Elétrico");
+      addMouseListener(new java.awt.event.MouseAdapter() {
+         public void mouseEntered(java.awt.event.MouseEvent evt) {
+            formMouseEntered(evt);
+         }
+      });
 
       jPanel1.setBackground(new java.awt.Color(0, 0, 0));
       jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -72,23 +81,29 @@ public class TelaPrincipal extends javax.swing.JFrame {
       desktop.setLayout(desktopLayout);
       desktopLayout.setHorizontalGroup(
          desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGap(0, 0, Short.MAX_VALUE)
+         .addGap(0, 617, Short.MAX_VALUE)
       );
       desktopLayout.setVerticalGroup(
          desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGap(0, 0, Short.MAX_VALUE)
+         .addGap(0, 391, Short.MAX_VALUE)
       );
 
       painelLateral.setBackground(new java.awt.Color(0, 153, 153));
       painelLateral.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-      painelCadastros.setBackground(new java.awt.Color(153, 153, 153));
+      painelCadastros.setBackground(new java.awt.Color(51, 51, 51));
 
-      rSButtonMetro1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-      rSButtonMetro1.setText("Meus Dados");
-      rSButtonMetro1.setColorBorde(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+      btDados.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+      btDados.setText("Meus Dados");
+      btDados.setColorBorde(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+      btDados.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btDadosActionPerformed(evt);
+         }
+      });
 
       jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+      jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
       jLabel2.setBackground(new java.awt.Color(0, 0, 0));
       jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -116,7 +131,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
       painelCadastros.setLayout(painelCadastrosLayout);
       painelCadastrosLayout.setHorizontalGroup(
          painelCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addComponent(rSButtonMetro1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+         .addComponent(btDados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
          .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
          .addComponent(rSButtonMetro2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
       );
@@ -124,15 +139,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
          painelCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(painelCadastrosLayout.createSequentialGroup()
             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(3, 3, 3)
-            .addComponent(rSButtonMetro1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 0, 0)
+            .addComponent(btDados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(1, 1, 1)
             .addComponent(rSButtonMetro2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
       );
 
-      pnRelatorios.setBackground(new java.awt.Color(153, 153, 153));
+      pnRelatorios.setBackground(new java.awt.Color(51, 51, 51));
 
       jPanel3.setBackground(new java.awt.Color(0, 0, 0));
+      jPanel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
       jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
       jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -152,6 +168,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
       rSButtonMetro3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
       rSButtonMetro3.setText("Diário");
+      rSButtonMetro3.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            rSButtonMetro3ActionPerformed(evt);
+         }
+      });
 
       rSButtonMetro4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
       rSButtonMetro4.setText("Semanal");
@@ -182,7 +203,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
          pnRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(pnRelatoriosLayout.createSequentialGroup()
             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(3, 3, 3)
+            .addGap(0, 0, 0)
             .addComponent(rSButtonMetro3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(0, 0, 0)
             .addComponent(rSButtonMetro4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -245,6 +266,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
       pack();
    }// </editor-fold>//GEN-END:initComponents
 
+   private void rSButtonMetro3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMetro3ActionPerformed
+      // TODO add your handling code here:
+   }//GEN-LAST:event_rSButtonMetro3ActionPerformed
+
+   private void btDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDadosActionPerformed
+      CadastroCliente c = new CadastroCliente();
+      this.desktop.add(c);
+      c.setVisible(rootPaneCheckingEnabled);
+   }//GEN-LAST:event_btDadosActionPerformed
+
+   private void formMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseEntered
+      ConfigBotao.evtEntered(btDados);
+   }//GEN-LAST:event_formMouseEntered
+
 
 
 
@@ -281,6 +316,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
    }
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
+   private seguro.resources.RSButtonMetro btDados;
    private javax.swing.JDesktopPane desktop;
    private javax.swing.JLabel jLabel1;
    private javax.swing.JLabel jLabel2;
@@ -292,11 +328,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
    private javax.swing.JPanel painelLateral;
    private javax.swing.JPanel painel_Topo;
    private javax.swing.JPanel pnRelatorios;
-   private rsbuttom.RSButtonMetro rSButtonMetro1;
-   private rsbuttom.RSButtonMetro rSButtonMetro2;
-   private rsbuttom.RSButtonMetro rSButtonMetro3;
-   private rsbuttom.RSButtonMetro rSButtonMetro4;
-   private rsbuttom.RSButtonMetro rSButtonMetro5;
-   private rsbuttom.RSButtonMetro rSButtonMetro6;
+   private seguro.resources.RSButtonMetro rSButtonMetro2;
+   private seguro.resources.RSButtonMetro rSButtonMetro3;
+   private seguro.resources.RSButtonMetro rSButtonMetro4;
+   private seguro.resources.RSButtonMetro rSButtonMetro5;
+   private seguro.resources.RSButtonMetro rSButtonMetro6;
    // End of variables declaration//GEN-END:variables
 }

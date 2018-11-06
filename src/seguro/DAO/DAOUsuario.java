@@ -31,14 +31,7 @@ public class DAOUsuario extends DAO{
       
       
    public boolean Login( Usuario montar, String SQL ) throws SQLException{
-      System.out.println( super.conexao.getConfig().getURL() );
-      
-      
-      
       this.montar( montar, super.getComandos().pegarResultadoSQL(SQL) );
-      
-      
-      
       
     return ( montar.getNome() != null ) ;
    }

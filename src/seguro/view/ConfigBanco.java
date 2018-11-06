@@ -55,8 +55,8 @@ public class ConfigBanco extends javax.swing.JFrame {
       JTextPorta = new javax.swing.JTextField();
       JTextBanco = new javax.swing.JTextField();
       jPanel4 = new javax.swing.JPanel();
-      btSalva = new rsbuttom.RSButtonMetro();
-      btTesta = new rsbuttom.RSButtonMetro();
+      btSalva = new seguro.resources.RSButtonMetro();
+      btTesta = new seguro.resources.RSButtonMetro();
 
       setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
       setTitle("Banco");
@@ -257,8 +257,8 @@ public class ConfigBanco extends javax.swing.JFrame {
    private javax.swing.JTextField JTextBanco;
    private javax.swing.JTextField JTextIP;
    private javax.swing.JTextField JTextPorta;
-   private rsbuttom.RSButtonMetro btSalva;
-   private rsbuttom.RSButtonMetro btTesta;
+   private seguro.resources.RSButtonMetro btSalva;
+   private seguro.resources.RSButtonMetro btTesta;
    private javax.swing.JLabel jLabel1;
    private javax.swing.JLabel jLabel2;
    private javax.swing.JLabel jLabel3;

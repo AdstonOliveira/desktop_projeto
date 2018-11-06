@@ -237,7 +237,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="rsbuttom.RSButtonMetro" name="btSalva">
+            <Component class="seguro.resources.RSButtonMetro" name="btSalva">
               <Properties>
                 <Property name="mnemonic" type="int" value="115"/>
                 <Property name="text" type="java.lang.String" value="Salvar"/>
@@ -246,7 +246,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btSalvaActionPerformed"/>
               </Events>
             </Component>
-            <Component class="rsbuttom.RSButtonMetro" name="btTesta">
+            <Component class="seguro.resources.RSButtonMetro" name="btTesta">
               <Properties>
                 <Property name="mnemonic" type="int" value="116"/>
                 <Property name="text" type="java.lang.String" value="Testar"/>

@@ -3,6 +3,7 @@ package seguro.view;
 import seguro.view.control.ControlLogin;
 import javax.swing.JOptionPane;
 import seguro.DAO.Conexao;
+import seguro.configuracoes.ConfigBotao;
 
 
 /**
@@ -13,9 +14,11 @@ public class login extends javax.swing.JFrame {
     private Conexao conexao = new Conexao();
     private ControlLogin control = new ControlLogin();
     
-    
     public login() {
         initComponents();
+        ConfigBotao.btOK( this.btConecta );
+        ConfigBotao.btCancela( this.btCancela );
+        
         this.setLocationRelativeTo(null);
         this.getRootPane().setDefaultButton( this.btConecta );
     }
@@ -34,8 +37,8 @@ public class login extends javax.swing.JFrame {
       textLogin = new javax.swing.JTextField();
       textSenha = new javax.swing.JPasswordField();
       jPanel2 = new javax.swing.JPanel();
-      btConecta = new rsbuttom.RSButtonMetro();
-      btCancela = new rsbuttom.RSButtonMetro();
+      btConecta = new javax.swing.JButton();
+      btCancela = new javax.swing.JButton();
       jMenuBar1 = new javax.swing.JMenuBar();
       jMenu1 = new javax.swing.JMenu();
       configBanco = new javax.swing.JMenuItem();
@@ -87,15 +90,15 @@ public class login extends javax.swing.JFrame {
       jPanel1Layout.setHorizontalGroup(
          jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(jPanel1Layout.createSequentialGroup()
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addContainerGap(71, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addComponent(textLogin)
+               .addComponent(textLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
                .addComponent(textSenha))
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addContainerGap(73, Short.MAX_VALUE))
       );
       jPanel1Layout.setVerticalGroup(
          jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,16 +117,38 @@ public class login extends javax.swing.JFrame {
       jPanel2.setBackground(new java.awt.Color(255, 255, 255));
       jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+      btConecta.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
       btConecta.setMnemonic('e');
       btConecta.setText("Conectar");
+      btConecta.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+      btConecta.addMouseListener(new java.awt.event.MouseAdapter() {
+         public void mouseClicked(java.awt.event.MouseEvent evt) {
+            btConectaMouseClicked(evt);
+         }
+         public void mouseEntered(java.awt.event.MouseEvent evt) {
+            btConectaMouseEntered(evt);
+         }
+         public void mouseExited(java.awt.event.MouseEvent evt) {
+            btConectaMouseExited(evt);
+         }
+      });
       btConecta.addActionListener(new java.awt.event.ActionListener() {
          public void actionPerformed(java.awt.event.ActionEvent evt) {
             btConectaActionPerformed(evt);
          }
       });
 
-      btCancela.setMnemonic('l');
+      btCancela.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+      btCancela.setMnemonic('n');
       btCancela.setText("Cancelar");
+      btCancela.addMouseListener(new java.awt.event.MouseAdapter() {
+         public void mouseEntered(java.awt.event.MouseEvent evt) {
+            btCancelaMouseEntered(evt);
+         }
+         public void mouseExited(java.awt.event.MouseEvent evt) {
+            btCancelaMouseExited(evt);
+         }
+      });
       btCancela.addActionListener(new java.awt.event.ActionListener() {
          public void actionPerformed(java.awt.event.ActionEvent evt) {
             btCancelaActionPerformed(evt);
@@ -136,19 +161,19 @@ public class login extends javax.swing.JFrame {
          jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(jPanel2Layout.createSequentialGroup()
             .addContainerGap()
-            .addComponent(btConecta, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-            .addComponent(btCancela, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(btConecta, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(18, 18, 18)
+            .addComponent(btCancela, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addContainerGap())
       );
       jPanel2Layout.setVerticalGroup(
          jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(jPanel2Layout.createSequentialGroup()
+         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
             .addContainerGap()
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-               .addComponent(btConecta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-               .addComponent(btCancela, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+               .addComponent(btConecta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+               .addComponent(btCancela, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
+            .addContainerGap())
       );
 
       javax.swing.GroupLayout painel_fundoLayout = new javax.swing.GroupLayout(painel_fundo);
@@ -208,14 +233,38 @@ public class login extends javax.swing.JFrame {
         config.setVisible( true );
     }//GEN-LAST:event_configBancoActionPerformed
 
-    private void btCancelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelaActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_btCancelaActionPerformed
-
    private void btConectaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConectaActionPerformed
-      String[] dadosLogin = new String[2];
-      dadosLogin[0] = this.textLogin.getText();
-      dadosLogin[1] = new String( this.textSenha.getPassword() );
+      this.bt_conectar();
+   }//GEN-LAST:event_btConectaActionPerformed
+
+   private void btConectaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btConectaMouseEntered
+      ConfigBotao.evtEntered(this.btConecta);
+   }//GEN-LAST:event_btConectaMouseEntered
+
+   private void btConectaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btConectaMouseExited
+      ConfigBotao.evtExited(this.btConecta);
+   }//GEN-LAST:event_btConectaMouseExited
+
+   private void btConectaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btConectaMouseClicked
+      ConfigBotao.clicked(this.btConecta);
+   }//GEN-LAST:event_btConectaMouseClicked
+
+   private void btCancelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelaActionPerformed
+      System.exit(0);
+   }//GEN-LAST:event_btCancelaActionPerformed
+
+   private void btCancelaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btCancelaMouseExited
+      ConfigBotao.evtExited(this.btCancela);
+   }//GEN-LAST:event_btCancelaMouseExited
+
+   private void btCancelaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btCancelaMouseEntered
+      ConfigBotao.evtEntered(this.btCancela);
+   }//GEN-LAST:event_btCancelaMouseEntered
+
+      public void bt_conectar(){
+         String[] dadosLogin = new String[2];
+         dadosLogin[0] = this.textLogin.getText();
+         dadosLogin[1] = new String( this.textSenha.getPassword() );
       
          if( this.control.Login( this.conexao, dadosLogin ) ){
             JOptionPane.showMessageDialog( this, "Seja Bem-Vindo " + this.textLogin.getText(), "Bem-Vindo",1 );
@@ -223,8 +272,9 @@ public class login extends javax.swing.JFrame {
             this.dispose();
          }else
             JOptionPane.showMessageDialog( this, "Não foi possivel entrar!!!","Não Logado",0 );
-   }//GEN-LAST:event_btConectaActionPerformed
-
+      }
+   
+   
     /**
      * @param args the command line arguments
      */
@@ -264,8 +314,8 @@ public class login extends javax.swing.JFrame {
     }
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
-   private rsbuttom.RSButtonMetro btCancela;
-   private rsbuttom.RSButtonMetro btConecta;
+   private javax.swing.JButton btCancela;
+   private javax.swing.JButton btConecta;
    private javax.swing.JMenuItem configBanco;
    private javax.swing.JLabel jLabel1;
    private javax.swing.JLabel jLabel2;

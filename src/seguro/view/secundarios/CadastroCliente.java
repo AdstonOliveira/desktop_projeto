@@ -28,8 +28,8 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
       jLabel1 = new javax.swing.JLabel();
       jLabel11 = new javax.swing.JLabel();
       jPanel3 = new javax.swing.JPanel();
-      rSButtonMetro1 = new rsbuttom.RSButtonMetro();
-      rSButtonMetro2 = new rsbuttom.RSButtonMetro();
+      rSButtonMetro1 = new seguro.resources.RSButtonMetro();
+      rSButtonMetro2 = new seguro.resources.RSButtonMetro();
       jPanel4 = new javax.swing.JPanel();
       jPanel5 = new javax.swing.JPanel();
       jPanel6 = new javax.swing.JPanel();
@@ -101,6 +101,11 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
       rSButtonMetro1.setColorBorde(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
       rSButtonMetro1.setColorHover(new java.awt.Color(0, 153, 204));
       rSButtonMetro1.setColorNormal(new java.awt.Color(0, 204, 51));
+      rSButtonMetro1.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            rSButtonMetro1ActionPerformed(evt);
+         }
+      });
 
       rSButtonMetro2.setBackground(new java.awt.Color(204, 51, 0));
       rSButtonMetro2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -194,10 +199,11 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
                .addGroup(jPanel8Layout.createSequentialGroup()
                   .addComponent(jLabel6)
                   .addGap(12, 12, 12)))
-            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                .addGroup(jPanel8Layout.createSequentialGroup()
                   .addGap(10, 10, 10)
-                  .addComponent(dataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                  .addComponent(dataNasc, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+                  .addGap(19, 19, 19))
                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
                .addComponent(jTextField2)
                .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -404,6 +410,10 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
       pack();
    }// </editor-fold>//GEN-END:initComponents
 
+   private void rSButtonMetro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMetro1ActionPerformed
+      // TODO add your handling code here:
+   }//GEN-LAST:event_rSButtonMetro1ActionPerformed
+
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
    private com.toedter.calendar.JDateChooser dataNasc;
@@ -434,7 +444,7 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
    private javax.swing.JTextField jTextField1;
    private javax.swing.JTextField jTextField2;
    private javax.swing.JTextField jTextField3;
-   private rsbuttom.RSButtonMetro rSButtonMetro1;
-   private rsbuttom.RSButtonMetro rSButtonMetro2;
+   private seguro.resources.RSButtonMetro rSButtonMetro1;
+   private seguro.resources.RSButtonMetro rSButtonMetro2;
    // End of variables declaration//GEN-END:variables
 }

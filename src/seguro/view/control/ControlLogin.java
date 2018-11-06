@@ -15,6 +15,7 @@ public class ControlLogin {
    public boolean Login( Conexao conexao, String[] dadosLogin ){
       String SQL = "select * from usuario where login = '" + dadosLogin[0] + "' and senha = '" + dadosLogin[1] + "';";
       this.user = new Usuario( dadosLogin[1], dadosLogin[0] );
+      
       if( this.user.Login( conexao, SQL ) ){
          TelaPrincipal.conexao = conexao;
          TelaPrincipal.usuario = this.user;

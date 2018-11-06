@@ -33,8 +33,8 @@ public class Gerenciador extends javax.swing.JInternalFrame {
       jLabel5 = new javax.swing.JLabel();
       jLabel6 = new javax.swing.JLabel();
       jPanel3 = new javax.swing.JPanel();
-      rSButtonMetro2 = new rsbuttom.RSButtonMetro();
-      rSButtonMetro3 = new rsbuttom.RSButtonMetro();
+      rSButtonMetro2 = new seguro.resources.RSButtonMetro();
+      rSButtonMetro3 = new seguro.resources.RSButtonMetro();
       jPanel4 = new javax.swing.JPanel();
       jPanel5 = new javax.swing.JPanel();
       jPanel6 = new javax.swing.JPanel();
@@ -45,7 +45,7 @@ public class Gerenciador extends javax.swing.JInternalFrame {
       jLabel4 = new javax.swing.JLabel();
       jScrollPane1 = new javax.swing.JScrollPane();
       jTextArea1 = new javax.swing.JTextArea();
-      btTeste = new rsbuttom.RSButtonMetro();
+      btTeste = new seguro.resources.RSButtonMetro();
       jTextField1 = new javax.swing.JTextField();
       jTextField2 = new javax.swing.JTextField();
       jTextField3 = new javax.swing.JTextField();
@@ -303,7 +303,7 @@ public class Gerenciador extends javax.swing.JInternalFrame {
 
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
-   private rsbuttom.RSButtonMetro btTeste;
+   private seguro.resources.RSButtonMetro btTeste;
    private javax.swing.JLabel jLabel1;
    private javax.swing.JLabel jLabel2;
    private javax.swing.JLabel jLabel3;
@@ -323,7 +323,7 @@ public class Gerenciador extends javax.swing.JInternalFrame {
    private javax.swing.JTextField jTextField2;
    private javax.swing.JTextField jTextField3;
    private javax.swing.JLabel label_status;
-   private rsbuttom.RSButtonMetro rSButtonMetro2;
-   private rsbuttom.RSButtonMetro rSButtonMetro3;
+   private seguro.resources.RSButtonMetro rSButtonMetro2;
+   private seguro.resources.RSButtonMetro rSButtonMetro3;
    // End of variables declaration//GEN-END:variables
 }

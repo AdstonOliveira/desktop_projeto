@@ -29,9 +29,9 @@ public class CadTipos extends javax.swing.JInternalFrame {
 
       jPanel1 = new javax.swing.JPanel();
       jPanel2 = new javax.swing.JPanel();
-      btSalvar = new rsbuttom.RSButtonMetro();
-      btCancelar = new rsbuttom.RSButtonMetro();
-      btEditar = new rsbuttom.RSButtonMetro();
+      btSalvar = new seguro.resources.RSButtonMetro();
+      btCancelar = new seguro.resources.RSButtonMetro();
+      btEditar = new seguro.resources.RSButtonMetro();
       jPanel3 = new javax.swing.JPanel();
       jPanel4 = new javax.swing.JPanel();
       jLabel1 = new javax.swing.JLabel();
@@ -201,9 +201,9 @@ public class CadTipos extends javax.swing.JInternalFrame {
 
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
-   private rsbuttom.RSButtonMetro btCancelar;
-   private rsbuttom.RSButtonMetro btEditar;
-   private rsbuttom.RSButtonMetro btSalvar;
+   private seguro.resources.RSButtonMetro btCancelar;
+   private seguro.resources.RSButtonMetro btEditar;
+   private seguro.resources.RSButtonMetro btSalvar;
    private javax.swing.JLabel jLabel1;
    private javax.swing.JPanel jPanel1;
    private javax.swing.JPanel jPanel2;

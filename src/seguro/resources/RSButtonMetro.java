@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package rsbuttom;
+package seguro.resources;
 
 /**
  *
@@ -51,12 +51,12 @@ public class RSButtonMetro extends JButton implements MouseListener, MouseMotion
         this.setSize(new Dimension(150, 35));
         this.setBorder(null);
 //        this.setBorderPainted(false);
-        this.setContentAreaFilled(false);
+        this.setContentAreaFilled(true);
         this.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         this.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         this.setBackground(this.colorNormal);
         this.setForeground(this.colorTextNormal);
-        this.setOpaque(true);
+        this.setOpaque(false);
         this.setVisible(true);
         this.addMouseListener(this);
         this.addMouseMotionListener(this);
@@ -70,6 +70,7 @@ public class RSButtonMetro extends JButton implements MouseListener, MouseMotion
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
     }
+    @Override
     public void mouseClicked(MouseEvent e) {
     }
 
@@ -98,6 +99,16 @@ public class RSButtonMetro extends JButton implements MouseListener, MouseMotion
         this.setForeground(this.colorTextNormal);
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     public Color getColorPressed() {
         return colorPressed;
     }
