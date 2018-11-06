@@ -1,12 +1,11 @@
 package seguro.configuracoes;
 /**
- *
  * @author root
  */
 public class Config {
     /** CONFIGS PADRAO */
     public Config(){
-        this.IpBanco = "localhost";
+        this.IpBanco = "192.168.0.237";
         this.porta = "3306";
         this.nome_banco = "gerenciador";
         

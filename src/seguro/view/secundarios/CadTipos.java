@@ -47,16 +47,27 @@ public class CadTipos extends javax.swing.JInternalFrame {
       jPanel1.setBackground(new java.awt.Color(51, 51, 51));
       jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+      jPanel2.setBackground(new java.awt.Color(0, 143, 143));
       jPanel2.setBorder(new javax.swing.border.MatteBorder(null));
       jPanel2.setInheritsPopupMenu(true);
 
       btSalvar.setBackground(new java.awt.Color(0, 204, 51));
+      btSalvar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
       btSalvar.setText("Salvar");
+      btSalvar.setColorBorde(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+      btSalvar.setColorNormal(new java.awt.Color(0, 204, 51));
 
       btCancelar.setBackground(new java.awt.Color(204, 51, 0));
+      btCancelar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
       btCancelar.setText("Cancelar");
+      btCancelar.setColorBorde(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+      btCancelar.setColorNormal(new java.awt.Color(204, 51, 0));
 
+      btEditar.setBackground(new java.awt.Color(204, 153, 0));
+      btEditar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
       btEditar.setText("Editar");
+      btEditar.setColorBorde(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+      btEditar.setColorNormal(new java.awt.Color(204, 153, 0));
 
       javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
       jPanel2.setLayout(jPanel2Layout);

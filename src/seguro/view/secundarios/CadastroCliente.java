@@ -42,7 +42,7 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
       jTextField1 = new javax.swing.JTextField();
       jTextField2 = new javax.swing.JTextField();
       jTextField3 = new javax.swing.JTextField();
-      jDateChooser1 = new com.toedter.calendar.JDateChooser();
+      dataNasc = new com.toedter.calendar.JDateChooser();
       jPanel7 = new javax.swing.JPanel();
       jPanel9 = new javax.swing.JPanel();
       jLabel8 = new javax.swing.JLabel();
@@ -125,7 +125,7 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
          .addGroup(jPanel3Layout.createSequentialGroup()
             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(rSButtonMetro1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(18, 18, 18)
+            .addGap(18, 18, Short.MAX_VALUE)
             .addComponent(rSButtonMetro2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
       );
@@ -176,7 +176,7 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
       jTextField3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
       jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-      jDateChooser1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+      dataNasc.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
       javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
       jPanel8.setLayout(jPanel8Layout);
@@ -197,7 +197,7 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
             .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                .addGroup(jPanel8Layout.createSequentialGroup()
                   .addGap(10, 10, 10)
-                  .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                  .addComponent(dataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
                .addComponent(jTextField2)
                .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -221,7 +221,7 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                .addComponent(jLabel6)
-               .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+               .addComponent(dataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
       );
 
@@ -406,7 +406,7 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
 
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
-   private com.toedter.calendar.JDateChooser jDateChooser1;
+   private com.toedter.calendar.JDateChooser dataNasc;
    private javax.swing.JLabel jLabel1;
    private javax.swing.JLabel jLabel10;
    private javax.swing.JLabel jLabel11;

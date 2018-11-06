@@ -9,41 +9,37 @@ import seguro.configuracoes.Config;
  *
  * @author root
  */
-public class Conexao {
-    private Config config;
-    private Connection conn;
-    protected MySQL comandos;
+public final class Conexao {
+   
+   private Config config;
+   private Connection conn;
     
     public Conexao( String IP, String Porta, String banco ){
        this.config = new Config( IP, Porta, banco );
-       this.comandos = new MySQL( this );
     }
-   
     public Conexao(){
        this.config = new Config();
-       this.comandos = new MySQL( this );
     }
    
     
     // Conectar ao banco
     public Connection abrir() {
-       try {
+      try {
           Class.forName( this.config.getDRIVER() );
           JOptionPane.showMessageDialog( null, this.config.getDRIVER() );
-          
        } catch (ClassNotFoundException ex) {
-          JOptionPane.showMessageDialog( null, ex,this.config.getURL(),0 );
+          JOptionPane.showMessageDialog( null, ex, this.config.getURL(),0 );
        }
        
-       try {
-          conn = DriverManager.getConnection( this.config.getURL(), this.config.getUSUARIO(), this.config.getSENHA() );
-          JOptionPane.showMessageDialog(null,this.config.getURL());
-          
-       } catch (SQLException ex) {
-          JOptionPane.showMessageDialog( null,ex,this.config.getURL(),0 );
-       }
-       
+      try {
+          conn = DriverManager.getConnection( this.getConfig().getURL(), this.getConfig().getUSUARIO(), 
+                                                                           this.getConfig().getSENHA() );
+          JOptionPane.showMessageDialog( null, this.getConfig().getURL() );
       return conn;
+      } catch (SQLException ex) {
+          JOptionPane.showMessageDialog( null, ex, this.config.getURL(),0 );
+      }
+       return null;
     }
     
     public boolean fechar(){
@@ -66,13 +62,7 @@ public class Conexao {
         this.config.setIpBanco(ip);
     }
     
-   public MySQL getComandos() {
-      return comandos;
-   }
 
-   public void setComandos(MySQL comandos) {
-      this.comandos = comandos;
-   }
 
    public Connection getConn() {
       return conn;

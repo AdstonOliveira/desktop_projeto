@@ -2,6 +2,8 @@ package seguro.model;
 
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import seguro.DAO.Conexao;
 import seguro.DAO.DAOUsuario;
@@ -19,6 +21,21 @@ public class Usuario {
    private String senha;
    private String login;
 
+   public Usuario(String senha, String login) {
+      this.senha = senha;
+      this.login = login;
+   }
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
    public String getLogin() {
       return login;
    }
@@ -77,14 +94,15 @@ public class Usuario {
    }
    
    
-   public boolean Login( String SQL, DAOUsuario dao ){
-      try {
-         dao.Login( this, SQL );
-         return true;
-      } catch (SQLException ex) {
-         JOptionPane.showMessageDialog( null, ex, login, 0 );
+   public boolean Login( Conexao conexao, String SQL ){
+      DAOUsuario dao = new DAOUsuario( conexao );
+         try {
+            return dao.Login( this, SQL ) ;
+         } catch (SQLException ex) {
+            JOptionPane.showMessageDialog( null,ex, conexao.getConfig().getURL(),0 );
          return false;
-      }
+         }
+      
    }
    
    

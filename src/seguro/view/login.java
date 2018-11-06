@@ -1,20 +1,22 @@
 package seguro.view;
 
+import seguro.view.control.ControlLogin;
 import javax.swing.JOptionPane;
 import seguro.DAO.Conexao;
-import seguro.DAO.DAOUsuario;
+
 
 /**
  * @author root
  */
 public class login extends javax.swing.JFrame {
 
-    private Conexao conexao;
+    private Conexao conexao = new Conexao();
     private ControlLogin control = new ControlLogin();
+    
     
     public login() {
         initComponents();
-        this.conexao = new DAOUsuario();
+        this.setLocationRelativeTo(null);
         this.getRootPane().setDefaultButton( this.btConecta );
     }
 
@@ -36,8 +38,8 @@ public class login extends javax.swing.JFrame {
       btCancela = new rsbuttom.RSButtonMetro();
       jMenuBar1 = new javax.swing.JMenuBar();
       jMenu1 = new javax.swing.JMenu();
+      configBanco = new javax.swing.JMenuItem();
       jMenuItem1 = new javax.swing.JMenuItem();
-      jMenuItem2 = new javax.swing.JMenuItem();
 
       setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
       setTitle("Login - Bem-Vindo");
@@ -75,7 +77,7 @@ public class login extends javax.swing.JFrame {
       jLabel3.setText("Senha:");
 
       textLogin.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-      textLogin.setText("adalton");
+      textLogin.setText("tom");
 
       textSenha.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
       textSenha.setText("123");
@@ -169,18 +171,18 @@ public class login extends javax.swing.JFrame {
 
       jMenu1.setText("Opções");
 
+      configBanco.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK));
+      configBanco.setText("Configurações");
+      configBanco.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            configBancoActionPerformed(evt);
+         }
+      });
+      jMenu1.add(configBanco);
+
       jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.ALT_MASK));
       jMenuItem1.setText("NovoCadastro");
       jMenu1.add(jMenuItem1);
-
-      jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK));
-      jMenuItem2.setText("Configurações");
-      jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            jMenuItem2ActionPerformed(evt);
-         }
-      });
-      jMenu1.add(jMenuItem2);
 
       jMenuBar1.add(jMenu1);
 
@@ -200,11 +202,11 @@ public class login extends javax.swing.JFrame {
       pack();
    }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void configBancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_configBancoActionPerformed
         ConfigBanco config = new ConfigBanco();
         config.defineConexao( this.conexao );
-        config.setVisible(true);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+        config.setVisible( true );
+    }//GEN-LAST:event_configBancoActionPerformed
 
     private void btCancelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelaActionPerformed
         System.exit(0);
@@ -215,11 +217,12 @@ public class login extends javax.swing.JFrame {
       dadosLogin[0] = this.textLogin.getText();
       dadosLogin[1] = new String( this.textSenha.getPassword() );
       
-         if( this.control.Login(conexao, dadosLogin) )
-            
-            JOptionPane.showMessageDialog(this, "Sucesso!!!", "Logado",1);
-         else
-            JOptionPane.showMessageDialog(this, "Falhou!!!","NãoLogado",0);
+         if( this.control.Login( this.conexao, dadosLogin ) ){
+            JOptionPane.showMessageDialog( this, "Seja Bem-Vindo " + this.textLogin.getText(), "Bem-Vindo",1 );
+            new TelaPrincipal().setVisible(true);
+            this.dispose();
+         }else
+            JOptionPane.showMessageDialog( this, "Não foi possivel entrar!!!","Não Logado",0 );
    }//GEN-LAST:event_btConectaActionPerformed
 
     /**
@@ -263,13 +266,13 @@ public class login extends javax.swing.JFrame {
    // Variables declaration - do not modify//GEN-BEGIN:variables
    private rsbuttom.RSButtonMetro btCancela;
    private rsbuttom.RSButtonMetro btConecta;
+   private javax.swing.JMenuItem configBanco;
    private javax.swing.JLabel jLabel1;
    private javax.swing.JLabel jLabel2;
    private javax.swing.JLabel jLabel3;
    private javax.swing.JMenu jMenu1;
    private javax.swing.JMenuBar jMenuBar1;
    private javax.swing.JMenuItem jMenuItem1;
-   private javax.swing.JMenuItem jMenuItem2;
    private javax.swing.JPanel jPanel1;
    private javax.swing.JPanel jPanel2;
    private javax.swing.JPanel painel_fundo;
