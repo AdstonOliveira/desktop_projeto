@@ -38,4 +38,13 @@ public class DAOUsuario extends DAO{
    
    
    
+   public boolean novoCadastro(String SQL){
+       return super.comandos.executar_comando(SQL);
+   }
+   
+   
+   
+   
+   
+   
 }

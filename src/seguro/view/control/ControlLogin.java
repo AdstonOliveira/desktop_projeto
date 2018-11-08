@@ -42,6 +42,11 @@ public class ControlLogin {
       
    }*/
 
+   
+   public void abrirNovoCad(){
+       
+   }
+   
 
 
 

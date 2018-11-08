@@ -26,7 +26,7 @@ public class ThHora extends Thread{
          if( compare.getTime() > Agendamento.dMin.getTime()-500 
                  && compare.getTime() < Agendamento.dMin.getTime()+500 ){
             try {
-               Runtime.getRuntime().exec("shutdown -s -t 60");
+               Runtime.getRuntime().exec( "shutdown -s -t 60" );
               
                try {
                   Thread.sleep(2000);

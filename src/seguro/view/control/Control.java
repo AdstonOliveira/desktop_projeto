@@ -12,7 +12,6 @@ public abstract class Control {
          TelaPrincipal.desktop.add(this.view);
          this.view.setVisible(true);
       }
-      
    }
    
    public void setView( JInternalFrame view ){
