@@ -1,8 +1,12 @@
 package seguro.view;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JDesktopPane;
 import seguro.DAO.Conexao;
 import seguro.model.Usuario;
 import seguro.view.control.ControlTelaInicial;
+import seguro.view.secundarios.Agendamento;
 /**
  * @author Adston at self
  */
@@ -276,7 +280,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
    }// </editor-fold>//GEN-END:initComponents
 
    private void rSButtonMetro3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMetro3ActionPerformed
-      // TODO add your handling code here:
+      Agendamento a = null;
+      try {
+         a = new Agendamento();
+      } catch (ParseException ex) {
+         Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+      }
+      desktop.add(a);
+      a.setVisible(true);
    }//GEN-LAST:event_rSButtonMetro3ActionPerformed
 
    private void btDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDadosActionPerformed
