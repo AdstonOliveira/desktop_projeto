@@ -26,18 +26,16 @@ public final class Conexao {
     public Connection abrir() {
       try {
           Class.forName( this.config.getDRIVER() );
-          JOptionPane.showMessageDialog( null, this.config.getDRIVER() );
-       } catch (ClassNotFoundException ex) {
-          JOptionPane.showMessageDialog( null, ex, this.config.getURL(),0 );
+          //JOptionPane.showMessageDialog( null, "Conexão estabelecida" );
+       } catch ( ClassNotFoundException ex ) {
+          JOptionPane.showMessageDialog( null, "Não foi possivel estabelecer conexao", this.config.getURL(),0 );
        }
        
       try {
-          conn = DriverManager.getConnection( this.getConfig().getURL(), this.getConfig().getUSUARIO(), 
-                                                                           this.getConfig().getSENHA() );
-          JOptionPane.showMessageDialog( null, this.getConfig().getURL() );
+          conn = DriverManager.getConnection( this.getConfig().getURL(), this.getConfig().getUSUARIO(),this.getConfig().getSENHA() );
       return conn;
       } catch (SQLException ex) {
-          JOptionPane.showMessageDialog( null, ex, this.config.getURL(),0 );
+          JOptionPane.showMessageDialog( null, "Servidor não respondeu", this.config.getURL(),0 );
       }
        return null;
     }

@@ -4,31 +4,32 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import seguro.Seguro;
 /**
  * @author Adston at self
  */
-public class MySQL {
-   private Conexao conexao;
+   public class MySQL {
+      private Conexao conexao;
    
    public MySQL( Conexao conexao ){
       this.conexao = conexao;
    }
-  
+   
+
    public boolean executar_comando( String comando ){
-      Connection conn = this.conexao.abrir();
+      Connection conn = Seguro.conexao.abrir();
       Statement stmt;
       
       if( conn != null ){
             try {
-              //conn.setAutoCommit( true );
                stmt = conn.prepareStatement( comando );
                stmt.execute( comando );
-               this.conexao.fechar();
+               Seguro.conexao.fechar();
             return true;
             
             } catch (SQLException ex) {
                this.msgErro( ex );
-               this.conexao.fechar();
+               Seguro.conexao.fechar();
             return false;
             }
       }
@@ -36,7 +37,7 @@ public class MySQL {
    }
 
 public ResultSet pegarResultadoSQL( String SQL ) {
-       Connection conn = this.conexao.abrir();
+       Connection conn = Seguro.conexao.abrir();
        ResultSet rs = null;
        Statement stmt;
        
@@ -55,10 +56,4 @@ public ResultSet pegarResultadoSQL( String SQL ) {
      JOptionPane.showMessageDialog( null, ex, "A Operação não pode ser realizada", 0 );
   }
 
-   public Conexao getConexao() {
-      return conexao;
-   }
-  
-  
-  
 }

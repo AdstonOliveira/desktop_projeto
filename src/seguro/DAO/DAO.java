@@ -1,10 +1,11 @@
 package seguro.DAO;
+
 /**
  * @author Adston at self
  */
 public abstract class DAO {
    
-   protected Conexao conexao;
+   protected Conexao conexao /*= Seguro.conexao*/;
    protected MySQL comandos;
    
    /**
@@ -13,8 +14,7 @@ public abstract class DAO {
     */
    public void setConexao( Conexao conexao ){
       this.conexao = conexao;
-      this.comandos = new MySQL(conexao);
-      
+      this.comandos = new MySQL( conexao );
    }
    
    public MySQL getComandos(){

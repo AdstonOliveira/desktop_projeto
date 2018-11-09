@@ -31,7 +31,7 @@ public class RSButtonMetro extends JButton implements MouseListener, MouseMotion
     private Color colorPressed = new Color(0, 51, 51);   
     private Color colorHover = new Color(38, 86, 186);
     
-    private Border bordeMoved = new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+    private Border bordeMoved = new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED);
     /**
      * Color para el texto
      */

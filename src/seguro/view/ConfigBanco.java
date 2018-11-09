@@ -2,6 +2,7 @@ package seguro.view;
 
 import javax.swing.JOptionPane;
 import seguro.DAO.Conexao;
+import seguro.Seguro;
 
 /**
  *
@@ -27,7 +28,8 @@ public class ConfigBanco extends javax.swing.JFrame {
         this.conexao.getConfig().setNome_banco( this.JTextBanco.getText() );     
         
         this.conexao.getConfig().defineURL();
-        JOptionPane.showMessageDialog(null, "Configurado","Executado",1);
+        JOptionPane.showMessageDialog( null, "Configuração Salva","Executado",1);
+        Seguro.testeConexaoInicial();
     }
     
     public void testa(){
@@ -96,7 +98,7 @@ public class ConfigBanco extends javax.swing.JFrame {
       jLabel4.setText("Nome Banco:");
 
       JTextIP.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-      JTextIP.setText("localhost");
+      JTextIP.setText("192.168.0.237");
 
       JTextPorta.setHorizontalAlignment(javax.swing.JTextField.CENTER);
       JTextPorta.setText("3306");
@@ -212,6 +214,7 @@ public class ConfigBanco extends javax.swing.JFrame {
 
     private void btSalvaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvaActionPerformed
         this.configura();
+        
     }//GEN-LAST:event_btSalvaActionPerformed
 
     private void btTestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTestaActionPerformed

@@ -28,19 +28,20 @@ public class ControlLogin {
    public void testePing() throws IOException{
       
       Scanner scanner = new Scanner( Runtime.getRuntime().exec("cmd /c ping localhost").getInputStream());
+      
    }
-/*
+
    public static void main(String[] args) throws IOException {
-      /* FUNCIONANDO   http://www.guj.com.br/t/pingando-em-java/112337/4       
-      String ip = "www.iwts.com.br";
+      // FUNCIONANDO   http://www.guj.com.br/t/pingando-em-java/112337/4       
+  /*    String ip = "10.10.10.00";
 	String resposta="";
 		Scanner scanner = new Scanner( Runtime.getRuntime().exec("cmd /c ping " + ip).getInputStream() );
 		while(scanner.hasNextLine()){
 			resposta += scanner.nextLine() + "\n";
 		}	
 		System.out.print(resposta);
-      
-   }*/
+      */
+   }
 
    
    public void abrirNovoCad(){

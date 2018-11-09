@@ -361,7 +361,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
    }//GEN-LAST:event_btDispositivoActionPerformed
 
     private void btAgendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAgendarActionPerformed
-        // TODO add your handling code here:
       Agendamento a = null;
       try {
          a = new Agendamento();
