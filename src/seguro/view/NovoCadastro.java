@@ -36,11 +36,12 @@ public class NovoCadastro extends javax.swing.JFrame {
     
     public boolean inserirNovo(){
         DAOUsuario dao = new DAOUsuario( /*this.conexao*/ );
-        
+        String Ssenha = new String( this.senha.getPassword() );
         String SQL = "insert into usuario(nome,login,senha,email) "
-                + "values('"+this.nome.getText()+"','"+this.nick.getText()+"','"
-                + new String( this.senha.getPassword()
-                + "','"+this.email.getText()+"');" );
+                + "values('"+this.nome.getText()+"',"
+                + "'"+this.nick.getText()+"','"
+                + Ssenha + "','"
+                +this.email.getText()+"');" ;
         
         return dao.novoCadastro(SQL);
     }

@@ -14,6 +14,7 @@ public class ControlCadUsuario {
    
    public void setUsuario( Usuario user ){
       this.user = user;
+      
    }
    
    
@@ -24,6 +25,10 @@ public class ControlCadUsuario {
       this.view.getTextNome().setText( this.user.getNome() );
       this.view.getTextNick().setText( this.user.getLogin() );
       this.view.getTextEmail().setText( this.user.getEmail() );
+      
+      this.view.getDtNasc().setDate( this.user.getDt_nasc() );
+      
+      
    }
 
    public void abreCliente(){
@@ -33,7 +38,7 @@ public class ControlCadUsuario {
 
       }else{
          this.view = new CadastroCliente();
-         TelaPrincipal.desktop.add(this.view);
+         TelaPrincipal.desktop.add( this.view );
          this.view.setVisible(true);
       }
    }

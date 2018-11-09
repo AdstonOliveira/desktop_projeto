@@ -69,7 +69,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         painel_Topo.setBackground(new java.awt.Color(0, 102, 102));
-        painel_Topo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        painel_Topo.setBorder(new javax.swing.border.SoftBevelBorder(0));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -102,13 +102,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         painelLateral.setBackground(new java.awt.Color(0, 153, 153));
-        painelLateral.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        painelLateral.setBorder(new javax.swing.border.SoftBevelBorder(0));
 
         painelCadastros.setBackground(new java.awt.Color(51, 51, 51));
 
-        btDados.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btDados.setBorder(new javax.swing.border.SoftBevelBorder(0));
         btDados.setText("Meus Dados");
-        btDados.setColorBorde(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btDados.setColorBorde(new javax.swing.border.SoftBevelBorder(0));
         btDados.setFocusPainted(false);
         btDados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,7 +117,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(0));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -136,9 +136,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        btDispositivo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btDispositivo.setBorder(new javax.swing.border.SoftBevelBorder(0));
         btDispositivo.setText("Dispositivo");
-        btDispositivo.setColorBorde(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btDispositivo.setColorBorde(new javax.swing.border.SoftBevelBorder(0));
         btDispositivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btDispositivoActionPerformed(evt);
@@ -167,7 +167,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         pnRelatorios.setBackground(new java.awt.Color(51, 51, 51));
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel3.setBorder(new javax.swing.border.SoftBevelBorder(0));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -185,7 +185,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        rSButtonMetro3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        rSButtonMetro3.setBorder(new javax.swing.border.SoftBevelBorder(0));
         rSButtonMetro3.setText("Diário");
         rSButtonMetro3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -193,17 +193,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        rSButtonMetro4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        rSButtonMetro4.setBorder(new javax.swing.border.SoftBevelBorder(0));
         rSButtonMetro4.setText("Semanal");
-        rSButtonMetro4.setColorBorde(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        rSButtonMetro4.setColorBorde(new javax.swing.border.SoftBevelBorder(0));
 
-        rSButtonMetro5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        rSButtonMetro5.setBorder(new javax.swing.border.SoftBevelBorder(0));
         rSButtonMetro5.setText("Mensal");
-        rSButtonMetro5.setColorBorde(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        rSButtonMetro5.setColorBorde(new javax.swing.border.SoftBevelBorder(0));
 
-        rSButtonMetro6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        rSButtonMetro6.setBorder(new javax.swing.border.SoftBevelBorder(0));
         rSButtonMetro6.setText("Anual");
-        rSButtonMetro6.setColorBorde(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        rSButtonMetro6.setColorBorde(new javax.swing.border.SoftBevelBorder(0));
 
         javax.swing.GroupLayout pnRelatoriosLayout = new javax.swing.GroupLayout(pnRelatorios);
         pnRelatorios.setLayout(pnRelatoriosLayout);
@@ -248,10 +248,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
         );
 
-        btAgendar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btAgendar.setBorder(new javax.swing.border.SoftBevelBorder(0));
         btAgendar.setText("Agendar");
         btAgendar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -259,11 +259,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        rSButtonMetro2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        rSButtonMetro2.setBorder(new javax.swing.border.SoftBevelBorder(0));
         rSButtonMetro2.setText("Agendados");
 
-        rSButtonMetro7.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        rSButtonMetro7.setText("Passados");
+        rSButtonMetro7.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        rSButtonMetro7.setText("Hist Desligamento");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -282,11 +282,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
-                .addComponent(btAgendar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btAgendar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(rSButtonMetro2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(rSButtonMetro2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(rSButtonMetro7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(rSButtonMetro7, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
 
         javax.swing.GroupLayout painelLateralLayout = new javax.swing.GroupLayout(painelLateral);

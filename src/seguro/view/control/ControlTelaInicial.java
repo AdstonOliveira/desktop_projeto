@@ -13,6 +13,7 @@ public class ControlTelaInicial {
          this.cad_cliente.setUsuario( TelaPrincipal.usuario );
          this.cad_cliente.montaCliente();
          this.cad_cliente.abreCliente();
+      
       }else
          this.cad_cliente.abreCliente();
       
