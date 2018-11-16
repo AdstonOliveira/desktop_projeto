@@ -16,6 +16,7 @@ public class CadastroEquipamento extends javax.swing.JInternalFrame {
     */
    public CadastroEquipamento() {
       initComponents();
+      this.getRootPane().setDefaultButton(btSalvar);
    }
 
    /**
@@ -29,8 +30,8 @@ public class CadastroEquipamento extends javax.swing.JInternalFrame {
 
       jPanel1 = new javax.swing.JPanel();
       jPanel3 = new javax.swing.JPanel();
-      rSButtonMetro1 = new seguro.resources.RSButtonMetro();
-      rSButtonMetro2 = new seguro.resources.RSButtonMetro();
+      btSalvar = new seguro.resources.RSButtonMetro();
+      btCancelar = new seguro.resources.RSButtonMetro();
       jPanel4 = new javax.swing.JPanel();
       jPanel5 = new javax.swing.JPanel();
       jLabel2 = new javax.swing.JLabel();
@@ -42,6 +43,12 @@ public class CadastroEquipamento extends javax.swing.JInternalFrame {
       listaTipo = new javax.swing.JComboBox<>();
       textConsumo = new javax.swing.JTextField();
       jLabel6 = new javax.swing.JLabel();
+      jLabel8 = new javax.swing.JLabel();
+      jScrollPane1 = new javax.swing.JScrollPane();
+      jTextArea1 = new javax.swing.JTextArea();
+      jPanel2 = new javax.swing.JPanel();
+      jLabel1 = new javax.swing.JLabel();
+      jLabel7 = new javax.swing.JLabel();
 
       setClosable(true);
       setIconifiable(true);
@@ -53,15 +60,15 @@ public class CadastroEquipamento extends javax.swing.JInternalFrame {
       jPanel3.setBackground(new java.awt.Color(0, 143, 143));
       jPanel3.setBorder(new javax.swing.border.MatteBorder(null));
 
-      rSButtonMetro1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-      rSButtonMetro1.setText("Salvar");
-      rSButtonMetro1.setColorBorde(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-      rSButtonMetro1.setColorNormal(new java.awt.Color(0, 204, 51));
+      btSalvar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+      btSalvar.setText("Salvar");
+      btSalvar.setColorBorde(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+      btSalvar.setColorNormal(new java.awt.Color(0, 204, 51));
 
-      rSButtonMetro2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-      rSButtonMetro2.setText("Cancelar");
-      rSButtonMetro2.setColorBorde(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-      rSButtonMetro2.setColorNormal(new java.awt.Color(204, 51, 0));
+      btCancelar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+      btCancelar.setText("Cancelar");
+      btCancelar.setColorBorde(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+      btCancelar.setColorNormal(new java.awt.Color(204, 51, 0));
 
       javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
       jPanel3.setLayout(jPanel3Layout);
@@ -70,18 +77,18 @@ public class CadastroEquipamento extends javax.swing.JInternalFrame {
          .addGroup(jPanel3Layout.createSequentialGroup()
             .addContainerGap()
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addComponent(rSButtonMetro1, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
-               .addComponent(rSButtonMetro2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+               .addComponent(btSalvar, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+               .addComponent(btCancelar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
             .addContainerGap())
       );
       jPanel3Layout.setVerticalGroup(
          jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(jPanel3Layout.createSequentialGroup()
-            .addContainerGap()
-            .addComponent(rSButtonMetro1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(rSButtonMetro2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap())
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
       );
 
       jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -105,54 +112,72 @@ public class CadastroEquipamento extends javax.swing.JInternalFrame {
          .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
       );
 
-      jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-      jLabel3.setText("Nome:");
+      jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+      jLabel3.setText("Modelo");
 
-      jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+      jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
       jLabel4.setText("Tipo:");
 
-      jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+      jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
       jLabel5.setText("Consumo: ");
 
       jLabel6.setFont(new java.awt.Font("Tahoma", 3, 10)); // NOI18N
       jLabel6.setText("(Watts)");
 
+      jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+      jLabel8.setText("Descrição:");
+
+      jTextArea1.setColumns(20);
+      jTextArea1.setRows(5);
+      jScrollPane1.setViewportView(jTextArea1);
+
       javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
       jPanel6.setLayout(jPanel6Layout);
       jPanel6Layout.setHorizontalGroup(
          jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(jPanel6Layout.createSequentialGroup()
-            .addContainerGap()
+         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-               .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-               .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-               .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-               .addComponent(textNome)
-               .addComponent(listaTipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+               .addComponent(jScrollPane1)
+               .addComponent(jLabel8)
                .addGroup(jPanel6Layout.createSequentialGroup()
-                  .addComponent(textConsumo, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                  .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                  .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)))
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                  .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                     .addComponent(listaTipo, javax.swing.GroupLayout.Alignment.LEADING, 0, 155, Short.MAX_VALUE)
+                     .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
+                     .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
+                     .addComponent(textNome, javax.swing.GroupLayout.Alignment.LEADING))
+                  .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                  .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                     .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(textConsumo, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel6)))))
+            .addContainerGap())
       );
       jPanel6Layout.setVerticalGroup(
          jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(jPanel6Layout.createSequentialGroup()
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-               .addComponent(jLabel3)
-               .addComponent(textNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addContainerGap()
+            .addComponent(jLabel3)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(textNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-               .addComponent(jLabel4)
-               .addComponent(listaTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-               .addComponent(jLabel5)
-               .addComponent(textConsumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-               .addComponent(jLabel6))
+            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+               .addGroup(jPanel6Layout.createSequentialGroup()
+                  .addComponent(jLabel4)
+                  .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                  .addComponent(listaTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+               .addGroup(jPanel6Layout.createSequentialGroup()
+                  .addComponent(jLabel5)
+                  .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                  .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                     .addComponent(textConsumo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                     .addComponent(jLabel6))))
+            .addGap(18, 18, 18)
+            .addComponent(jLabel8)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
       );
 
@@ -165,8 +190,8 @@ public class CadastroEquipamento extends javax.swing.JInternalFrame {
             .addGap(0, 0, Short.MAX_VALUE))
          .addGroup(jPanel4Layout.createSequentialGroup()
             .addContainerGap()
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addContainerGap())
+            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap(20, Short.MAX_VALUE))
       );
       jPanel4Layout.setVerticalGroup(
          jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,19 +202,52 @@ public class CadastroEquipamento extends javax.swing.JInternalFrame {
             .addContainerGap())
       );
 
+      jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+
+      jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+      jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+      jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+      jLabel1.setText("Cadastro de Dispositivos");
+
+      jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+      jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/android.png"))); // NOI18N
+
+      javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+      jPanel2.setLayout(jPanel2Layout);
+      jPanel2Layout.setHorizontalGroup(
+         jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+      );
+      jPanel2Layout.setVerticalGroup(
+         jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+         .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+               .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+               .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 3, Short.MAX_VALUE))
+      );
+
       javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
       jPanel1.setLayout(jPanel1Layout);
       jPanel1Layout.setHorizontalGroup(
          jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(jPanel1Layout.createSequentialGroup()
             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGap(1, 1, 1)
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+         .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
       );
       jPanel1Layout.setVerticalGroup(
          jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-         .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(1, 1, 1)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+               .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+               .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
       );
 
       javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -208,19 +266,25 @@ public class CadastroEquipamento extends javax.swing.JInternalFrame {
 
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
+   private seguro.resources.RSButtonMetro btCancelar;
+   private seguro.resources.RSButtonMetro btSalvar;
+   private javax.swing.JLabel jLabel1;
    private javax.swing.JLabel jLabel2;
    private javax.swing.JLabel jLabel3;
    private javax.swing.JLabel jLabel4;
    private javax.swing.JLabel jLabel5;
    private javax.swing.JLabel jLabel6;
+   private javax.swing.JLabel jLabel7;
+   private javax.swing.JLabel jLabel8;
    private javax.swing.JPanel jPanel1;
+   private javax.swing.JPanel jPanel2;
    private javax.swing.JPanel jPanel3;
    private javax.swing.JPanel jPanel4;
    private javax.swing.JPanel jPanel5;
    private javax.swing.JPanel jPanel6;
+   private javax.swing.JScrollPane jScrollPane1;
+   private javax.swing.JTextArea jTextArea1;
    private javax.swing.JComboBox<String> listaTipo;
-   private seguro.resources.RSButtonMetro rSButtonMetro1;
-   private seguro.resources.RSButtonMetro rSButtonMetro2;
    private javax.swing.JTextField textConsumo;
    private javax.swing.JTextField textNome;
    // End of variables declaration//GEN-END:variables
