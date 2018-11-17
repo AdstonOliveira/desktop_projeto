@@ -10,13 +10,10 @@ public class ControlCadUsuario {
    private Usuario user;
    private CadastroCliente view;
    
-   
-   
    public void setUsuario( Usuario user ){
       this.user = user;
       
    }
-   
    
    public void montaCliente(){
       if( this.view == null ) 

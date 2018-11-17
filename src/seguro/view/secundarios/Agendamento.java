@@ -12,7 +12,7 @@ import seguro.resources.RSButtonMetro;
  */
 public class Agendamento extends javax.swing.JInternalFrame {
    
-   SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy HH:mm");  
+   SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy HH:mm");
    static public Date dMin;
    ThHora th;
    

@@ -4,10 +4,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JDesktopPane;
 import seguro.DAO.Conexao;
+import seguro.control.graficos.ControlGraficos;
 import seguro.model.Usuario;
 import seguro.view.control.ControlTelaInicial;
-import seguro.view.graficos.GraficoDiario;
-import seguro.view.graficos.GraficoMensal;
 import seguro.view.secundarios.Agendamento;
 /**
  * @author Adston at self
@@ -49,9 +48,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
       jPanel3 = new javax.swing.JPanel();
       jLabel3 = new javax.swing.JLabel();
       rSButtonMetro3 = new seguro.resources.RSButtonMetro();
-      rSButtonMetro4 = new seguro.resources.RSButtonMetro();
-      rSButtonMetro5 = new seguro.resources.RSButtonMetro();
-      rSButtonMetro6 = new seguro.resources.RSButtonMetro();
       jPanel4 = new javax.swing.JPanel();
       jPanel5 = new javax.swing.JPanel();
       jLabel4 = new javax.swing.JLabel();
@@ -188,29 +184,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
       );
 
       rSButtonMetro3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-      rSButtonMetro3.setText("Diário");
+      rSButtonMetro3.setText("Visualizar Gráficos");
       rSButtonMetro3.addActionListener(new java.awt.event.ActionListener() {
          public void actionPerformed(java.awt.event.ActionEvent evt) {
             rSButtonMetro3ActionPerformed(evt);
          }
       });
-
-      rSButtonMetro4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-      rSButtonMetro4.setText("Semanal");
-      rSButtonMetro4.setColorBorde(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-      rSButtonMetro5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-      rSButtonMetro5.setText("Mensal");
-      rSButtonMetro5.setColorBorde(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-      rSButtonMetro5.addActionListener(new java.awt.event.ActionListener() {
-         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            rSButtonMetro5ActionPerformed(evt);
-         }
-      });
-
-      rSButtonMetro6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-      rSButtonMetro6.setText("Anual");
-      rSButtonMetro6.setColorBorde(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
       javax.swing.GroupLayout pnRelatoriosLayout = new javax.swing.GroupLayout(pnRelatorios);
       pnRelatorios.setLayout(pnRelatoriosLayout);
@@ -218,11 +197,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
          pnRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
          .addGroup(pnRelatoriosLayout.createSequentialGroup()
-            .addGroup(pnRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addComponent(rSButtonMetro3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-               .addComponent(rSButtonMetro4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-               .addComponent(rSButtonMetro5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-               .addComponent(rSButtonMetro6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(rSButtonMetro3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(0, 0, Short.MAX_VALUE))
       );
       pnRelatoriosLayout.setVerticalGroup(
@@ -230,14 +205,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
          .addGroup(pnRelatoriosLayout.createSequentialGroup()
             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(1, 1, 1)
-            .addComponent(rSButtonMetro3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(0, 0, 0)
-            .addComponent(rSButtonMetro4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(0, 0, 0)
-            .addComponent(rSButtonMetro5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(0, 0, 0)
-            .addComponent(rSButtonMetro6, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
-            .addGap(0, 0, 0))
+            .addComponent(rSButtonMetro3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
       );
 
       jPanel5.setBackground(new java.awt.Color(0, 0, 0));
@@ -313,7 +281,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addComponent(pnRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addContainerGap(128, Short.MAX_VALUE))
       );
 
       javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -353,10 +321,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
    }// </editor-fold>//GEN-END:initComponents
 
    private void rSButtonMetro3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMetro3ActionPerformed
-      GraficoDiario gd;
-      gd = new GraficoDiario();
-      desktop.add(gd);
-      gd.setVisible(true);
+     ControlGraficos cg = new ControlGraficos();
+     cg.abrir();
       
    }//GEN-LAST:event_rSButtonMetro3ActionPerformed
 
@@ -382,12 +348,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         desktop.add(a);
         a.setVisible(true);
     }//GEN-LAST:event_btAgendarActionPerformed
-
-   private void rSButtonMetro5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMetro5ActionPerformed
-      GraficoMensal gm = new GraficoMensal();
-      desktop.add(gm);
-      gm.setVisible(true);
-   }//GEN-LAST:event_rSButtonMetro5ActionPerformed
 
 
 
@@ -444,9 +404,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
    private javax.swing.JPanel pnRelatorios;
    private seguro.resources.RSButtonMetro rSButtonMetro2;
    private seguro.resources.RSButtonMetro rSButtonMetro3;
-   private seguro.resources.RSButtonMetro rSButtonMetro4;
-   private seguro.resources.RSButtonMetro rSButtonMetro5;
-   private seguro.resources.RSButtonMetro rSButtonMetro6;
    private seguro.resources.RSButtonMetro rSButtonMetro7;
    // End of variables declaration//GEN-END:variables
 
