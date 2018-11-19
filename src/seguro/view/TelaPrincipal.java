@@ -4,7 +4,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JDesktopPane;
 import seguro.DAO.Conexao;
-import seguro.control.graficos.ControlGraficos;
 import seguro.model.Usuario;
 import seguro.view.control.Abrir;
 import seguro.view.control.ControlTelaInicial;

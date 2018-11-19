@@ -8,10 +8,10 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
    /**
     * Creates new form CadastroCliente
     */
+   
    public CadastroCliente() {
       initComponents();
       this.getRootPane().setDefaultButton(this.btSalvar);
-      
    }
 
   

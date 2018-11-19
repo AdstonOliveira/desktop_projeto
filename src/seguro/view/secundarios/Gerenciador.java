@@ -1,23 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package seguro.view.secundarios;
 
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import seguro.resources.RSButtonMetro;
+
 /**
- *
  * @author Adston at self
- */
+*/
 public class Gerenciador extends javax.swing.JInternalFrame {
 
-   /**
-    * Creates new form Gerenciador
-    */
    public Gerenciador() {
       initComponents();
-      this.getRootPane().setDefaultButton(btChecarConectividade);
+      this.getRootPane().setDefaultButton( btChecarConectividade );
    }
+   
+   
+   
+   
+   
 
    /**
     * This method is called from within the constructor to initialize the form.
@@ -332,4 +335,180 @@ public class Gerenciador extends javax.swing.JInternalFrame {
    private javax.swing.JTextField jTextField2;
    private javax.swing.JLabel label_status;
    // End of variables declaration//GEN-END:variables
+
+   public RSButtonMetro getBtCancelar() {
+      return btCancelar;
+   }
+
+   public void setBtCancelar(RSButtonMetro btCancelar) {
+      this.btCancelar = btCancelar;
+   }
+
+   public RSButtonMetro getBtChecarConectividade() {
+      return btChecarConectividade;
+   }
+
+   public void setBtChecarConectividade(RSButtonMetro btChecarConectividade) {
+      this.btChecarConectividade = btChecarConectividade;
+   }
+
+   public RSButtonMetro getBtSalvar() {
+      return btSalvar;
+   }
+
+   public void setBtSalvar(RSButtonMetro btSalvar) {
+      this.btSalvar = btSalvar;
+   }
+
+   public JTextArea getDescricao() {
+      return descricao;
+   }
+
+   public void setDescricao(JTextArea descricao) {
+      this.descricao = descricao;
+   }
+
+   public JLabel getjLabel1() {
+      return jLabel1;
+   }
+
+   public void setjLabel1(JLabel jLabel1) {
+      this.jLabel1 = jLabel1;
+   }
+
+   public JLabel getjLabel2() {
+      return jLabel2;
+   }
+
+   public void setjLabel2(JLabel jLabel2) {
+      this.jLabel2 = jLabel2;
+   }
+
+   public JLabel getjLabel3() {
+      return jLabel3;
+   }
+
+   public void setjLabel3(JLabel jLabel3) {
+      this.jLabel3 = jLabel3;
+   }
+
+   public JLabel getjLabel4() {
+      return jLabel4;
+   }
+
+   public void setjLabel4(JLabel jLabel4) {
+      this.jLabel4 = jLabel4;
+   }
+
+   public JLabel getjLabel5() {
+      return jLabel5;
+   }
+
+   public void setjLabel5(JLabel jLabel5) {
+      this.jLabel5 = jLabel5;
+   }
+
+   public JLabel getjLabel6() {
+      return jLabel6;
+   }
+
+   public void setjLabel6(JLabel jLabel6) {
+      this.jLabel6 = jLabel6;
+   }
+
+   public JPanel getjPanel1() {
+      return jPanel1;
+   }
+
+   public void setjPanel1(JPanel jPanel1) {
+      this.jPanel1 = jPanel1;
+   }
+
+   public JPanel getjPanel2() {
+      return jPanel2;
+   }
+
+   public void setjPanel2(JPanel jPanel2) {
+      this.jPanel2 = jPanel2;
+   }
+
+   public JPanel getjPanel3() {
+      return jPanel3;
+   }
+
+   public void setjPanel3(JPanel jPanel3) {
+      this.jPanel3 = jPanel3;
+   }
+
+   public JPanel getjPanel4() {
+      return jPanel4;
+   }
+
+   public void setjPanel4(JPanel jPanel4) {
+      this.jPanel4 = jPanel4;
+   }
+
+   public JPanel getjPanel5() {
+      return jPanel5;
+   }
+
+   public void setjPanel5(JPanel jPanel5) {
+      this.jPanel5 = jPanel5;
+   }
+
+   public JPanel getjPanel6() {
+      return jPanel6;
+   }
+
+   public void setjPanel6(JPanel jPanel6) {
+      this.jPanel6 = jPanel6;
+   }
+
+   public JPanel getjPanel7() {
+      return jPanel7;
+   }
+
+   public void setjPanel7(JPanel jPanel7) {
+      this.jPanel7 = jPanel7;
+   }
+
+   public JScrollPane getjScrollPane1() {
+      return jScrollPane1;
+   }
+
+   public void setjScrollPane1(JScrollPane jScrollPane1) {
+      this.jScrollPane1 = jScrollPane1;
+   }
+
+   public JTextField getjTextField1() {
+      return jTextField1;
+   }
+
+   public void setjTextField1(JTextField jTextField1) {
+      this.jTextField1 = jTextField1;
+   }
+
+   public JTextField getjTextField2() {
+      return jTextField2;
+   }
+
+   public void setjTextField2(JTextField jTextField2) {
+      this.jTextField2 = jTextField2;
+   }
+
+   public JLabel getLabel_status() {
+      return label_status;
+   }
+
+   public void setLabel_status(JLabel label_status) {
+      this.label_status = label_status;
+   }
+
+
+
+
+
+
+
+
 }

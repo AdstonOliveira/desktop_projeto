@@ -5,20 +5,21 @@ import seguro.view.secundarios.CadastroCliente;
 /**
  * @author Adston at self
 */
-public class ControlCadUsuario {
+public class ControlCadUsuario{
    private Usuario user;
    private CadastroCliente view;
    
    
    public void setUsuario( Usuario user ){
       this.user = user;
-      
    }
+   
+   
    public void ModoTeste(){
       if( this.view == null ) 
-         this.view = new CadastroCliente();
-
-      this.view.setTitle("Modo Teste");
+         this.setView( new CadastroCliente() );
+      
+      this.view.setTitle( "Modo Teste" );
    }
    
    
@@ -34,18 +35,26 @@ public class ControlCadUsuario {
       this.view.getDtNasc().setDate( this.user.getDt_nasc() );
    }
 
-   public void abreCliente(){
-      if( this.view != null ){
-         TelaPrincipal.desktop.add( this.view );
-        this.view.setVisible(true);
-
-      }else{
+   public void exibir(){
+      if( this.view == null )
          this.view = new CadastroCliente();
-         TelaPrincipal.desktop.add( this.view );
-         this.view.setVisible(true);
-      }
+         
+      TelaPrincipal.desktop.add( this.view );
+      this.view.setVisible(true);
+      
    }
 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
    public Usuario getUser() {
       return user;
    }
@@ -58,7 +67,7 @@ public class ControlCadUsuario {
       return view;
    }
 
-   public void setView(CadastroCliente view) {
+   public void setView( CadastroCliente view ) {
       this.view = view;
    }
 

@@ -14,45 +14,40 @@ public abstract class ControladoraClasses {
    static ControlCadDispos control_cad_dispositivos;
    static ControlCadUsuario control_cad_usuario;
    static ControlGerenciador control_gerenciador;
-   
    static ControlGraficos control_graficos;
-   private static int posicao = 1;
+   static ControlTotais control_totais;
    
    
    public static void abrir( String classe ){
       String abrir = classe.toLowerCase();
-         switch( abrir ){
-            
-            case "control_cad_usuario" :
-               if( control_cad_usuario == null )//{
-                  control_cad_usuario = new ControlCadUsuario();
+         
+      switch( abrir ){
+         case "control_cad_usuario" :
+            if( control_cad_usuario == null )
+               control_cad_usuario = new ControlCadUsuario();
                      
-               if( control_cad_usuario.getUser() != null ){
-                  control_cad_usuario.montaCliente();
-                  TelaPrincipal.desktop.add( control_cad_usuario.getView() );
-                  control_cad_usuario.getView().setVisible( true );
-               }else{
-                  control_cad_usuario.ModoTeste();
+            if( control_cad_usuario.getUser() != null ){
+               control_cad_usuario.montaCliente();
                   
-                  if( !checaAberta(control_cad_usuario.getView()) ){
-                     TelaPrincipal.desktop.add( control_cad_usuario.getView() );
-                     control_cad_usuario.getView().setVisible( true );
-                  }
-               }
-            break;
+               if( !checaAberta( control_cad_usuario.getView()) )
+                  control_cad_usuario.exibir();
+               
+            }else{
+               control_cad_usuario.ModoTeste();
+               if( !checaAberta(control_cad_usuario.getView()) )
+                  control_cad_usuario.exibir();
+            }
+         break;
             
             case "control_cad_gerenciador":
                if( control_gerenciador == null )
                   control_gerenciador = new ControlGerenciador();
                
-               if( control_gerenciador.getView() != null ){
-                  
-                  if( !checaAberta( control_gerenciador.getView() ) ){
-                     control_gerenciador.montaDispositivo();
+               if( control_gerenciador.getDispositivo() != null ){
+                  control_gerenciador.montaDispositivo();
+                     
                      TelaPrincipal.desktop.add( control_gerenciador.getView() );
                      control_gerenciador.getView().setVisible(true);
-                  }
-                  
                }else{
                   control_cad_usuario.ModoTeste();
                   
@@ -75,13 +70,18 @@ public abstract class ControladoraClasses {
                   }
                }
                //ADICIONAR CONDICIONAL
-            break;   
-                  
+            break;
+            case "control_totais" :
+               if(control_totais == null)
+                  control_totais = new ControlTotais();
                
+               if( control_totais.getView() != null )
+                  control_totais.iniciar();
                
-               
-               
-               
+                  if( !checaAberta(control_totais.getView()) )
+                     control_totais.exibir();
+
+            break;      
                
             default:
                System.out.println("Sem execução");
@@ -91,11 +91,11 @@ public abstract class ControladoraClasses {
    }
    
    
-   public static boolean checaAberta(JInternalFrame checar){
+   public static boolean checaAberta( JInternalFrame checar ){
       for( JInternalFrame each : TelaPrincipal.desktop.getAllFrames() )
          
          if( each.equals( checar ) ){
-            JOptionPane.showMessageDialog(TelaPrincipal.desktop, "A janela já esta aberta");
+            JOptionPane.showMessageDialog( TelaPrincipal.desktop, "A janela já esta aberta" );
             checar.moveToFront();
             return true;
          }
