@@ -11,6 +11,7 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
    public CadastroCliente() {
       initComponents();
       this.getRootPane().setDefaultButton(this.btSalvar);
+      
    }
 
   
@@ -393,9 +394,7 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
       jPanel7.setLayout(jPanel7Layout);
       jPanel7Layout.setHorizontalGroup(
          jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(jPanel7Layout.createSequentialGroup()
-            .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(0, 0, 0))
+         .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
          .addGroup(jPanel7Layout.createSequentialGroup()
             .addContainerGap()
             .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)

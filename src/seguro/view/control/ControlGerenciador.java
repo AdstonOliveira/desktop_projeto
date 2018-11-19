@@ -14,10 +14,13 @@ public class ControlGerenciador extends Control{
    public void setView(){
       this.setView( new Gerenciador() );
    }
-   
 
+   public void montaDispositivo(){}
    
    
-
+   
+   
+   
+   
    
 }

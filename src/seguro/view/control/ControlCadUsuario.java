@@ -17,7 +17,7 @@ public class ControlCadUsuario {
    public void ModoTeste(){
       if( this.view == null ) 
          this.view = new CadastroCliente();
-      
+
       this.view.setTitle("Modo Teste");
    }
    

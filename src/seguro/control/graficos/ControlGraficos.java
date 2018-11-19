@@ -18,19 +18,27 @@ public class ControlGraficos{
 
    public ControlGraficos() {
       this.graficos = new GeradorGrafico();
+      this.iniciar();
    }
    
-   public boolean abrir(){
+   public boolean iniciar(){
+      if( this.view == null ){
+         this.view = new GraficosMultiplos();
+         
+         this.view.setControl(this);
+      }
+      
+      return this.view != null;
+   }
+   
+   public void modoTeste(){
       if( this.view == null ){
          this.view = new GraficosMultiplos();
          this.view.setControl(this);
       }
-      
-      TelaPrincipal.desktop.add( view );
-      this.view.setVisible(true);
-         
-      return this.view != null;
    }
+   
+   
    
    
    
@@ -124,6 +132,22 @@ public class ControlGraficos{
       this.view = graficos;
    }
    */
+
+   public GeradorGrafico getGraficos() {
+      return graficos;
+   }
+
+   public void setGraficos(GeradorGrafico graficos) {
+      this.graficos = graficos;
+   }
+
+   public GraficosMultiplos getView() {
+      return view;
+   }
+
+   public void setView(GraficosMultiplos view) {
+      this.view = view;
+   }
    
    
    

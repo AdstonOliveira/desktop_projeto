@@ -20,12 +20,6 @@ public class ControlTelaInicial {
    }
    
    
-   public void dispositivo(){
-      ControlGerenciador control = new ControlGerenciador();
-      control.abrir();
-   }
-   
-   
 
 
    

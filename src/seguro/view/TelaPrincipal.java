@@ -50,7 +50,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
       pnRelatorios = new javax.swing.JPanel();
       jPanel3 = new javax.swing.JPanel();
       jLabel3 = new javax.swing.JLabel();
-      rSButtonMetro3 = new seguro.resources.RSButtonMetro();
       btGrafMultiplo = new seguro.resources.RSButtonMetro();
       rSButtonMetro1 = new seguro.resources.RSButtonMetro();
       jPanel4 = new javax.swing.JPanel();
@@ -188,14 +187,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
          .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
       );
 
-      rSButtonMetro3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-      rSButtonMetro3.setText("Gráfico Individual");
-      rSButtonMetro3.addActionListener(new java.awt.event.ActionListener() {
-         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            rSButtonMetro3ActionPerformed(evt);
-         }
-      });
-
       btGrafMultiplo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
       btGrafMultiplo.setText("Gerar Gráficos");
       btGrafMultiplo.setToolTipText("Exibe varios equipamentos em unico grafico");
@@ -207,6 +198,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
       rSButtonMetro1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
       rSButtonMetro1.setText("Totais");
+      rSButtonMetro1.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            rSButtonMetro1ActionPerformed(evt);
+         }
+      });
 
       javax.swing.GroupLayout pnRelatoriosLayout = new javax.swing.GroupLayout(pnRelatorios);
       pnRelatorios.setLayout(pnRelatoriosLayout);
@@ -215,7 +211,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
          .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
          .addGroup(pnRelatoriosLayout.createSequentialGroup()
             .addGroup(pnRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addComponent(rSButtonMetro3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                .addComponent(btGrafMultiplo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                .addComponent(rSButtonMetro1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(0, 0, Short.MAX_VALUE))
@@ -225,8 +220,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
          .addGroup(pnRelatoriosLayout.createSequentialGroup()
             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(1, 1, 1)
-            .addComponent(rSButtonMetro3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(0, 0, 0)
             .addComponent(btGrafMultiplo, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(0, 0, 0)
             .addComponent(rSButtonMetro1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -305,7 +298,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addComponent(pnRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(128, Short.MAX_VALUE))
+            .addContainerGap(152, Short.MAX_VALUE))
       );
 
       javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -344,12 +337,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
       pack();
    }// </editor-fold>//GEN-END:initComponents
 
-   private void rSButtonMetro3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMetro3ActionPerformed
-     ControlGraficos cg = new ControlGraficos();
-     cg.abrir();
-      
-   }//GEN-LAST:event_rSButtonMetro3ActionPerformed
-
    private void btDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDadosActionPerformed
       ControladoraClasses.abrir( Abrir.MEUS_DADOS.getDescricao() );
    }//GEN-LAST:event_btDadosActionPerformed
@@ -359,7 +346,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
    }//GEN-LAST:event_formMouseEntered
 
    private void btGerenciadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGerenciadorActionPerformed
-      this.control.dispositivo();
+      ControladoraClasses.abrir( Abrir.GERENCIADOR.getDescricao() );
    }//GEN-LAST:event_btGerenciadorActionPerformed
 
     private void btAgendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAgendarActionPerformed
@@ -376,8 +363,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
     
     
    private void btGrafMultiploActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGrafMultiploActionPerformed
-
+      ControladoraClasses.abrir( Abrir.GERAR_GRAFICOS.getDescricao() );
    }//GEN-LAST:event_btGrafMultiploActionPerformed
+
+   private void rSButtonMetro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMetro1ActionPerformed
+      // TODO add your handling code here:
+   }//GEN-LAST:event_rSButtonMetro1ActionPerformed
 
 
 
@@ -435,7 +426,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
    private javax.swing.JPanel pnRelatorios;
    private seguro.resources.RSButtonMetro rSButtonMetro1;
    private seguro.resources.RSButtonMetro rSButtonMetro2;
-   private seguro.resources.RSButtonMetro rSButtonMetro3;
    private seguro.resources.RSButtonMetro rSButtonMetro7;
    // End of variables declaration//GEN-END:variables
 
