@@ -4,9 +4,6 @@ import com.toedter.calendar.JDateChooser;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-/**
- * @author Adston at self
-*/
 public class CadastroCliente extends javax.swing.JInternalFrame {
    /**
     * Creates new form CadastroCliente
@@ -33,13 +30,6 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
       jPanel6 = new javax.swing.JPanel();
       jLabel2 = new javax.swing.JLabel();
       jPanel8 = new javax.swing.JPanel();
-      jPanel11 = new javax.swing.JPanel();
-      jLabel3 = new javax.swing.JLabel();
-      textNome = new javax.swing.JTextField();
-      jLabel4 = new javax.swing.JLabel();
-      textNick = new javax.swing.JTextField();
-      jLabel5 = new javax.swing.JLabel();
-      textEmail = new javax.swing.JTextField();
       jPanel12 = new javax.swing.JPanel();
       jLabel12 = new javax.swing.JLabel();
       textSobrenome = new javax.swing.JTextField();
@@ -47,6 +37,13 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
       dtNasc = new com.toedter.calendar.JDateChooser();
       jLabel13 = new javax.swing.JLabel();
       textConfEmail = new javax.swing.JTextField();
+      jPanel11 = new javax.swing.JPanel();
+      jLabel3 = new javax.swing.JLabel();
+      textNome = new javax.swing.JTextField();
+      jLabel4 = new javax.swing.JLabel();
+      textNick = new javax.swing.JTextField();
+      jLabel5 = new javax.swing.JLabel();
+      textEmail = new javax.swing.JTextField();
       jPanel7 = new javax.swing.JPanel();
       jPanel9 = new javax.swing.JPanel();
       jLabel8 = new javax.swing.JLabel();
@@ -88,13 +85,13 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
          .addGroup(jPanel2Layout.createSequentialGroup()
             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addContainerGap())
       );
       jPanel2Layout.setVerticalGroup(
          jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-         .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+         .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+         .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
       );
 
       jPanel3.setBackground(new java.awt.Color(0, 143, 143));
@@ -134,11 +131,11 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
       jPanel3Layout.setVerticalGroup(
          jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(jPanel3Layout.createSequentialGroup()
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addContainerGap(91, Short.MAX_VALUE)
             .addComponent(btSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 91, Short.MAX_VALUE)
             .addComponent(btCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addContainerGap(93, Short.MAX_VALUE))
       );
 
       jPanel4.setBackground(new java.awt.Color(255, 255, 255));
@@ -166,6 +163,66 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
          .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
       );
 
+      jPanel8.setBackground(new java.awt.Color(255, 255, 255));
+      jPanel8.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+      jPanel12.setBorder(new javax.swing.border.MatteBorder(null));
+
+      jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+      jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+      jLabel12.setText("Sobrenome:");
+
+      textSobrenome.setText("\"modo exibição\"");
+      textSobrenome.setNextFocusableComponent(textNick);
+
+      jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+      jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+      jLabel6.setText("Dt Nasc:");
+
+      dtNasc.setNextFocusableComponent(textEmail);
+
+      jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+      jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+      jLabel13.setText("Confirmar E-mail:");
+
+      textConfEmail.setText("\"modo exibição\"");
+      textConfEmail.setNextFocusableComponent(senhaAtual);
+
+      javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+      jPanel12.setLayout(jPanel12Layout);
+      jPanel12Layout.setHorizontalGroup(
+         jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+         .addGroup(jPanel12Layout.createSequentialGroup()
+            .addContainerGap()
+            .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+               .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+               .addComponent(textSobrenome)
+               .addGroup(jPanel12Layout.createSequentialGroup()
+                  .addGap(1, 1, 1)
+                  .addComponent(dtNasc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+               .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
+               .addComponent(textConfEmail)
+               .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addContainerGap())
+      );
+      jPanel12Layout.setVerticalGroup(
+         jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+         .addGroup(jPanel12Layout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(jLabel12)
+            .addGap(3, 3, 3)
+            .addComponent(textSobrenome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel6)
+            .addGap(3, 3, 3)
+            .addComponent(dtNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel13)
+            .addGap(3, 3, 3)
+            .addComponent(textConfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap())
+      );
+
       jPanel11.setBorder(new javax.swing.border.MatteBorder(null));
 
       jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -174,6 +231,7 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
 
       textNome.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
       textNome.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+      textNome.setText("\"modo exibição\"");
       textNome.setNextFocusableComponent(textSobrenome);
 
       jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -182,6 +240,7 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
 
       textNick.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
       textNick.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+      textNick.setText("\"modo exibição\"");
       textNick.setNextFocusableComponent(dtNasc);
 
       jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -190,6 +249,8 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
 
       textEmail.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
       textEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+      textEmail.setText("\"modo exibição\"");
+      textEmail.setNextFocusableComponent(textConfEmail);
 
       javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
       jPanel11.setLayout(jPanel11Layout);
@@ -213,69 +274,14 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
             .addComponent(jLabel3)
             .addGap(3, 3, 3)
             .addComponent(textNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel4)
             .addGap(3, 3, 3)
             .addComponent(textNick, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel5)
             .addGap(3, 3, 3)
             .addComponent(textEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap())
-      );
-
-      jPanel12.setBorder(new javax.swing.border.MatteBorder(null));
-
-      jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-      jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-      jLabel12.setText("Sobrenome:");
-
-      textSobrenome.setNextFocusableComponent(textNick);
-
-      jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-      jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-      jLabel6.setText("Dt Nasc:");
-
-      dtNasc.setNextFocusableComponent(textEmail);
-
-      jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-      jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-      jLabel13.setText("Confirmar E-mail:");
-
-      textConfEmail.setNextFocusableComponent(senhaAtual);
-
-      javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-      jPanel12.setLayout(jPanel12Layout);
-      jPanel12Layout.setHorizontalGroup(
-         jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(jPanel12Layout.createSequentialGroup()
-            .addContainerGap()
-            .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-               .addComponent(textSobrenome)
-               .addGroup(jPanel12Layout.createSequentialGroup()
-                  .addGap(1, 1, 1)
-                  .addComponent(dtNasc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-               .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-               .addComponent(textConfEmail)
-               .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addContainerGap())
-      );
-      jPanel12Layout.setVerticalGroup(
-         jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(jPanel12Layout.createSequentialGroup()
-            .addContainerGap()
-            .addComponent(jLabel12)
-            .addGap(3, 3, 3)
-            .addComponent(textSobrenome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel6)
-            .addGap(3, 3, 3)
-            .addComponent(dtNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel13)
-            .addGap(3, 3, 3)
-            .addComponent(textConfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addContainerGap())
       );
 
@@ -284,37 +290,24 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
       jPanel8Layout.setHorizontalGroup(
          jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
          .addGroup(jPanel8Layout.createSequentialGroup()
+            .addContainerGap()
             .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap())
       );
       jPanel8Layout.setVerticalGroup(
          jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-         .addComponent(jPanel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-      );
-
-      javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-      jPanel5.setLayout(jPanel5Layout);
-      jPanel5Layout.setHorizontalGroup(
-         jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+         .addGroup(jPanel8Layout.createSequentialGroup()
             .addContainerGap()
-            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addContainerGap())
-      );
-      jPanel5Layout.setVerticalGroup(
-         jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(jPanel5Layout.createSequentialGroup()
-            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addContainerGap())
+            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+               .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+               .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(9, 9, 9))
       );
 
       jPanel7.setBackground(new java.awt.Color(255, 255, 255));
-      jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 142, 142)));
+      jPanel7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
       jLabel8.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
       jLabel8.setText("Senha AtuaL:");
@@ -325,12 +318,20 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
       jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
       jLabel10.setText("Confirmar: ");
 
-      novaSenha.setNextFocusableComponent(novaSenha);
+      senhaAtual.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+      senhaAtual.setText("123");
+      senhaAtual.setNextFocusableComponent(novaSenha);
+
+      novaSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+      novaSenha.setNextFocusableComponent(confirmaSenha);
+      novaSenha.setRequestFocusEnabled(false);
       novaSenha.addActionListener(new java.awt.event.ActionListener() {
          public void actionPerformed(java.awt.event.ActionEvent evt) {
             novaSenhaActionPerformed(evt);
          }
       });
+
+      confirmaSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
       javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
       jPanel9.setLayout(jPanel9Layout);
@@ -394,7 +395,7 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
          jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(jPanel7Layout.createSequentialGroup()
             .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(0, 0, Short.MAX_VALUE))
+            .addGap(0, 0, 0))
          .addGroup(jPanel7Layout.createSequentialGroup()
             .addContainerGap()
             .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -406,6 +407,31 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
             .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addContainerGap())
+      );
+
+      javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+      jPanel5.setLayout(jPanel5Layout);
+      jPanel5Layout.setHorizontalGroup(
+         jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+         .addGroup(jPanel5Layout.createSequentialGroup()
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+               .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+               .addGroup(jPanel5Layout.createSequentialGroup()
+                  .addContainerGap()
+                  .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                     .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                     .addComponent(jPanel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addContainerGap())
+      );
+      jPanel5Layout.setVerticalGroup(
+         jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+         .addGroup(jPanel5Layout.createSequentialGroup()
+            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addContainerGap())
       );
 
@@ -422,12 +448,8 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                .addGroup(jPanel4Layout.createSequentialGroup()
                   .addComponent(jLabel14)
-                  .addGap(0, 0, Short.MAX_VALUE)))
+                  .addGap(0, 281, Short.MAX_VALUE)))
             .addContainerGap())
-         .addGroup(jPanel4Layout.createSequentialGroup()
-            .addGap(85, 85, 85)
-            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGap(85, 85, 85))
       );
       jPanel4Layout.setVerticalGroup(
          jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -435,9 +457,7 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
             .addComponent(jLabel14)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGap(9, 9, 9))
+            .addContainerGap())
       );
 
       javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

@@ -18,6 +18,8 @@ public abstract class Control {
       this.view = view;
    }
    
-   
+   public JInternalFrame getView(){
+      return this.view;
+   }
    
 }

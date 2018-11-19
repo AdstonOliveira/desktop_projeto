@@ -10,6 +10,7 @@ public class ConfigBotao {
 
    private static Color btOK = new Color( 0,204,51 ); 
    private static Color btCancela = new Color( 204,51,0 );
+   static Color original;
    
    private static Color entered = new Color( 0,51,51 );
 
@@ -27,7 +28,8 @@ public class ConfigBotao {
    }
 
    
-   static Color original;
+   
+   
    
    public static void evtEntered( JButton botao ){
       original = botao.getBackground();
@@ -37,7 +39,7 @@ public class ConfigBotao {
    }
    
    public static void evtExited( JButton botao ){
-      String[] positivo = new String[]{"Salvar","Configurar","Conectar","OK","Gravar","Agendar"};
+      String[] positivo = new String[]{"Salvar","Configurar","Conectar","OK","Gravar","Agendar","gerar"};
       String[] negativo = new String[]{"cancelar"};
       
       for(String color : negativo)
