@@ -309,9 +309,10 @@ public class login extends javax.swing.JFrame {
     
    private void btConectaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConectaActionPerformed
       this.bt_conectar();
+      System.out.println(linux.isSelected());
          if( linux.isSelected() ){
-            PreencheAleatorio.randDia = ".\\randDia.txt";
-            PreencheAleatorio.randMes = ".\\randMes.txt";
+            PreencheAleatorio.randDia = "\\randDia.txt";
+            PreencheAleatorio.randMes = "\\randMes.txt";
          }
    }//GEN-LAST:event_btConectaActionPerformed
 
