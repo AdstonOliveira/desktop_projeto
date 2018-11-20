@@ -6,7 +6,9 @@
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="novoCad">
           <Properties>
+            <Property name="mnemonic" type="int" value="120"/>
             <Property name="text" type="java.lang.String" value="Op&#xe7;&#xf5;es"/>
+            <Property name="toolTipText" type="java.lang.String" value="para execu&#xe7;&#xe3;o em linux"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="configBanco">
@@ -30,6 +32,12 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem1ActionPerformed"/>
               </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JRadioButtonMenuItem" name="linux">
+              <Properties>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" value="Linux"/>
+              </Properties>
             </MenuItem>
           </SubComponents>
         </Menu>

@@ -13,6 +13,7 @@ import javax.swing.JTextField;
 //import seguro.DAO.Conexao;
 import seguro.Seguro;
 import seguro.configuracoes.ConfigBotao;
+import seguro.configuracoes.PreencheAleatorio;
 
 
 /**
@@ -53,6 +54,7 @@ public class login extends javax.swing.JFrame {
       novoCad = new javax.swing.JMenu();
       configBanco = new javax.swing.JMenuItem();
       jMenuItem1 = new javax.swing.JMenuItem();
+      linux = new javax.swing.JRadioButtonMenuItem();
 
       setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
       setTitle("Login - Bem-Vindo");
@@ -215,7 +217,9 @@ public class login extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
       );
 
+      novoCad.setMnemonic('x');
       novoCad.setText("Opções");
+      novoCad.setToolTipText("para execução em linux");
 
       configBanco.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK));
       configBanco.setText("Configurações");
@@ -234,6 +238,10 @@ public class login extends javax.swing.JFrame {
          }
       });
       novoCad.add(jMenuItem1);
+
+      linux.setSelected(true);
+      linux.setText("Linux");
+      novoCad.add(linux);
 
       jMenuBar1.add(novoCad);
 
@@ -301,6 +309,10 @@ public class login extends javax.swing.JFrame {
     
    private void btConectaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConectaActionPerformed
       this.bt_conectar();
+         if( linux.isSelected() ){
+            PreencheAleatorio.randDia = ".\\randDia.txt";
+            PreencheAleatorio.randMes = ".\\randMes.txt";
+         }
    }//GEN-LAST:event_btConectaActionPerformed
 
    private void btConectaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btConectaMouseEntered
@@ -398,6 +410,7 @@ public class login extends javax.swing.JFrame {
    private javax.swing.JMenuItem jMenuItem1;
    private javax.swing.JPanel jPanel1;
    private javax.swing.JPanel jPanel2;
+   private javax.swing.JRadioButtonMenuItem linux;
    private javax.swing.JMenu novoCad;
    private javax.swing.JPanel painel_fundo;
    private javax.swing.JPanel pnTop;
