@@ -444,7 +444,6 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="textSobrenome">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="&quot;modo exibi&#xe7;&#xe3;o&quot;"/>
                             <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
                               <ComponentRef name="textNick"/>
                             </Property>
@@ -477,7 +476,6 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="textConfEmail">
                           <Properties>
-                            <Property name="text" type="java.lang.String" value="&quot;modo exibi&#xe7;&#xe3;o&quot;"/>
                             <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
                               <ComponentRef name="senhaAtual"/>
                             </Property>
@@ -547,7 +545,6 @@
                               <Font name="Tahoma" size="12" style="0"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="0"/>
-                            <Property name="text" type="java.lang.String" value="&quot;modo exibi&#xe7;&#xe3;o&quot;"/>
                             <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
                               <ComponentRef name="textSobrenome"/>
                             </Property>
@@ -568,7 +565,6 @@
                               <Font name="Tahoma" size="12" style="0"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="0"/>
-                            <Property name="text" type="java.lang.String" value="&quot;modo exibi&#xe7;&#xe3;o&quot;"/>
                             <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
                               <ComponentRef name="dtNasc"/>
                             </Property>
@@ -589,7 +585,6 @@
                               <Font name="Tahoma" size="12" style="0"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="0"/>
-                            <Property name="text" type="java.lang.String" value="&quot;modo exibi&#xe7;&#xe3;o&quot;"/>
                             <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
                               <ComponentRef name="textConfEmail"/>
                             </Property>

@@ -340,8 +340,9 @@ public class login extends javax.swing.JFrame {
          System.out.println("bt" + dadosLogin[1]);
       
          if( this.control.Login( Seguro.conexao, dadosLogin ) ){
-            JOptionPane.showMessageDialog( this, "Seja Bem-Vindo " + this.textLogin.getText(), "Bem-Vindo",1 );
+            JOptionPane.showMessageDialog( this, "Seja Bem-Vindo " + TelaPrincipal.usuario.getLogin(),"Bem-Vindo",1 );
             new TelaPrincipal().setVisible(true);
+            
             this.dispose();
          }else
             JOptionPane.showMessageDialog( this, "Não foi possivel entrar!!!","Não Logado",0 );

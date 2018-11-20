@@ -2,11 +2,13 @@ package seguro.model;
 /**
  * @author Adston at self
 */
-public class Dispositivo {
+public class Gerenciador {
    
-   private String IP;
+   private String id;
    private String MAC;
+   private String IP;
    private String descrição;
+   
 
    
    
@@ -33,6 +35,14 @@ public class Dispositivo {
    public void setDescrição(String descrição) {
       this.descrição = descrição;
    }
+   
+   
+   
+   
+   
+   
+   
+   
    
    
    

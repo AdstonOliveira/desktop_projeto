@@ -1,6 +1,6 @@
 package seguro.control.graficos;
 import seguro.view.TelaPrincipal;
-import seguro.view.secundarios.Totais;
+import seguro.view.graficos.Totais;
 /**
  * @author Adston at self
 */

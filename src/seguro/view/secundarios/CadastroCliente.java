@@ -173,7 +173,6 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
       jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
       jLabel12.setText("Sobrenome:");
 
-      textSobrenome.setText("\"modo exibição\"");
       textSobrenome.setNextFocusableComponent(textNick);
 
       jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -186,7 +185,6 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
       jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
       jLabel13.setText("Confirmar E-mail:");
 
-      textConfEmail.setText("\"modo exibição\"");
       textConfEmail.setNextFocusableComponent(senhaAtual);
 
       javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
@@ -232,7 +230,6 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
 
       textNome.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
       textNome.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-      textNome.setText("\"modo exibição\"");
       textNome.setNextFocusableComponent(textSobrenome);
 
       jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -241,7 +238,6 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
 
       textNick.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
       textNick.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-      textNick.setText("\"modo exibição\"");
       textNick.setNextFocusableComponent(dtNasc);
 
       jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -250,7 +246,6 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
 
       textEmail.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
       textEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-      textEmail.setText("\"modo exibição\"");
       textEmail.setNextFocusableComponent(textConfEmail);
 
       javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);

@@ -24,7 +24,7 @@ public class DAOEquipamentos extends DAO{
          return equips;
    }
 
-   public static void main(String[] args) {
+ /*  public static void main(String[] args) {
       Conexao conn = new Conexao("192.168.0.237","3306","gerenciador");
       System.out.println(conn.getConfig().getDRIVER());
       System.out.println(conn.getConfig().getURL());
@@ -33,6 +33,6 @@ public class DAOEquipamentos extends DAO{
       System.out.println(d.conexao.getConfig().getDRIVER());
       System.out.println(d.conexao.getConfig().getURL());
    }
-   
+   */
    
 }

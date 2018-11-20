@@ -3,6 +3,8 @@ package seguro.view.graficos;
 import com.toedter.calendar.JDateChooser;
 import com.toedter.calendar.JMonthChooser;
 import com.toedter.calendar.JYearChooser;
+import java.io.IOException;
+
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -143,7 +145,7 @@ public class GraficosMultiplos extends javax.swing.JInternalFrame {
       jPanel9.setLayout(jPanel9Layout);
       jPanel9Layout.setHorizontalGroup(
          jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addComponent(jLabel3)
+         .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
       );
       jPanel9Layout.setVerticalGroup(
          jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,7 +236,7 @@ public class GraficosMultiplos extends javax.swing.JInternalFrame {
             .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                .addComponent(grafico_diario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                .addGroup(jPanel10Layout.createSequentialGroup()
-                  .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                   .addGap(116, 116, 116)))
             .addContainerGap())
       );
@@ -662,7 +664,7 @@ public class GraficosMultiplos extends javax.swing.JInternalFrame {
             .addGap(1, 1, 1)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-               .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 454, Short.MAX_VALUE)))
+               .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 462, Short.MAX_VALUE)))
       );
 
       javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -684,13 +686,18 @@ public class GraficosMultiplos extends javax.swing.JInternalFrame {
    }//GEN-LAST:event_jCheckBox2ActionPerformed
 
    private void gerarAnualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerarAnualActionPerformed
+      
+      
+
+
    }//GEN-LAST:event_gerarAnualActionPerformed
 
    private void gerarDiarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerarDiarioActionPerformed
-      //this.painel_equipamentos.removeAll();
-      this.painel_equipamentos.repaint();
-      this.painel_equipamentos.updateUI();
-      // TODO add your handling code here:
+      try {
+         this.control.gerarDiario();
+      } catch (IOException ex) {
+         System.out.println(ex);
+      }
    }//GEN-LAST:event_gerarDiarioActionPerformed
 
    private void gerarDiarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gerarDiarioMouseEntered

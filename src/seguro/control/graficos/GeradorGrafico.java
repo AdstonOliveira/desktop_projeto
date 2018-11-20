@@ -1,5 +1,6 @@
 package seguro.control.graficos;
 
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -12,7 +13,7 @@ import org.jfree.data.category.DefaultCategoryDataset;
  */
 public class GeradorGrafico {
 
-   public static JPanel teste(int range){
+   public static JPanel teste( int range ){
       DefaultCategoryDataset ds = new DefaultCategoryDataset();
       String letra = "a";
       
@@ -25,13 +26,28 @@ public class GeradorGrafico {
          }
       }   
       
-            JFreeChart grafico = ChartFactory.createLineChart("Meu Gráfico", "Dia", 
+      JFreeChart grafico = ChartFactory.createLineChart("Meu Gráfico", "Dia", 
                "Valor", ds, PlotOrientation.VERTICAL, true, true, false);
             
    return new ChartPanel(grafico);
    }
 
+   public static void montar(){
+      
+   }
+   
+   
+   
+   
 
+/*   public static void main(String[] args) {
+      JFrame t = new JFrame();
+      t.setDefaultCloseOperation(0);
+      JPanel j = GeradorGrafico.teste(10);
+      t.add(j);
+      j.setVisible(true);
+      t.setVisible(true);
+   }*/
 
 
 

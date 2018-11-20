@@ -6,20 +6,24 @@ import seguro.view.secundarios.CadastroCliente;
  * @author Adston at self
 */
 public class ControlCadUsuario{
-   private Usuario user;
+  // private Usuario user;
    private CadastroCliente view;
    
    
    public void setUsuario( Usuario user ){
-      this.user = user;
+  //    this.user = user;
    }
    
    
    public void ModoTeste(){
       if( this.view == null ) 
          this.setView( new CadastroCliente() );
-      
       this.view.setTitle( "Modo Teste" );
+      
+      this.view.getTextNome().setText( "Teste" );
+      this.view.getTextNick().setText( "Teste" );
+      this.view.getTextEmail().setText( "Teste" );
+      
    }
    
    
@@ -28,11 +32,11 @@ public class ControlCadUsuario{
       if( this.view == null ) 
          this.view = new CadastroCliente();
       
-      this.view.getTextNome().setText( this.user.getNome() );
-      this.view.getTextNick().setText( this.user.getLogin() );
-      this.view.getTextEmail().setText( this.user.getEmail() );
+      this.view.getTextNome().setText( TelaPrincipal.usuario.getNome() );
+      this.view.getTextNick().setText( TelaPrincipal.usuario.getLogin() );
+      this.view.getTextEmail().setText( TelaPrincipal.usuario.getEmail() );
       
-      this.view.getDtNasc().setDate( this.user.getDt_nasc() );
+      this.view.getDtNasc().setDate( TelaPrincipal.usuario.getDt_nasc() );
    }
 
    public void exibir(){
@@ -55,13 +59,13 @@ public class ControlCadUsuario{
    
    
    
-   public Usuario getUser() {
+  /* public Usuario getUser() {
       return user;
    }
 
    public void setUser(Usuario user) {
       this.user = user;
-   }
+   }*/
 
    public CadastroCliente getView() {
       return view;

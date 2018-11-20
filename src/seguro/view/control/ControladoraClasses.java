@@ -3,6 +3,7 @@ package seguro.view.control;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 import seguro.control.graficos.ControlGraficos;
+import seguro.control.graficos.ControlTotais;
 import seguro.view.TelaPrincipal;
 
 /**
@@ -17,6 +18,9 @@ public abstract class ControladoraClasses {
    static ControlGraficos control_graficos;
    static ControlTotais control_totais;
    
+   static boolean modo_teste = true;
+   
+   
    
    public static void abrir( String classe ){
       String abrir = classe.toLowerCase();
@@ -26,7 +30,7 @@ public abstract class ControladoraClasses {
             if( control_cad_usuario == null )
                control_cad_usuario = new ControlCadUsuario();
                      
-            if( control_cad_usuario.getUser() != null ){
+            if( !modo_teste ){
                control_cad_usuario.montaCliente();
                   
                if( !checaAberta( control_cad_usuario.getView()) )
@@ -42,6 +46,7 @@ public abstract class ControladoraClasses {
             case "control_cad_gerenciador":
                if( control_gerenciador == null )
                   control_gerenciador = new ControlGerenciador();
+               
                
                if( control_gerenciador.getDispositivo() != null ){
                   control_gerenciador.montaDispositivo();
@@ -62,12 +67,18 @@ public abstract class ControladoraClasses {
                if( control_graficos == null )
                   control_graficos = new ControlGraficos();
                
-               if( control_graficos.getView() != null){
-                  control_graficos.iniciar();
-                  if( !checaAberta(control_graficos.getView()) ){
-                     TelaPrincipal.desktop.add( control_graficos.getView() );
-                     control_graficos.getView().setVisible(true);
+               if( modo_teste ){
+                  
+                  if( control_graficos.getView() != null){
+                     if( !checaAberta( control_graficos.getView() ) ){
+                        TelaPrincipal.desktop.add( control_graficos.getView() );
+                        control_graficos.getView().setVisible(true);
+                     }
                   }
+               }else{
+                  control_graficos.modoTeste();
+                  if( !checaAberta( control_graficos.getView()) )
+                     control_graficos.getView().setVisible(true);
                }
                //ADICIONAR CONDICIONAL
             break;
@@ -78,8 +89,8 @@ public abstract class ControladoraClasses {
                if( control_totais.getView() != null )
                   control_totais.iniciar();
                
-                  if( !checaAberta(control_totais.getView()) )
-                     control_totais.exibir();
+               if( !checaAberta( control_totais.getView() ) )
+                  control_totais.exibir();
 
             break;      
                

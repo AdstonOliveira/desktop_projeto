@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package seguro.view.secundarios;
+package seguro.view.graficos;
 
 /**
  *
@@ -33,16 +33,14 @@ public class Totais extends javax.swing.JInternalFrame {
       jPanel3 = new javax.swing.JPanel();
       jPanel9 = new javax.swing.JPanel();
       jLabel6 = new javax.swing.JLabel();
-      jTextField1 = new javax.swing.JTextField();
+      txtConsumoTotal = new javax.swing.JTextField();
       jPanel4 = new javax.swing.JPanel();
-      jPanel5 = new javax.swing.JPanel();
+      pnTotalPizza = new javax.swing.JPanel();
       jPanel6 = new javax.swing.JPanel();
       jLabel1 = new javax.swing.JLabel();
-      jLabel4 = new javax.swing.JLabel();
-      jPanel7 = new javax.swing.JPanel();
+      painelTotalBarras = new javax.swing.JPanel();
       jPanel8 = new javax.swing.JPanel();
       jLabel2 = new javax.swing.JLabel();
-      jLabel5 = new javax.swing.JLabel();
 
       jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -74,24 +72,24 @@ public class Totais extends javax.swing.JInternalFrame {
       jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
       jLabel6.setText("Consumo Total:");
 
-      jTextField1.setEditable(false);
-      jTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-      jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-      jTextField1.setText("XYZ KWh");
+      txtConsumoTotal.setEditable(false);
+      txtConsumoTotal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+      txtConsumoTotal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+      txtConsumoTotal.setText("xyz KWh");
 
       javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
       jPanel9.setLayout(jPanel9Layout);
       jPanel9Layout.setHorizontalGroup(
          jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-         .addComponent(jTextField1)
+         .addComponent(txtConsumoTotal)
       );
       jPanel9Layout.setVerticalGroup(
          jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(jPanel9Layout.createSequentialGroup()
             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(5, 5, 5)
-            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(txtConsumoTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
       );
 
       javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -108,13 +106,13 @@ public class Totais extends javax.swing.JInternalFrame {
          .addGroup(jPanel3Layout.createSequentialGroup()
             .addContainerGap()
             .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addContainerGap(344, Short.MAX_VALUE))
       );
 
       jPanel4.setBackground(new java.awt.Color(255, 255, 255));
       jPanel4.setBorder(new javax.swing.border.MatteBorder(null));
 
-      jPanel5.setBorder(new javax.swing.border.MatteBorder(null));
+      pnTotalPizza.setBorder(new javax.swing.border.MatteBorder(null));
 
       jPanel6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -131,30 +129,22 @@ public class Totais extends javax.swing.JInternalFrame {
          .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
       );
 
-      jLabel4.setText("Grafico de Pizza");
-
-      javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-      jPanel5.setLayout(jPanel5Layout);
-      jPanel5Layout.setHorizontalGroup(
-         jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(jPanel5Layout.createSequentialGroup()
+      javax.swing.GroupLayout pnTotalPizzaLayout = new javax.swing.GroupLayout(pnTotalPizza);
+      pnTotalPizza.setLayout(pnTotalPizzaLayout);
+      pnTotalPizzaLayout.setHorizontalGroup(
+         pnTotalPizzaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+         .addGroup(pnTotalPizzaLayout.createSequentialGroup()
             .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(0, 0, Short.MAX_VALUE))
-         .addGroup(jPanel5Layout.createSequentialGroup()
-            .addGap(166, 166, 166)
-            .addComponent(jLabel4)
+            .addGap(0, 332, Short.MAX_VALUE))
+      );
+      pnTotalPizzaLayout.setVerticalGroup(
+         pnTotalPizzaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+         .addGroup(pnTotalPizzaLayout.createSequentialGroup()
+            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
       );
-      jPanel5Layout.setVerticalGroup(
-         jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(jPanel5Layout.createSequentialGroup()
-            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
-            .addComponent(jLabel4)
-            .addGap(82, 82, 82))
-      );
 
-      jPanel7.setBorder(new javax.swing.border.MatteBorder(null));
+      painelTotalBarras.setBorder(new javax.swing.border.MatteBorder(null));
 
       jPanel8.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -171,27 +161,19 @@ public class Totais extends javax.swing.JInternalFrame {
          .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
       );
 
-      jLabel5.setText("Grafico de Barras");
-
-      javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-      jPanel7.setLayout(jPanel7Layout);
-      jPanel7Layout.setHorizontalGroup(
-         jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(jPanel7Layout.createSequentialGroup()
+      javax.swing.GroupLayout painelTotalBarrasLayout = new javax.swing.GroupLayout(painelTotalBarras);
+      painelTotalBarras.setLayout(painelTotalBarrasLayout);
+      painelTotalBarrasLayout.setHorizontalGroup(
+         painelTotalBarrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+         .addGroup(painelTotalBarrasLayout.createSequentialGroup()
             .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(0, 0, Short.MAX_VALUE))
-         .addGroup(jPanel7Layout.createSequentialGroup()
-            .addGap(173, 173, 173)
-            .addComponent(jLabel5)
-            .addContainerGap(178, Short.MAX_VALUE))
+            .addGap(0, 354, Short.MAX_VALUE))
       );
-      jPanel7Layout.setVerticalGroup(
-         jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(jPanel7Layout.createSequentialGroup()
+      painelTotalBarrasLayout.setVerticalGroup(
+         painelTotalBarrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+         .addGroup(painelTotalBarrasLayout.createSequentialGroup()
             .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(64, 64, 64)
-            .addComponent(jLabel5)
-            .addGap(0, 106, Short.MAX_VALUE))
+            .addGap(0, 196, Short.MAX_VALUE))
       );
 
       javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -201,17 +183,17 @@ public class Totais extends javax.swing.JInternalFrame {
          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
             .addContainerGap()
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-               .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-               .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+               .addComponent(painelTotalBarras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+               .addComponent(pnTotalPizza, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addContainerGap())
       );
       jPanel4Layout.setVerticalGroup(
          jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(jPanel4Layout.createSequentialGroup()
             .addContainerGap()
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnTotalPizza, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(painelTotalBarras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addContainerGap())
       );
 
@@ -254,18 +236,16 @@ public class Totais extends javax.swing.JInternalFrame {
    private javax.swing.JLabel jLabel1;
    private javax.swing.JLabel jLabel2;
    private javax.swing.JLabel jLabel3;
-   private javax.swing.JLabel jLabel4;
-   private javax.swing.JLabel jLabel5;
    private javax.swing.JLabel jLabel6;
    private javax.swing.JPanel jPanel1;
    private javax.swing.JPanel jPanel2;
    private javax.swing.JPanel jPanel3;
    private javax.swing.JPanel jPanel4;
-   private javax.swing.JPanel jPanel5;
    private javax.swing.JPanel jPanel6;
-   private javax.swing.JPanel jPanel7;
    private javax.swing.JPanel jPanel8;
    private javax.swing.JPanel jPanel9;
-   private javax.swing.JTextField jTextField1;
+   private javax.swing.JPanel painelTotalBarras;
+   private javax.swing.JPanel pnTotalPizza;
+   private javax.swing.JTextField txtConsumoTotal;
    // End of variables declaration//GEN-END:variables
 }

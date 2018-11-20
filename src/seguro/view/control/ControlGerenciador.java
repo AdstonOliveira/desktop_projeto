@@ -1,36 +1,36 @@
 package seguro.view.control;
-import seguro.model.Dispositivo;
+import seguro.model.Gerenciador;
 import seguro.view.TelaPrincipal;
-import seguro.view.secundarios.Gerenciador;
+import seguro.view.secundarios.ViewGerenciador;
 /**
  * @author Adston at self
  */
 public class ControlGerenciador{
    
-   private Gerenciador view;
-   private Dispositivo dispositivo_gerenciador;
+   private Gerenciador dispositivo_gerenciador;
+   private ViewGerenciador view;
    
    public ControlGerenciador(){
       this.setView();
    }
    
    public void setView(){
-      this.setView( new Gerenciador() );
+      this.setView( new ViewGerenciador() );
    }
 
    public void montaDispositivo(){
       if( this.view == null )
-         this.view = new Gerenciador();
+         this.view = new ViewGerenciador();
       
       if( this.dispositivo_gerenciador == null ){
-         this.dispositivo_gerenciador = new Dispositivo();
+         this.dispositivo_gerenciador = new Gerenciador();
          //INCORPORAR MONTAGEM
       }
    }
 
    public void exibir(){
       if( this.view == null )
-         this.view = new Gerenciador();
+         this.view = new ViewGerenciador();
          
          TelaPrincipal.desktop.add( this.view );
          this.view.setVisible( true );
@@ -44,19 +44,19 @@ public class ControlGerenciador{
    
    
    
-   public Gerenciador getView() {
+   public ViewGerenciador getView() {
       return view;
    }
 
-   public void setView(Gerenciador view) {
+   public void setView(ViewGerenciador view) {
       this.view = view;
    }
 
-   public Dispositivo getDispositivo() {
+   public Gerenciador getDispositivo() {
       return this.dispositivo_gerenciador;
    }
 
-   public void setDispositivo(Dispositivo dispositivo) {
+   public void setDispositivo(Gerenciador dispositivo) {
       this.dispositivo_gerenciador = dispositivo;
    }
    

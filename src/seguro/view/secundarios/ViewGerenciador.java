@@ -10,9 +10,9 @@ import seguro.resources.RSButtonMetro;
 /**
  * @author Adston at self
 */
-public class Gerenciador extends javax.swing.JInternalFrame {
+public class ViewGerenciador extends javax.swing.JInternalFrame {
 
-   public Gerenciador() {
+   public ViewGerenciador() {
       initComponents();
       this.getRootPane().setDefaultButton( btChecarConectividade );
    }

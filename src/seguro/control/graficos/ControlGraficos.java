@@ -1,10 +1,11 @@
 package seguro.control.graficos;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import seguro.view.TelaPrincipal;
+import seguro.configuracoes.PreencheAleatorio;
 import seguro.view.graficos.GraficosMultiplos;
 
 /**
@@ -15,7 +16,8 @@ public class ControlGraficos{
    //private Graficos view;
    private GeradorGrafico graficos;
    private GraficosMultiplos view;
-
+   private boolean modoTeste = true;
+   
    public ControlGraficos() {
       this.graficos = new GeradorGrafico();
       this.iniciar();
@@ -32,10 +34,7 @@ public class ControlGraficos{
    }
    
    public void modoTeste(){
-      if( this.view == null ){
-         this.view = new GraficosMultiplos();
-         this.view.setControl(this);
-      }
+      this.modoTeste = true;
    }
    
    
@@ -70,21 +69,33 @@ public class ControlGraficos{
       return result;
    }
    
-   public boolean gerarDiario(){
-      if( validaRange() ){
-         JPanel chart = GeradorGrafico.teste(6 ); // criar sql com conexao ao banco
-         chart.setSize( this.view.getGrafico_diario().getSize() );
-         chart.setBorder( this.view.getGrafico_diario().getBorder() );
-         this.view.getGrafico_diario().setLayout( new BorderLayout() );
-         this.view.getGrafico_diario().add( chart, BorderLayout.CENTER );
-         this.view.getGrafico_diario().updateUI();
-            
+   public boolean gerarDiario() throws IOException{
+      JPanel chart;
+      
+      if( this.cor_data() && validaRange() ){
+         if( !this.modoTeste ){ // Implementar funcional
+            chart = GeradorGrafico.teste( 6 ); // criar sql com conexao ao banco
+            this.adicionarGrafico( chart, this.view.getGrafico_diario() );
+         }else{
+            int range = this.numDias( this.view.getDt_inicial().getDate().getTime(), this.view.getDt_final().getDate().getTime() );
+            chart = PreencheAleatorio.lerArquivo(PreencheAleatorio.randDia, "Modo Teste", "Diário", range);
+            this.adicionarGrafico(chart, this.view.getGrafico_diario() );
+         }
       }
       
       return true;
       
    }
    
+   public void adicionarGrafico( JPanel chart, JPanel fundo ){
+      fundo.removeAll();
+      fundo.updateUI();
+      chart.setSize( this.view.getGrafico_diario().getSize() );
+      chart.setBorder( this.view.getGrafico_diario().getBorder() );
+      fundo.setLayout( new BorderLayout() );
+      fundo.add( chart, BorderLayout.CENTER );
+      fundo.updateUI();
+   }
    
    
    
@@ -102,22 +113,25 @@ public class ControlGraficos{
       }
    }
    
-   
-   public void cor_data(){
+   */
+   public boolean cor_data(){
       
-      if( this.view.dtIni_pnDia.getDate() == null )
-         this.dtIni_pnDia.setBackground(Color.RED);
-      else
-         this.dtIni_pnDia.setBackground(Color.BLACK);
+      if( this.view.getDt_inicial().getDate() == null ){
+         this.view.getDt_inicial().setBackground( Color.RED );
+         return false;
+      }else
+         this.view.getDt_inicial().setBackground(Color.BLACK);
          
-      if( this.dtFim_pnDia.getDate() == null )
-         this.dtFim_pnDia.setBackground(Color.RED);
-      else
-         this.dtFim_pnDia.setBackground(Color.BLACK);
+      if( this.view.getDt_final().getDate() == null ){
+         this.view.getDt_final().setBackground(Color.RED);
+         return false;
+      }else
+         this.view.getDt_final().setBackground(Color.BLACK);
          
+      return true;
    }
    
-   */
+   
    
    
    
