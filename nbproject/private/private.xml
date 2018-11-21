@@ -3,13 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/adston/desktop_projeto/src/seguro/view/ConfigBanco.java</file>
+            <file>file:/D:/adston/desktop_projeto/src/seguro/view/control/Abrir.java</file>
             <file>file:/D:/adston/desktop_projeto/src/seguro/view/control/ControladoraClasses.java</file>
-            <file>file:/D:/adston/desktop_projeto/src/seguro/control/graficos/ControlGraficos.java</file>
-            <file>file:/D:/adston/desktop_projeto/src/seguro/view/login.java</file>
+            <file>file:/D:/adston/desktop_projeto/src/seguro/view/secundarios/CadastroEquipamento.java</file>
             <file>file:/D:/adston/desktop_projeto/src/seguro/view/TelaPrincipal.java</file>
-            <file>file:/D:/adston/desktop_projeto/src/seguro/configuracoes/PreencheAleatorio.java</file>
-            <file>file:/D:/adston/desktop_projeto/src/seguro/view/graficos/GraficosMultiplos.java</file>
+            <file>file:/D:/adston/desktop_projeto/src/seguro/view/control/ControlCadDispos.java</file>
         </group>
     </open-files>
 </project-private>
