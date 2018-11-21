@@ -18,7 +18,7 @@ public abstract class ControladoraClasses {
    static ControlGraficos control_graficos;
    static ControlTotais control_totais;
    
-   static boolean modo_teste = true;
+   public static boolean modo_teste = false;
    
    
    
@@ -86,12 +86,12 @@ public abstract class ControladoraClasses {
                if(control_totais == null)
                   control_totais = new ControlTotais();
                
-               if( control_totais.getView() != null )
-                  control_totais.iniciar();
-               
-               if( !checaAberta( control_totais.getView() ) )
-                  control_totais.exibir();
-
+                  if( modo_teste)
+                     control_totais.ModoTeste();
+                     
+                  if( control_totais.getView() != null )
+                     if( !checaAberta( control_totais.getView() ) )
+                        control_totais.exibir();
             break;      
                
             default:

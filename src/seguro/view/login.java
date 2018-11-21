@@ -9,11 +9,13 @@ import seguro.view.control.ControlLogin;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
+import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JTextField;
 //import seguro.DAO.Conexao;
 import seguro.Seguro;
 import seguro.configuracoes.ConfigBotao;
 import seguro.configuracoes.PreencheAleatorio;
+import seguro.view.control.ControladoraClasses;
 
 
 /**
@@ -55,6 +57,7 @@ public class login extends javax.swing.JFrame {
       configBanco = new javax.swing.JMenuItem();
       jMenuItem1 = new javax.swing.JMenuItem();
       linux = new javax.swing.JRadioButtonMenuItem();
+      modo_teste = new javax.swing.JRadioButtonMenuItem();
 
       setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
       setTitle("Login - Bem-Vindo");
@@ -142,7 +145,6 @@ public class login extends javax.swing.JFrame {
       btConecta.setMnemonic('e');
       btConecta.setText("Conectar");
       btConecta.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-      btConecta.setEnabled(false);
       btConecta.addMouseListener(new java.awt.event.MouseAdapter() {
          public void mouseClicked(java.awt.event.MouseEvent evt) {
             btConectaMouseClicked(evt);
@@ -239,9 +241,19 @@ public class login extends javax.swing.JFrame {
       });
       novoCad.add(jMenuItem1);
 
-      linux.setSelected(true);
+      linux.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.ALT_MASK));
       linux.setText("Linux");
       novoCad.add(linux);
+
+      modo_teste.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.ALT_MASK));
+      modo_teste.setSelected(true);
+      modo_teste.setText("Demonstração");
+      modo_teste.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            modo_testeActionPerformed(evt);
+         }
+      });
+      novoCad.add(modo_teste);
 
       jMenuBar1.add(novoCad);
 
@@ -308,12 +320,20 @@ public class login extends javax.swing.JFrame {
     
     
    private void btConectaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConectaActionPerformed
-      this.bt_conectar();
-      System.out.println(linux.isSelected());
          if( linux.isSelected() ){
-            PreencheAleatorio.randDia = "\\randDia.txt";
-            PreencheAleatorio.randMes = "\\randMes.txt";
+            PreencheAleatorio.randDia = "/tmp/randDia.txt";
+            PreencheAleatorio.randMes = "/tmp/randMes.txt";
          }
+         
+      if( !modo_teste.isSelected() ){
+         this.bt_conectar();
+      }else{
+         ControladoraClasses.modo_teste = true;
+       
+         new TelaPrincipal().setVisible(true);
+         this.dispose();
+     }
+         
    }//GEN-LAST:event_btConectaActionPerformed
 
    private void btConectaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btConectaMouseEntered
@@ -333,17 +353,23 @@ public class login extends javax.swing.JFrame {
    }//GEN-LAST:event_btCancelaActionPerformed
 
    private void btCancelaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btCancelaMouseExited
-      ConfigBotao.evtExited(this.btCancela);
+      ConfigBotao.evtExited( this.btCancela );
    }//GEN-LAST:event_btCancelaMouseExited
 
    private void btCancelaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btCancelaMouseEntered
-      ConfigBotao.evtEntered(this.btCancela);
+      ConfigBotao.evtEntered( this.btCancela );
    }//GEN-LAST:event_btCancelaMouseEntered
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         NovoCadastro novoCadastro = new NovoCadastro();
         novoCadastro.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+   private void modo_testeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modo_testeActionPerformed
+      if( modo_teste.isSelected() )
+         this.btConecta.setEnabled( true );
+      
+   }//GEN-LAST:event_modo_testeActionPerformed
 
       public void bt_conectar(){
          String[] dadosLogin = new String[2];
@@ -354,9 +380,7 @@ public class login extends javax.swing.JFrame {
       
          if( this.control.Login( Seguro.conexao, dadosLogin ) ){
             JOptionPane.showMessageDialog( this, "Seja Bem-Vindo " + TelaPrincipal.usuario.getLogin(),"Bem-Vindo",1 );
-            new TelaPrincipal().setVisible(true);
             
-            this.dispose();
          }else
             JOptionPane.showMessageDialog( this, "Não foi possivel entrar!!!","Não Logado",0 );
       }
@@ -412,6 +436,7 @@ public class login extends javax.swing.JFrame {
    private javax.swing.JPanel jPanel1;
    private javax.swing.JPanel jPanel2;
    private javax.swing.JRadioButtonMenuItem linux;
+   private javax.swing.JRadioButtonMenuItem modo_teste;
    private javax.swing.JMenu novoCad;
    private javax.swing.JPanel painel_fundo;
    private javax.swing.JPanel pnTop;
@@ -554,6 +579,22 @@ public class login extends javax.swing.JFrame {
 
    public void setTextSenha(JPasswordField textSenha) {
       this.textSenha = textSenha;
+   }
+
+   public JRadioButtonMenuItem getLinux() {
+      return linux;
+   }
+
+   public void setLinux(JRadioButtonMenuItem linux) {
+      this.linux = linux;
+   }
+
+   public JRadioButtonMenuItem getModo_teste() {
+      return modo_teste;
+   }
+
+   public void setModo_teste(JRadioButtonMenuItem modo_teste) {
+      this.modo_teste = modo_teste;
    }
 
 }

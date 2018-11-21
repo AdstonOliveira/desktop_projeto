@@ -5,12 +5,14 @@ import seguro.view.graficos.Totais;
  * @author Adston at self
 */
 public class ControlTotais {
-
    private Totais view;
+   
    
    public void ModoTeste(){
       if( this.view == null )
          this.view = new Totais();
+      
+      this.view.modo_teste();
    }
    
    public void exibir(){

@@ -3,6 +3,8 @@ package seguro;
 
 import java.awt.AWTException;
 import java.awt.Color;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import seguro.DAO.Conexao;
 import seguro.view.login;
 
@@ -18,35 +20,35 @@ public class Seguro {
      */
    
     public static void main( String[] args ) throws AWTException {
-      // login login = new login();
-       test( login );
+       Seguro.test( login );
        login.setVisible( true );
-       
-    /*
-            SystemTray tray = SystemTray.getSystemTray();
+    }
+    
+    
+    
+    
+    public static void testeConexaoInicial(){
+       Seguro.test(login);
+    }
+    private void segundoPlano() throws AWTException{
+       java.awt.SystemTray tray = java.awt.SystemTray.getSystemTray();
             
-            Image image = new ImageIcon("..//img//about.png").getImage(); //Pega a imagem...
+            java.awt.Image image = new javax.swing.ImageIcon("..//img//about.png").getImage(); //Pega a imagem...
             String tooltip = "Teste Icones";
-            PopupMenu menu = new PopupMenu( "Pop Up" );
+            java.awt.PopupMenu menu = new java.awt.PopupMenu( "Pop Up" );
             
-            TrayIcon icon = new TrayIcon( image, tooltip, menu );
+            java.awt.TrayIcon icon = new java.awt.TrayIcon( image, tooltip, menu );
             tray.add(icon);
             
       SimpleDateFormat formatador = new SimpleDateFormat("HH:mm");
       
-      Date now = new Date();
+       Date now = new Date();
        System.out.println( now.getTime() );
        System.out.println( formatador.format(now) );
-    */
     }
-    public static void testeConexaoInicial(){
-       Seguro.test(login);
-    }
-    
     
     public static void test( login view ){
        class Th extends Thread{
-          
           public login view;
           
             public Th( login view ){
@@ -60,6 +62,7 @@ public class Seguro {
                      view.getStatus().setText("Servidor disponível");
                      view.getStatus().setForeground( Color.GREEN );
                      view.getBtConecta().setEnabled(true);
+                     view.getModo_teste().setEnabled(false);
                   }else{
                      view.getStatus().setText("Servidor indisponível");
                      view.getStatus().setForeground( Color.RED );

@@ -5,6 +5,9 @@
  */
 package seguro.view.graficos;
 
+import seguro.control.graficos.GeradorGrafico;
+import seguro.view.TelaPrincipal;
+
 /**
  *
  * @author Adston at self
@@ -17,7 +20,24 @@ public class Totais extends javax.swing.JInternalFrame {
    public Totais() {
       initComponents();
    }
-
+   
+   public void modo_teste(){
+      float vlTotal = 300;
+      int[] valores = new int[]{50,15,15,25,5};
+      String[] equipamentos = new String[]{"Equip1","Equip2","Equip3","Equip4","Equip5"};
+      float[] consumo = new float[5];
+         
+      int i = 0;
+      for( int each : valores ){
+         consumo[i] = each * vlTotal / 100;
+         i++;
+      }
+            
+      GeradorGrafico.adicionarGrafico(GeradorGrafico.modo_teste_pizza(valores,equipamentos), this.pnTotalPizza);
+      GeradorGrafico.adicionarGrafico(GeradorGrafico.modo_teste_barra(consumo,equipamentos), this.pnTotalBarras);
+   }
+   
+   
    /**
     * This method is called from within the constructor to initialize the form.
     * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,11 +56,13 @@ public class Totais extends javax.swing.JInternalFrame {
       txtConsumoTotal = new javax.swing.JTextField();
       jPanel4 = new javax.swing.JPanel();
       pnTotalPizza = new javax.swing.JPanel();
-      jPanel6 = new javax.swing.JPanel();
-      jLabel1 = new javax.swing.JLabel();
-      painelTotalBarras = new javax.swing.JPanel();
-      jPanel8 = new javax.swing.JPanel();
-      jLabel2 = new javax.swing.JLabel();
+      pnTotalBarras = new javax.swing.JPanel();
+
+      setClosable(true);
+      setIconifiable(true);
+      setMaximizable(true);
+      setTitle("Totais");
+      setAutoscrolls(true);
 
       jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -55,7 +77,7 @@ public class Totais extends javax.swing.JInternalFrame {
       jPanel2.setLayout(jPanel2Layout);
       jPanel2Layout.setHorizontalGroup(
          jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+         .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 682, Short.MAX_VALUE)
       );
       jPanel2Layout.setVerticalGroup(
          jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -73,9 +95,15 @@ public class Totais extends javax.swing.JInternalFrame {
       jLabel6.setText("Consumo Total:");
 
       txtConsumoTotal.setEditable(false);
+      txtConsumoTotal.setBackground(new java.awt.Color(204, 102, 0));
       txtConsumoTotal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
       txtConsumoTotal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-      txtConsumoTotal.setText("xyz KWh");
+      txtConsumoTotal.setText("300 KWh/mes");
+      txtConsumoTotal.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            txtConsumoTotalActionPerformed(evt);
+         }
+      });
 
       javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
       jPanel9.setLayout(jPanel9Layout);
@@ -97,104 +125,68 @@ public class Totais extends javax.swing.JInternalFrame {
       jPanel3Layout.setHorizontalGroup(
          jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(jPanel3Layout.createSequentialGroup()
-            .addContainerGap()
+            .addGap(1, 1, 1)
             .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(1, 1, 1))
       );
       jPanel3Layout.setVerticalGroup(
          jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(jPanel3Layout.createSequentialGroup()
             .addContainerGap()
             .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(344, Short.MAX_VALUE))
+            .addContainerGap(476, Short.MAX_VALUE))
       );
 
       jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-      jPanel4.setBorder(new javax.swing.border.MatteBorder(null));
+      jPanel4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-      pnTotalPizza.setBorder(new javax.swing.border.MatteBorder(null));
-
-      jPanel6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-      jLabel1.setText("Total por dispositivo");
-
-      javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-      jPanel6.setLayout(jPanel6Layout);
-      jPanel6Layout.setHorizontalGroup(
-         jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-      );
-      jPanel6Layout.setVerticalGroup(
-         jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-      );
+      pnTotalPizza.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+      pnTotalPizza.setPreferredSize(new java.awt.Dimension(104, 270));
 
       javax.swing.GroupLayout pnTotalPizzaLayout = new javax.swing.GroupLayout(pnTotalPizza);
       pnTotalPizza.setLayout(pnTotalPizzaLayout);
       pnTotalPizzaLayout.setHorizontalGroup(
          pnTotalPizzaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(pnTotalPizzaLayout.createSequentialGroup()
-            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(0, 332, Short.MAX_VALUE))
+         .addGap(0, 547, Short.MAX_VALUE)
       );
       pnTotalPizzaLayout.setVerticalGroup(
          pnTotalPizzaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(pnTotalPizzaLayout.createSequentialGroup()
-            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+         .addGap(0, 274, Short.MAX_VALUE)
       );
 
-      painelTotalBarras.setBorder(new javax.swing.border.MatteBorder(null));
+      pnTotalBarras.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+      pnTotalBarras.setPreferredSize(new java.awt.Dimension(104, 270));
 
-      jPanel8.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-      jLabel2.setText("Consumo Total ");
-
-      javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-      jPanel8.setLayout(jPanel8Layout);
-      jPanel8Layout.setHorizontalGroup(
-         jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addComponent(jLabel2)
+      javax.swing.GroupLayout pnTotalBarrasLayout = new javax.swing.GroupLayout(pnTotalBarras);
+      pnTotalBarras.setLayout(pnTotalBarrasLayout);
+      pnTotalBarrasLayout.setHorizontalGroup(
+         pnTotalBarrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+         .addGap(0, 547, Short.MAX_VALUE)
       );
-      jPanel8Layout.setVerticalGroup(
-         jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-      );
-
-      javax.swing.GroupLayout painelTotalBarrasLayout = new javax.swing.GroupLayout(painelTotalBarras);
-      painelTotalBarras.setLayout(painelTotalBarrasLayout);
-      painelTotalBarrasLayout.setHorizontalGroup(
-         painelTotalBarrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(painelTotalBarrasLayout.createSequentialGroup()
-            .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(0, 354, Short.MAX_VALUE))
-      );
-      painelTotalBarrasLayout.setVerticalGroup(
-         painelTotalBarrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(painelTotalBarrasLayout.createSequentialGroup()
-            .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(0, 196, Short.MAX_VALUE))
+      pnTotalBarrasLayout.setVerticalGroup(
+         pnTotalBarrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+         .addGap(0, 274, Short.MAX_VALUE)
       );
 
       javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
       jPanel4.setLayout(jPanel4Layout);
       jPanel4Layout.setHorizontalGroup(
          jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-            .addContainerGap()
-            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-               .addComponent(painelTotalBarras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-               .addComponent(pnTotalPizza, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addContainerGap())
+         .addGroup(jPanel4Layout.createSequentialGroup()
+            .addGap(3, 3, 3)
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+               .addComponent(pnTotalBarras, javax.swing.GroupLayout.DEFAULT_SIZE, 551, Short.MAX_VALUE)
+               .addComponent(pnTotalPizza, javax.swing.GroupLayout.DEFAULT_SIZE, 551, Short.MAX_VALUE))
+            .addGap(3, 3, 3))
       );
       jPanel4Layout.setVerticalGroup(
          jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(jPanel4Layout.createSequentialGroup()
-            .addContainerGap()
-            .addComponent(pnTotalPizza, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(3, 3, 3)
+            .addComponent(pnTotalPizza, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(painelTotalBarras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap())
+            .addComponent(pnTotalBarras, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
+            .addGap(3, 3, 3))
       );
 
       javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -204,7 +196,7 @@ public class Totais extends javax.swing.JInternalFrame {
          .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
          .addGroup(jPanel1Layout.createSequentialGroup()
             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGap(1, 1, 1)
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
       );
       jPanel1Layout.setVerticalGroup(
@@ -231,20 +223,20 @@ public class Totais extends javax.swing.JInternalFrame {
       pack();
    }// </editor-fold>//GEN-END:initComponents
 
+   private void txtConsumoTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConsumoTotalActionPerformed
+      // TODO add your handling code here:
+   }//GEN-LAST:event_txtConsumoTotalActionPerformed
+
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
-   private javax.swing.JLabel jLabel1;
-   private javax.swing.JLabel jLabel2;
    private javax.swing.JLabel jLabel3;
    private javax.swing.JLabel jLabel6;
    private javax.swing.JPanel jPanel1;
    private javax.swing.JPanel jPanel2;
    private javax.swing.JPanel jPanel3;
    private javax.swing.JPanel jPanel4;
-   private javax.swing.JPanel jPanel6;
-   private javax.swing.JPanel jPanel8;
    private javax.swing.JPanel jPanel9;
-   private javax.swing.JPanel painelTotalBarras;
+   private javax.swing.JPanel pnTotalBarras;
    private javax.swing.JPanel pnTotalPizza;
    private javax.swing.JTextField txtConsumoTotal;
    // End of variables declaration//GEN-END:variables

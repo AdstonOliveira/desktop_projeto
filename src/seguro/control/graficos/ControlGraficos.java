@@ -87,6 +87,13 @@ public class ControlGraficos{
       
    }
    
+   
+   
+   
+   
+   
+   
+   
    public void adicionarGrafico( JPanel chart, JPanel fundo ){
       fundo.removeAll();
       fundo.updateUI();
