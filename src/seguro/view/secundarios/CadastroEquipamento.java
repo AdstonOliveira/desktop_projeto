@@ -62,6 +62,7 @@ public class CadastroEquipamento extends javax.swing.JInternalFrame {
 
       setClosable(true);
       setIconifiable(true);
+      setMaximizable(true);
       setTitle("Cadastro de Equipamentos");
 
       jPanel1.setBackground(new java.awt.Color(51, 51, 51));

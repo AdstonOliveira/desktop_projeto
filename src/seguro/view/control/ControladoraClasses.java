@@ -94,13 +94,26 @@ public abstract class ControladoraClasses {
                if(control_agendados == null)
                   control_agendados = new ControlAgendados();
                
-                  if( modo_teste )
-                     control_agendados.ModoTeste();
+               if( modo_teste )
+                  control_agendados.ModoTeste();
                   
-                  if( control_agendados.getView() != null )
-                     if( !checaAberta( control_agendados.getView()) )
-                        control_agendados.exibir();
+               if( control_agendados.getView() != null )
+                  if( !checaAberta( control_agendados.getView()) )
+                     control_agendados.exibir();
             break;
+            case "control_cad_dispositivos" :
+               if(control_cad_dispositivos == null)
+                  control_cad_dispositivos = new ControlCadDispos();
+               
+               if( modo_teste )
+                  control_cad_dispositivos.ModoTeste();
+               
+               if( control_cad_dispositivos.getView() != null)
+                  if( !checaAberta( control_cad_dispositivos.getView() ) )
+                  control_cad_dispositivos.exibir();
+            break;      
+            
+            
             default:
                System.out.println("Sem execução");
                break;
