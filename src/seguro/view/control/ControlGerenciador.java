@@ -1,4 +1,5 @@
 package seguro.view.control;
+import java.awt.Color;
 import seguro.model.Gerenciador;
 import seguro.view.TelaPrincipal;
 import seguro.view.secundarios.ViewGerenciador;
@@ -27,14 +28,27 @@ public class ControlGerenciador{
          //INCORPORAR MONTAGEM
       }
    }
+   
+   public void ModoTeste(){
+      Color cor = new Color(0,153,153);
+      this.view.getIP().setText("localhost");
+      this.view.getIP().setForeground(cor);
+      
+      this.view.getMAC().setText("FF-FF-FF-AA-AA-AA");
+      this.view.getMAC().setForeground(cor);
+      
+      this.view.getDescricao().append("Sistema em modo demonstração");
+      this.view.getDescricao().setForeground(cor);
+      
+   }
+   
 
    public void exibir(){
       if( this.view == null )
          this.view = new ViewGerenciador();
-         
-         TelaPrincipal.desktop.add( this.view );
-         this.view.setVisible( true );
       
+      TelaPrincipal.desktop.add( this.view );
+      this.view.setVisible( true );
    }
    
    

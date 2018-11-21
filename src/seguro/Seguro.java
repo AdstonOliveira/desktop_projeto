@@ -5,7 +5,11 @@ import java.awt.AWTException;
 import java.awt.Color;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JOptionPane;
 import seguro.DAO.Conexao;
+import seguro.view.ConfigBanco;
+import seguro.view.TelaPrincipal;
+import seguro.view.control.ControladoraClasses;
 import seguro.view.login;
 
 /**
@@ -67,8 +71,24 @@ public class Seguro {
                      view.getStatus().setText("Servidor indisponível");
                      view.getStatus().setForeground( Color.RED );
                      view.getBtConecta().setEnabled(false);
-                  }
                      
+                     int i = JOptionPane.showConfirmDialog(view, "Deseja inicializar o modo demonstração?",
+                             "Modo demonstração?", 0);
+                     
+                             if( i == 0 ){
+                                ControladoraClasses.modo_teste = true;
+                                view.getBtConecta().setEnabled(true);
+                                new TelaPrincipal().setVisible(true);
+                                this.view.dispose();
+                             }else{
+                                int j = JOptionPane.showConfirmDialog(view,"Abrir Configurações?","Configurar?",0);
+                                   if( j == 0 ) {
+                                      ConfigBanco config = new ConfigBanco();
+                                      config.defineConexao( Seguro.conexao );
+                                      config.setVisible( true );
+                                   }
+                             }
+                  }
                }
        }
        Th teste = new Th( view );

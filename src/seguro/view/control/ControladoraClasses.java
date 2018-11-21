@@ -17,6 +17,7 @@ public abstract class ControladoraClasses {
    static ControlGerenciador control_gerenciador;
    static ControlGraficos control_graficos;
    static ControlTotais control_totais;
+   static ControlAgendados control_agendados;
    
    public static boolean modo_teste = false;
    
@@ -47,19 +48,15 @@ public abstract class ControladoraClasses {
                if( control_gerenciador == null )
                   control_gerenciador = new ControlGerenciador();
                
-               
-               if( control_gerenciador.getDispositivo() != null ){
+               if( !modo_teste ){
                   control_gerenciador.montaDispositivo();
-                     
-                     TelaPrincipal.desktop.add( control_gerenciador.getView() );
-                     control_gerenciador.getView().setVisible(true);
-               }else{
-                  control_cad_usuario.ModoTeste();
+                  if( !checaAberta(control_gerenciador.getView()) )
+                     control_gerenciador.exibir();
                   
-                  if( !checaAberta( control_gerenciador.getView() ) ){
-                     TelaPrincipal.desktop.add( control_gerenciador.getView() );
-                     control_gerenciador.getView().setVisible( true );
-                  }
+               }else{
+                  control_gerenciador.ModoTeste();
+                  if( !checaAberta( control_gerenciador.getView() ) )
+                     control_gerenciador.exibir();
                }
             break;
             
@@ -93,7 +90,17 @@ public abstract class ControladoraClasses {
                      if( !checaAberta( control_totais.getView() ) )
                         control_totais.exibir();
             break;      
+            case "control_agendados" :
+               if(control_agendados == null)
+                  control_agendados = new ControlAgendados();
                
+                  if( modo_teste )
+                     control_agendados.ModoTeste();
+                  
+                  if( control_agendados.getView() != null )
+                     if( !checaAberta( control_agendados.getView()) )
+                        control_agendados.exibir();
+            break;
             default:
                System.out.println("Sem execução");
                break;

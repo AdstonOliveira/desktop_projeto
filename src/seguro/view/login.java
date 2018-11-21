@@ -102,7 +102,7 @@ public class login extends javax.swing.JFrame {
 
       status.setFont(new java.awt.Font("Tahoma", 2, 10)); // NOI18N
       status.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-      status.setText("Servidor Status");
+      status.setText("...Tentando conexao com o banco de dados ...");
 
       javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
       jPanel1.setLayout(jPanel1Layout);
@@ -145,6 +145,7 @@ public class login extends javax.swing.JFrame {
       btConecta.setMnemonic('e');
       btConecta.setText("Conectar");
       btConecta.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+      btConecta.setEnabled(false);
       btConecta.addMouseListener(new java.awt.event.MouseAdapter() {
          public void mouseClicked(java.awt.event.MouseEvent evt) {
             btConectaMouseClicked(evt);
@@ -246,7 +247,6 @@ public class login extends javax.swing.JFrame {
       novoCad.add(linux);
 
       modo_teste.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.ALT_MASK));
-      modo_teste.setSelected(true);
       modo_teste.setText("Demonstração");
       modo_teste.addActionListener(new java.awt.event.ActionListener() {
          public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -310,15 +310,6 @@ public class login extends javax.swing.JFrame {
        Th teste = new Th( Seguro.conexao, this );
     }
     */
-    
-    
-    
-    
-    
-    
-    
-    
-    
    private void btConectaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConectaActionPerformed
          if( linux.isSelected() ){
             PreencheAleatorio.randDia = "/tmp/randDia.txt";
@@ -368,6 +359,8 @@ public class login extends javax.swing.JFrame {
    private void modo_testeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modo_testeActionPerformed
       if( modo_teste.isSelected() )
          this.btConecta.setEnabled( true );
+      else
+         this.btConecta.setEnabled( false );
       
    }//GEN-LAST:event_modo_testeActionPerformed
 
@@ -380,7 +373,8 @@ public class login extends javax.swing.JFrame {
       
          if( this.control.Login( Seguro.conexao, dadosLogin ) ){
             JOptionPane.showMessageDialog( this, "Seja Bem-Vindo " + TelaPrincipal.usuario.getLogin(),"Bem-Vindo",1 );
-            
+            new TelaPrincipal().setVisible(true);
+            this.dispose();
          }else
             JOptionPane.showMessageDialog( this, "Não foi possivel entrar!!!","Não Logado",0 );
       }

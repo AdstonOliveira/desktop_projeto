@@ -65,7 +65,7 @@
                   <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jPanel4" max="32767" attributes="0"/>
-                      <Component id="jPanel3" pref="462" max="32767" attributes="0"/>
+                      <Component id="jPanel3" pref="466" max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -161,8 +161,8 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Di&#xe1;rio">
-                        <Property name="tabTitle" type="java.lang.String" value="Di&#xe1;rio"/>
+                      <JTabbedPaneConstraints tabName="Por dia">
+                        <Property name="tabTitle" type="java.lang.String" value="Por dia"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -348,8 +348,8 @@
                 <Container class="javax.swing.JPanel" name="jPanel12">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Mensal">
-                        <Property name="tabTitle" type="java.lang.String" value="Mensal"/>
+                      <JTabbedPaneConstraints tabName="Por m&#xea;s">
+                        <Property name="tabTitle" type="java.lang.String" value="Por m&#xea;s"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -539,8 +539,8 @@
                 <Container class="javax.swing.JPanel" name="jPanel18">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Anual">
-                        <Property name="tabTitle" type="java.lang.String" value="Anual"/>
+                      <JTabbedPaneConstraints tabName="Por ano">
+                        <Property name="tabTitle" type="java.lang.String" value="Por ano"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>

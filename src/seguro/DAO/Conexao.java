@@ -26,7 +26,6 @@ public final class Conexao {
     public Connection abrir() {
       try {
           Class.forName( this.config.getDRIVER() );
-          //JOptionPane.showMessageDialog( null, "Conexão estabelecida" );
        } catch ( ClassNotFoundException ex ) {
           JOptionPane.showMessageDialog( null, "Não foi possivel estabelecer conexao", this.config.getURL(),0 );
        }

@@ -40,7 +40,7 @@ public class ConfigBotao {
    
    public static void evtExited( JButton botao ){
       String[] positivo = new String[]{"Salvar","Configurar","Conectar","OK","Gravar","Agendar","gerar"};
-      String[] negativo = new String[]{"cancelar"};
+      String[] negativo = new String[]{"cancelar","excluir","excluir agendamento"};
       
       for(String color : negativo)
          if( botao.getText().equalsIgnoreCase(color) )

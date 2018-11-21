@@ -53,6 +53,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
       jPanel2 = new javax.swing.JPanel();
       jLabel2 = new javax.swing.JLabel();
       btGerenciador = new seguro.resources.RSButtonMetro();
+      rSButtonMetro1 = new seguro.resources.RSButtonMetro();
       pnRelatorios = new javax.swing.JPanel();
       jPanel3 = new javax.swing.JPanel();
       jLabel3 = new javax.swing.JLabel();
@@ -63,7 +64,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
       jLabel4 = new javax.swing.JLabel();
       btAgendar = new seguro.resources.RSButtonMetro();
       rSButtonMetro2 = new seguro.resources.RSButtonMetro();
-      rSButtonMetro7 = new seguro.resources.RSButtonMetro();
 
       setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
       setTitle("Software de Gerenciador de Consumo Elétrico");
@@ -106,7 +106,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
       );
       desktopLayout.setVerticalGroup(
          desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGap(0, 439, Short.MAX_VALUE)
+         .addGap(0, 441, Short.MAX_VALUE)
       );
 
       painelLateral.setBackground(new java.awt.Color(0, 153, 153));
@@ -153,6 +153,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
          }
       });
 
+      rSButtonMetro1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+      rSButtonMetro1.setText("Novo Dispositivo");
+
       javax.swing.GroupLayout painelCadastrosLayout = new javax.swing.GroupLayout(painelCadastros);
       painelCadastros.setLayout(painelCadastrosLayout);
       painelCadastrosLayout.setHorizontalGroup(
@@ -160,6 +163,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
          .addComponent(btDados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
          .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
          .addComponent(btGerenciador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+         .addGroup(painelCadastrosLayout.createSequentialGroup()
+            .addComponent(rSButtonMetro1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 0, Short.MAX_VALUE))
       );
       painelCadastrosLayout.setVerticalGroup(
          painelCadastrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -168,8 +174,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGap(1, 1, 1)
             .addComponent(btDados, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(0, 0, 0)
-            .addComponent(btGerenciador, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
-            .addGap(0, 0, 0))
+            .addComponent(btGerenciador, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 0, 0)
+            .addComponent(rSButtonMetro1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
       );
 
       pnRelatorios.setBackground(new java.awt.Color(51, 51, 51));
@@ -258,10 +266,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
       });
 
       rSButtonMetro2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-      rSButtonMetro2.setText("Agendados");
-
-      rSButtonMetro7.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-      rSButtonMetro7.setText("Hist Desligamento");
+      rSButtonMetro2.setText("Histórico");
+      rSButtonMetro2.setToolTipText("Histórico de desligamento (futuros e passados)");
+      rSButtonMetro2.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            rSButtonMetro2ActionPerformed(evt);
+         }
+      });
 
       javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
       jPanel4.setLayout(jPanel4Layout);
@@ -271,8 +282,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
          .addGroup(jPanel4Layout.createSequentialGroup()
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                .addComponent(btAgendar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-               .addComponent(rSButtonMetro2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-               .addComponent(rSButtonMetro7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+               .addComponent(rSButtonMetro2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(0, 0, Short.MAX_VALUE))
       );
       jPanel4Layout.setVerticalGroup(
@@ -282,10 +292,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGap(1, 1, 1)
             .addComponent(btAgendar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(0, 0, 0)
-            .addComponent(rSButtonMetro2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(0, 0, 0)
-            .addComponent(rSButtonMetro7, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
-            .addGap(0, 0, 0))
+            .addComponent(rSButtonMetro2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
       );
 
       javax.swing.GroupLayout painelLateralLayout = new javax.swing.GroupLayout(painelLateral);
@@ -304,7 +311,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addComponent(pnRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(152, Short.MAX_VALUE))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
       );
 
       javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -376,6 +383,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
       ControladoraClasses.abrir( Abrir.TOTAIS.getDescricao() );
    }//GEN-LAST:event_btTotaisActionPerformed
 
+   private void rSButtonMetro2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMetro2ActionPerformed
+      ControladoraClasses.abrir(Abrir.AGENDADOS.getDescricao());
+   }//GEN-LAST:event_rSButtonMetro2ActionPerformed
+
 
 
 
@@ -431,8 +442,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
    private javax.swing.JPanel painelLateral;
    private javax.swing.JPanel painel_Topo;
    private javax.swing.JPanel pnRelatorios;
+   private seguro.resources.RSButtonMetro rSButtonMetro1;
    private seguro.resources.RSButtonMetro rSButtonMetro2;
-   private seguro.resources.RSButtonMetro rSButtonMetro7;
    // End of variables declaration//GEN-END:variables
 
    public static Conexao getConexao() {

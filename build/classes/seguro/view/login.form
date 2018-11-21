@@ -46,7 +46,6 @@
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                   <KeyStroke key="Alt+T"/>
                 </Property>
-                <Property name="selected" type="boolean" value="true"/>
                 <Property name="text" type="java.lang.String" value="Demonstra&#xe7;&#xe3;o"/>
               </Properties>
               <Events>
@@ -256,7 +255,7 @@
                   <Font name="Tahoma" size="10" style="2"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Servidor Status"/>
+                <Property name="text" type="java.lang.String" value="...Tentando conexao com o banco de dados ..."/>
               </Properties>
             </Component>
           </SubComponents>
@@ -311,6 +310,7 @@
                     <BevelBorder/>
                   </Border>
                 </Property>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btConectaMouseClicked"/>

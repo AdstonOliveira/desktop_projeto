@@ -271,7 +271,6 @@ public class Agendamento extends javax.swing.JInternalFrame {
       ThHora th = new ThHora();
       
       th.start();
-      
    }//GEN-LAST:event_btGravarActionPerformed
 
 

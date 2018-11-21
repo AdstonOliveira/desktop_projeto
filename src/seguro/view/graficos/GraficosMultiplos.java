@@ -250,7 +250,7 @@ public class GraficosMultiplos extends javax.swing.JInternalFrame {
             .addContainerGap())
       );
 
-      jTabbedPane1.addTab("Diário", jPanel10);
+      jTabbedPane1.addTab("Por dia", jPanel10);
 
       jPanel13.setBackground(new java.awt.Color(255, 255, 255));
       jPanel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -367,7 +367,7 @@ public class GraficosMultiplos extends javax.swing.JInternalFrame {
             .addComponent(jPanel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
       );
 
-      jTabbedPane1.addTab("Mensal", jPanel12);
+      jTabbedPane1.addTab("Por mês", jPanel12);
 
       jPanel25.setBackground(new java.awt.Color(255, 255, 255));
       jPanel25.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -490,7 +490,7 @@ public class GraficosMultiplos extends javax.swing.JInternalFrame {
             .addComponent(jPanel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
       );
 
-      jTabbedPane1.addTab("Anual", jPanel18);
+      jTabbedPane1.addTab("Por ano", jPanel18);
 
       jPanel6.setBackground(new java.awt.Color(0, 143, 143));
       jPanel6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -664,7 +664,7 @@ public class GraficosMultiplos extends javax.swing.JInternalFrame {
             .addGap(1, 1, 1)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-               .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 462, Short.MAX_VALUE)))
+               .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 466, Short.MAX_VALUE)))
       );
 
       javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

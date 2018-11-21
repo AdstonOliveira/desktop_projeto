@@ -1,5 +1,6 @@
 package seguro.configuracoes;
 
+import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -61,7 +62,6 @@ public class PreencheAleatorio {
 
    public static void consumo_dia_aleatorio(){
       if(!checaExiste(randDia)){
-      
             try {
                BufferedWriter br = new BufferedWriter( new FileWriter( randDia, true ) );
                
@@ -78,6 +78,7 @@ public class PreencheAleatorio {
    
    public static JPanel lerArquivo( String arquivo, String titulo, String desc, int range ) throws IOException{
       JFreeChart auto = null;
+      
       DefaultCategoryDataset ds = null;
       BufferedReader br = null;
       String[] quebra = new String[4];
@@ -107,6 +108,7 @@ public class PreencheAleatorio {
       
       auto = ChartFactory.createLineChart(titulo, desc, 
                "Consumo (em watts/segundo)", ds, PlotOrientation.VERTICAL, true, true, false);
+      auto.setBackgroundPaint(Color.BLACK);
       
       return new ChartPanel(auto);      
    }

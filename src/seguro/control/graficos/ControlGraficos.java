@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import seguro.configuracoes.PreencheAleatorio;
+import seguro.view.control.ControladoraClasses;
 import seguro.view.graficos.GraficosMultiplos;
 
 /**
@@ -73,13 +74,13 @@ public class ControlGraficos{
       JPanel chart;
       
       if( this.cor_data() && validaRange() ){
-         if( !this.modoTeste ){ // Implementar funcional
+         if( !ControladoraClasses.modo_teste ){ // Implementar funcional
             chart = GeradorGrafico.teste( 6 ); // criar sql com conexao ao banco
             this.adicionarGrafico( chart, this.view.getGrafico_diario() );
          }else{
             int range = this.numDias( this.view.getDt_inicial().getDate().getTime(), this.view.getDt_final().getDate().getTime() );
-            chart = PreencheAleatorio.lerArquivo(PreencheAleatorio.randDia, "Modo Teste", "Diário", range);
-            this.adicionarGrafico(chart, this.view.getGrafico_diario() );
+            chart = PreencheAleatorio.lerArquivo( PreencheAleatorio.randDia, "Modo Teste", "Diário", range);
+            this.adicionarGrafico( chart, this.view.getGrafico_diario() );
          }
       }
       

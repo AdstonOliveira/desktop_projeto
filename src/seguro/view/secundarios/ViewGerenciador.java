@@ -1,11 +1,13 @@
 package seguro.view.secundarios;
 
+import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import seguro.resources.RSButtonMetro;
+import seguro.view.control.ControladoraClasses;
 
 /**
  * @author Adston at self
@@ -49,8 +51,8 @@ public class ViewGerenciador extends javax.swing.JInternalFrame {
       jScrollPane1 = new javax.swing.JScrollPane();
       descricao = new javax.swing.JTextArea();
       btChecarConectividade = new seguro.resources.RSButtonMetro();
-      jTextField1 = new javax.swing.JTextField();
-      jTextField2 = new javax.swing.JTextField();
+      textIP = new javax.swing.JTextField();
+      textMAC = new javax.swing.JTextField();
       label_status = new javax.swing.JLabel();
 
       setClosable(true);
@@ -82,8 +84,11 @@ public class ViewGerenciador extends javax.swing.JInternalFrame {
       );
       jPanel2Layout.setVerticalGroup(
          jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-         .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
+         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+               .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+               .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(4, 4, 4))
       );
 
       jPanel3.setBackground(new java.awt.Color(0, 139, 139));
@@ -150,7 +155,7 @@ public class ViewGerenciador extends javax.swing.JInternalFrame {
       );
       jPanel6Layout.setVerticalGroup(
          jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+         .addComponent(jLabel1)
       );
 
       jPanel7.setBorder(new javax.swing.border.MatteBorder(null));
@@ -171,19 +176,23 @@ public class ViewGerenciador extends javax.swing.JInternalFrame {
       descricao.setLineWrap(true);
       descricao.setRows(5);
       descricao.setTabSize(3);
-      descricao.setText("Dispositivo de teste de \nvisualização");
       descricao.setWrapStyleWord(true);
       jScrollPane1.setViewportView(descricao);
 
       btChecarConectividade.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
       btChecarConectividade.setMnemonic('h');
-      btChecarConectividade.setText("Checar Status");
+      btChecarConectividade.setText("Contactar");
       btChecarConectividade.setToolTipText("Verifica a conectividade com o dispositivo");
       btChecarConectividade.setColorBorde(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+      btChecarConectividade.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btChecarConectividadeActionPerformed(evt);
+         }
+      });
 
-      jTextField1.setText("\"localhost\"");
+      textIP.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-      jTextField2.setText("\"FF-FF-FF-FF-FF-FF\"");
+      textMAC.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
       javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
       jPanel7.setLayout(jPanel7Layout);
@@ -200,8 +209,8 @@ public class ViewGerenciador extends javax.swing.JInternalFrame {
                      .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                   .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                   .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                     .addComponent(jTextField1)
-                     .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.TRAILING))))
+                     .addComponent(textIP)
+                     .addComponent(textMAC, javax.swing.GroupLayout.Alignment.TRAILING))))
             .addGap(18, 18, 18))
          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
             .addGap(69, 69, 69)
@@ -214,17 +223,17 @@ public class ViewGerenciador extends javax.swing.JInternalFrame {
             .addContainerGap()
             .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                .addComponent(jLabel2)
-               .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+               .addComponent(textIP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                .addComponent(jLabel3)
-               .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+               .addComponent(textMAC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGap(11, 11, 11)
             .addComponent(jLabel4)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(btChecarConectividade, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addComponent(btChecarConectividade, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addContainerGap())
       );
 
@@ -256,7 +265,7 @@ public class ViewGerenciador extends javax.swing.JInternalFrame {
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(label_status, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(label_status, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
             .addContainerGap())
       );
 
@@ -311,6 +320,16 @@ public class ViewGerenciador extends javax.swing.JInternalFrame {
       pack();
    }// </editor-fold>//GEN-END:initComponents
 
+   private void btChecarConectividadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btChecarConectividadeActionPerformed
+      
+      if( ControladoraClasses.modo_teste ){
+         this.label_status.setText("Dispositivo em modo demonstração");
+         this.label_status.setForeground(Color.GREEN);
+      
+      
+      }
+   }//GEN-LAST:event_btChecarConectividadeActionPerformed
+
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
    private seguro.resources.RSButtonMetro btCancelar;
@@ -331,9 +350,9 @@ public class ViewGerenciador extends javax.swing.JInternalFrame {
    private javax.swing.JPanel jPanel6;
    private javax.swing.JPanel jPanel7;
    private javax.swing.JScrollPane jScrollPane1;
-   private javax.swing.JTextField jTextField1;
-   private javax.swing.JTextField jTextField2;
    private javax.swing.JLabel label_status;
+   private javax.swing.JTextField textIP;
+   private javax.swing.JTextField textMAC;
    // End of variables declaration//GEN-END:variables
 
    public RSButtonMetro getBtCancelar() {
@@ -480,20 +499,20 @@ public class ViewGerenciador extends javax.swing.JInternalFrame {
       this.jScrollPane1 = jScrollPane1;
    }
 
-   public JTextField getjTextField1() {
-      return jTextField1;
+   public JTextField getIP() {
+      return textIP;
    }
 
-   public void setjTextField1(JTextField jTextField1) {
-      this.jTextField1 = jTextField1;
+   public void setIP(JTextField jTextField1) {
+      this.textIP = jTextField1;
    }
 
-   public JTextField getjTextField2() {
-      return jTextField2;
+   public JTextField getMAC() {
+      return textMAC;
    }
 
-   public void setjTextField2(JTextField jTextField2) {
-      this.jTextField2 = jTextField2;
+   public void setMAC(JTextField jTextField2) {
+      this.textMAC = jTextField2;
    }
 
    public JLabel getLabel_status() {
