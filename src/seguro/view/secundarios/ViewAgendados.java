@@ -45,8 +45,9 @@ public class ViewAgendados extends javax.swing.JInternalFrame {
       tabela_agendados = new javax.swing.JTable();
       jPanel5 = new javax.swing.JPanel();
       jLabel1 = new javax.swing.JLabel();
-      excluir_agendado = new seguro.resources.RSButtonMetro();
+      jPanel7 = new javax.swing.JPanel();
       adicionar = new seguro.resources.RSButtonMetro();
+      excluir_agendado = new seguro.resources.RSButtonMetro();
       jPanel3 = new javax.swing.JPanel();
       jPanel6 = new javax.swing.JPanel();
       jLabel3 = new javax.swing.JLabel();
@@ -84,7 +85,7 @@ public class ViewAgendados extends javax.swing.JInternalFrame {
       jTabbedPane1.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
 
       jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-      jPanel4.setBorder(new javax.swing.border.MatteBorder(null));
+      jPanel4.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 142, 142)));
 
       tabela_agendados.setModel(new javax.swing.table.DefaultTableModel(
          new Object [][] {
@@ -121,6 +122,25 @@ public class ViewAgendados extends javax.swing.JInternalFrame {
          .addComponent(jLabel1)
       );
 
+      jPanel7.setBackground(new java.awt.Color(0, 142, 142));
+
+      adicionar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+      adicionar.setMnemonic('a');
+      adicionar.setText("Agendar");
+      adicionar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+         public void mouseDragged(java.awt.event.MouseEvent evt) {
+            adicionarMouseDragged(evt);
+         }
+      });
+      adicionar.addMouseListener(new java.awt.event.MouseAdapter() {
+         public void mouseEntered(java.awt.event.MouseEvent evt) {
+            adicionarMouseEntered(evt);
+         }
+         public void mouseExited(java.awt.event.MouseEvent evt) {
+            adicionarMouseExited(evt);
+         }
+      });
+
       excluir_agendado.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
       excluir_agendado.setMnemonic('x');
       excluir_agendado.setText("Excluir");
@@ -143,22 +163,26 @@ public class ViewAgendados extends javax.swing.JInternalFrame {
          }
       });
 
-      adicionar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-      adicionar.setMnemonic('a');
-      adicionar.setText("Agendar");
-      adicionar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-         public void mouseDragged(java.awt.event.MouseEvent evt) {
-            adicionarMouseDragged(evt);
-         }
-      });
-      adicionar.addMouseListener(new java.awt.event.MouseAdapter() {
-         public void mouseEntered(java.awt.event.MouseEvent evt) {
-            adicionarMouseEntered(evt);
-         }
-         public void mouseExited(java.awt.event.MouseEvent evt) {
-            adicionarMouseExited(evt);
-         }
-      });
+      javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+      jPanel7.setLayout(jPanel7Layout);
+      jPanel7Layout.setHorizontalGroup(
+         jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+         .addGroup(jPanel7Layout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(adicionar, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(excluir_agendado, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
+            .addContainerGap())
+      );
+      jPanel7Layout.setVerticalGroup(
+         jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+         .addGroup(jPanel7Layout.createSequentialGroup()
+            .addContainerGap()
+            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+               .addComponent(adicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+               .addComponent(excluir_agendado, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+      );
 
       javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
       jPanel4.setLayout(jPanel4Layout);
@@ -167,30 +191,22 @@ public class ViewAgendados extends javax.swing.JInternalFrame {
          .addGroup(jPanel4Layout.createSequentialGroup()
             .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(0, 0, Short.MAX_VALUE))
-         .addGroup(jPanel4Layout.createSequentialGroup()
+         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
             .addContainerGap()
-            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addGroup(jPanel4Layout.createSequentialGroup()
-                  .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                  .addContainerGap())
-               .addGroup(jPanel4Layout.createSequentialGroup()
-                  .addGap(58, 58, 58)
-                  .addComponent(adicionar, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
-                  .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                  .addComponent(excluir_agendado, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
-                  .addGap(59, 59, 59))))
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+               .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+               .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addContainerGap())
       );
       jPanel4Layout.setVerticalGroup(
          jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
             .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-               .addComponent(excluir_agendado, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-               .addComponent(adicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(10, 10, 10))
+            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap())
       );
 
       jTabbedPane1.addTab("Agendados", jPanel4);
@@ -248,7 +264,7 @@ public class ViewAgendados extends javax.swing.JInternalFrame {
          .addGroup(jPanel3Layout.createSequentialGroup()
             .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
             .addContainerGap())
       );
 
@@ -328,6 +344,7 @@ public class ViewAgendados extends javax.swing.JInternalFrame {
    private javax.swing.JPanel jPanel4;
    private javax.swing.JPanel jPanel5;
    private javax.swing.JPanel jPanel6;
+   private javax.swing.JPanel jPanel7;
    private javax.swing.JScrollPane jScrollPane1;
    private javax.swing.JScrollPane jScrollPane2;
    private javax.swing.JTabbedPane jTabbedPane1;

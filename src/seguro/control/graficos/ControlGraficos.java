@@ -125,17 +125,22 @@ public class ControlGraficos{
    public boolean cor_data(){
       
       if( this.view.getDt_inicial().getDate() == null ){
-         this.view.getDt_inicial().setBackground( Color.RED );
+         this.view.getLbDtIn().setForeground( Color.RED );
+         this.view.getDt_inicial().setForeground(Color.RED);
          return false;
-      }else
-         this.view.getDt_inicial().setBackground(Color.BLACK);
-         
+      }else{
+         this.view.getDt_inicial().setForeground(Color.BLACK);
+         this.view.getLbDtIn().setForeground( Color.BLACK );
+      }
+      
       if( this.view.getDt_final().getDate() == null ){
-         this.view.getDt_final().setBackground(Color.RED);
+         this.view.getLbDtFim().setForeground( Color.RED );
+         this.view.getDt_final().setForeground(Color.RED);
          return false;
-      }else
+      }else{
+         this.view.getLbDtFim().setForeground( Color.BLACK );
          this.view.getDt_final().setBackground(Color.BLACK);
-         
+      }
       return true;
    }
    

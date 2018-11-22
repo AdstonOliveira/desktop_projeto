@@ -39,7 +39,7 @@ public class ConfigBotao {
    }
    
    public static void evtExited( JButton botao ){
-      String[] positivo = new String[]{"Salvar","Configurar","Conectar","OK","Gravar","Agendar","gerar"};
+      String[] positivo = new String[]{"Salvar","Configurar","Conectar","OK","Gravar","Agendar","gerar","adicionar"};
       String[] negativo = new String[]{"cancelar","excluir","excluir agendamento"};
       
       for(String color : negativo)

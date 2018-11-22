@@ -15,6 +15,8 @@ public class ConfigBanco extends javax.swing.JFrame {
      */
     public ConfigBanco() {
         initComponents();
+        
+        this.getRootPane().setDefaultButton(this.btSalva);
     }
 
     public void defineConexao( Conexao conexao ){
@@ -59,15 +61,17 @@ public class ConfigBanco extends javax.swing.JFrame {
       jComboBox1 = new javax.swing.JComboBox<>();
       BTeSCOLHA = new javax.swing.JButton();
       jPanel3 = new javax.swing.JPanel();
-      jLabel2 = new javax.swing.JLabel();
-      jLabel3 = new javax.swing.JLabel();
+      jPanel5 = new javax.swing.JPanel();
       jLabel4 = new javax.swing.JLabel();
       JTextIP = new javax.swing.JTextField();
       JTextPorta = new javax.swing.JTextField();
       JTextBanco = new javax.swing.JTextField();
+      jLabel2 = new javax.swing.JLabel();
+      jLabel3 = new javax.swing.JLabel();
+      jPanel6 = new javax.swing.JPanel();
       jLabel5 = new javax.swing.JLabel();
-      jLabel6 = new javax.swing.JLabel();
       userBanco = new javax.swing.JTextField();
+      jLabel6 = new javax.swing.JLabel();
       userSenha = new javax.swing.JPasswordField();
       jPanel4 = new javax.swing.JPanel();
       btSalva = new seguro.resources.RSButtonMetro();
@@ -89,6 +93,7 @@ public class ConfigBanco extends javax.swing.JFrame {
 
       jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "192.168.0.237", "localhost" }));
 
+      BTeSCOLHA.setMnemonic('e');
       BTeSCOLHA.setText("Escolha");
       BTeSCOLHA.addActionListener(new java.awt.event.ActionListener() {
          public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,7 +117,7 @@ public class ConfigBanco extends javax.swing.JFrame {
          jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(jPanel2Layout.createSequentialGroup()
             .addComponent(jLabel1)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+            .addGap(5, 5, 5)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                .addComponent(BTeSCOLHA)))
@@ -121,96 +126,142 @@ public class ConfigBanco extends javax.swing.JFrame {
       jPanel3.setBackground(new java.awt.Color(255, 255, 255));
       jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+      jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+
+      jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+      jLabel4.setText("Nome Banco:");
+
+      JTextIP.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+      JTextIP.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+      JTextIP.setText("192.168.0.237");
+
+      JTextPorta.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+      JTextPorta.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+      JTextPorta.setText("3306");
+
+      JTextBanco.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+      JTextBanco.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+      JTextBanco.setText("gerenciador");
+
       jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
       jLabel2.setText("IP Servidor:");
 
       jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
       jLabel3.setText("Porta:");
 
-      jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-      jLabel4.setText("Nome Banco:");
+      javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+      jPanel5.setLayout(jPanel5Layout);
+      jPanel5Layout.setHorizontalGroup(
+         jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+         .addGroup(jPanel5Layout.createSequentialGroup()
+            .addContainerGap()
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+               .addComponent(jLabel2)
+               .addComponent(jLabel3)
+               .addComponent(jLabel4))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+               .addComponent(JTextIP)
+               .addComponent(JTextPorta)
+               .addComponent(JTextBanco, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE))
+            .addContainerGap())
+      );
+      jPanel5Layout.setVerticalGroup(
+         jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+         .addGroup(jPanel5Layout.createSequentialGroup()
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+               .addComponent(jLabel2)
+               .addComponent(JTextIP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+               .addGroup(jPanel5Layout.createSequentialGroup()
+                  .addGap(6, 6, 6)
+                  .addComponent(jLabel3))
+               .addGroup(jPanel5Layout.createSequentialGroup()
+                  .addGap(1, 1, 1)
+                  .addComponent(JTextPorta, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+               .addGroup(jPanel5Layout.createSequentialGroup()
+                  .addGap(6, 6, 6)
+                  .addComponent(jLabel4))
+               .addGroup(jPanel5Layout.createSequentialGroup()
+                  .addGap(1, 1, 1)
+                  .addComponent(JTextBanco, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGap(3, 3, 3))
+      );
 
-      JTextIP.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-      JTextIP.setText("192.168.0.237");
-
-      JTextPorta.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-      JTextPorta.setText("3306");
-
-      JTextBanco.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-      JTextBanco.setText("gerenciador");
+      jPanel6.setBackground(new java.awt.Color(255, 255, 255));
 
       jLabel5.setText("UsuarioBanco:");
 
       jLabel6.setText("SenhaUser:");
 
-      userSenha.setText("jPasswordField1");
+      javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+      jPanel6.setLayout(jPanel6Layout);
+      jPanel6Layout.setHorizontalGroup(
+         jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+         .addGroup(jPanel6Layout.createSequentialGroup()
+            .addGap(42, 42, 42)
+            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+               .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+               .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+               .addComponent(userBanco)
+               .addComponent(userSenha))
+            .addGap(42, 42, 42))
+      );
+      jPanel6Layout.setVerticalGroup(
+         jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+         .addGroup(jPanel6Layout.createSequentialGroup()
+            .addGap(6, 6, 6)
+            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+               .addGroup(jPanel6Layout.createSequentialGroup()
+                  .addGap(6, 6, 6)
+                  .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+               .addComponent(userBanco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+               .addGroup(jPanel6Layout.createSequentialGroup()
+                  .addGap(6, 6, 6)
+                  .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+               .addComponent(userSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(3, 3, 3))
+      );
 
       javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
       jPanel3.setLayout(jPanel3Layout);
       jPanel3Layout.setHorizontalGroup(
          jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(jPanel3Layout.createSequentialGroup()
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addContainerGap()
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addComponent(jLabel2)
-               .addComponent(jLabel3)
-               .addComponent(jLabel4))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-               .addComponent(JTextIP)
-               .addComponent(JTextPorta)
-               .addComponent(JTextBanco, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE))
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-         .addGroup(jPanel3Layout.createSequentialGroup()
-            .addGap(40, 40, 40)
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addComponent(jLabel5)
-               .addComponent(jLabel6))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-               .addGroup(jPanel3Layout.createSequentialGroup()
-                  .addGap(33, 33, 33)
-                  .addComponent(userBanco, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-               .addGroup(jPanel3Layout.createSequentialGroup()
-                  .addGap(16, 16, 16)
-                  .addComponent(userSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+               .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+               .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addContainerGap())
       );
       jPanel3Layout.setVerticalGroup(
          jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(jPanel3Layout.createSequentialGroup()
-            .addContainerGap()
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-               .addComponent(jLabel2)
-               .addComponent(JTextIP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-               .addComponent(jLabel3)
-               .addComponent(JTextPorta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-               .addComponent(jLabel4)
-               .addComponent(JTextBanco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-               .addComponent(jLabel5)
-               .addComponent(userBanco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-               .addComponent(jLabel6)
-               .addComponent(userSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addContainerGap())
       );
 
       jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
+      btSalva.setBackground(new java.awt.Color(0, 204, 51));
+      btSalva.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
       btSalva.setMnemonic('s');
       btSalva.setText("Salvar");
+      btSalva.setColorNormal(new java.awt.Color(0, 204, 51));
       btSalva.addActionListener(new java.awt.event.ActionListener() {
          public void actionPerformed(java.awt.event.ActionEvent evt) {
             btSalvaActionPerformed(evt);
          }
       });
 
+      btTesta.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
       btTesta.setMnemonic('t');
       btTesta.setText("Testar");
       btTesta.addActionListener(new java.awt.event.ActionListener() {
@@ -224,20 +275,20 @@ public class ConfigBanco extends javax.swing.JFrame {
       jPanel4Layout.setHorizontalGroup(
          jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(jPanel4Layout.createSequentialGroup()
-            .addContainerGap(13, Short.MAX_VALUE)
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btSalva, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, 13, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btTesta, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(14, Short.MAX_VALUE))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
       );
       jPanel4Layout.setVerticalGroup(
          jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(jPanel4Layout.createSequentialGroup()
             .addContainerGap()
-            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-               .addComponent(btSalva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-               .addComponent(btTesta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addContainerGap())
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+               .addComponent(btSalva, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
+               .addComponent(btTesta, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
       );
 
       javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -254,7 +305,7 @@ public class ConfigBanco extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(3, 3, 3)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGap(1, 1, 1)
             .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
       );
 
@@ -338,6 +389,8 @@ public class ConfigBanco extends javax.swing.JFrame {
    private javax.swing.JPanel jPanel2;
    private javax.swing.JPanel jPanel3;
    private javax.swing.JPanel jPanel4;
+   private javax.swing.JPanel jPanel5;
+   private javax.swing.JPanel jPanel6;
    private javax.swing.JTextField userBanco;
    private javax.swing.JPasswordField userSenha;
    // End of variables declaration//GEN-END:variables
