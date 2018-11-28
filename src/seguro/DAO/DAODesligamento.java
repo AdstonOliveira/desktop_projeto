@@ -3,7 +3,6 @@ package seguro.DAO;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import seguro.model.Desligamento;
@@ -49,6 +48,32 @@ public class DAODesligamento extends DAO{
       return equipamentos;
    }
    
+   public ArrayList<Desligamento> listaDesligamento(){
+      //d.id , e.modelo, d.agendado, d.equip_id
+      ArrayList<Desligamento> desligamentos = new ArrayList();
+      ResultSet rs = this.comandos.pegarResultadoSQL("select * from lista_desligamento;");
+      
+      try {
+         while( rs.next() ){
+            Desligamento d = new Desligamento();
+            d.setId(rs.getInt("id"));
+            d.setEquip(rs.getString("modelo"));
+            d.setEquip_id(rs.getInt("equip_id"));
+            d.setAgendado(rs.getTimestamp("agendado"));
+            
+            desligamentos.add(d);
+         }
+         rs.close();
+      } catch (SQLException ex) {
+         Logger.getLogger(DAODesligamento.class.getName()).log(Level.SEVERE, null, ex);
+      }
+      
+      if( desligamentos.isEmpty() )
+         return null;
+      
+      return desligamentos;
+      
+   }
    
    
    

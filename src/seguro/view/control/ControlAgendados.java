@@ -3,6 +3,7 @@ package seguro.view.control;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JTable;
+import seguro.DAO.DAODesligamento;
 import seguro.model.Desligamento;
 import seguro.view.TelaPrincipal;
 import seguro.view.secundarios.ViewAgendados;
@@ -14,6 +15,10 @@ import seguro.view.tabela.TableFuturos;
 public class ControlAgendados extends Control{
 
    private ViewAgendados view;
+   private DAODesligamento dao = new DAODesligamento();
+   
+   
+   
    
    @Override
    public void ModoTeste(){
@@ -59,15 +64,7 @@ public class ControlAgendados extends Control{
       
       this.view.setControl(this);
       
-      for(int i = 0; i < 5; i++){
-       Desligamento d = new Desligamento();
-          
-          d.setId(i);
-          d.setEquip("abc"+i);
-          d.setEquip_id(i+2);
-       
-       list.add(d);
-       }
+      this.list = dao.listaDesligamento();
        
        this.view.getTabela_agendados().setModel(new TableFuturos(list));
        
