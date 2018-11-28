@@ -6,6 +6,7 @@ import javax.swing.JDesktopPane;
 import seguro.DAO.Conexao;
 import seguro.model.Usuario;
 import seguro.view.control.Abrir;
+import seguro.view.control.ControlAgendamento;
 import seguro.view.control.ControlTelaInicial;
 import seguro.view.control.ControladoraClasses;
 
@@ -384,14 +385,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
    }//GEN-LAST:event_btGerenciadorActionPerformed
 
     private void btAgendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAgendarActionPerformed
-      Agendamento a = null;
-      try {
-         a = new Agendamento();
-      } catch (ParseException ex) {
-         Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-      }
-        desktop.add(a);
-        a.setVisible(true);
+       ControladoraClasses.abrir(Abrir.AGENDAR.getDescricao());
     }//GEN-LAST:event_btAgendarActionPerformed
 
     

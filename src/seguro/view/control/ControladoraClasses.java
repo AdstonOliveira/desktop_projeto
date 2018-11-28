@@ -18,9 +18,9 @@ public abstract class ControladoraClasses {
    static ControlGraficos control_graficos;
    static ControlTotais control_totais;
    static ControlAgendados control_agendados;
+   static ControlAgendamento control_agendamento;
    
    public static boolean modo_teste = false;
-   
    
    
    public static void abrir( String classe ){
@@ -83,8 +83,8 @@ public abstract class ControladoraClasses {
                if(control_totais == null)
                   control_totais = new ControlTotais();
                
-                  if( modo_teste)
-                     control_totais.ModoTeste();
+               if( modo_teste )
+                  control_totais.ModoTeste();
                      
                   if( control_totais.getView() != null )
                      if( !checaAberta( control_totais.getView() ) )
@@ -96,10 +96,13 @@ public abstract class ControladoraClasses {
                
                if( modo_teste )
                   control_agendados.ModoTeste();
-                  
-               if( control_agendados.getView() != null )
+               else{
+                  control_agendados.ModoProducao();
+                  abrir(control_agendados);
+               }
+               /*if( control_agendados.getView() != null )
                   if( !checaAberta( control_agendados.getView()) )
-                     control_agendados.exibir();
+                     control_agendados.exibir();*/
             break;
             case "control_cad_dispositivos" :
                if(control_cad_dispositivos == null)
@@ -112,15 +115,24 @@ public abstract class ControladoraClasses {
                   if( !checaAberta( control_cad_dispositivos.getView() ) )
                   control_cad_dispositivos.exibir();
             break;      
-            
-            
+            case "control_agendamento" :
+               if(control_agendamento == null)
+                  control_agendamento = new ControlAgendamento();
+
+               if( modo_teste ){   
+                  control_agendamento.ModoTeste();
+                  abrir(control_agendamento);
+               }else{
+                  control_agendamento.ModoProducao();
+                  abrir(control_agendamento);
+               }
+            break;
             default:
                System.out.println("Sem execução");
                break;
                   
          }
    }
-   
    
    public static boolean checaAberta( JInternalFrame checar ){
       for( JInternalFrame each : TelaPrincipal.desktop.getAllFrames() )
@@ -135,6 +147,16 @@ public abstract class ControladoraClasses {
    }
    
    
+   
+   public static boolean abrir( Control control ){// implementar
+      if( control.getView() != null )
+         if( !checaAberta( control.getView() ) ){
+            control.exibir( control.getView() );
+            return true;
+         }
+      
+      return false;
+   }
    
    
    

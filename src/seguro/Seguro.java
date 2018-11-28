@@ -3,8 +3,6 @@ package seguro;
 
 import java.awt.AWTException;
 import java.awt.Color;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import javax.swing.JOptionPane;
 import seguro.DAO.Conexao;
 import seguro.view.ConfigBanco;
@@ -18,12 +16,15 @@ import seguro.view.login;
  */
 public class Seguro {
    public static final Conexao conexao = new Conexao();
-   public static final login login = new login(); 
+   public static final login login = new login();
+   public static final ConfigurarServidor inicial = new ConfigurarServidor();
    /**
      * @param args the command line arguments
      */
    
     public static void main( String[] args ) throws AWTException {
+       
+       Seguro.inicial.config_inicial();
        Seguro.test( login );
        login.setVisible( true );
     }
@@ -32,9 +33,9 @@ public class Seguro {
     
     
     public static void testeConexaoInicial(){
-       Seguro.test(login);
+       Seguro.test( login );
     }
-    private void segundoPlano() throws AWTException{
+ /*   private void segundoPlano() throws AWTException{
        java.awt.SystemTray tray = java.awt.SystemTray.getSystemTray();
             
             java.awt.Image image = new javax.swing.ImageIcon("..//img//about.png").getImage(); //Pega a imagem...
@@ -50,8 +51,21 @@ public class Seguro {
        System.out.println( now.getTime() );
        System.out.println( formatador.format(now) );
     }
+    */
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     public static void test( login view ){
+       
        class Th extends Thread{
           public login view;
           
@@ -62,11 +76,14 @@ public class Seguro {
             
                @Override
                public void run(){
+                  
                   if( Seguro.conexao.abrir() != null ){
                      view.getStatus().setText("Servidor disponível");
                      view.getStatus().setForeground( Color.GREEN );
                      view.getBtConecta().setEnabled(true);
                      view.getModo_teste().setEnabled(false);
+                     
+                     Seguro.inicial.novaConfig( Seguro.conexao.toSave() );
                   }else{
                      view.getStatus().setText("Servidor indisponível");
                      view.getStatus().setForeground( Color.RED );
@@ -92,5 +109,6 @@ public class Seguro {
                }
        }
        Th teste = new Th( view );
+       
     }
 }

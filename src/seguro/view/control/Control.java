@@ -3,7 +3,7 @@ import javax.swing.JInternalFrame;
 import seguro.view.TelaPrincipal;
 /**
  * @author Adston at self
- */
+*/
 public abstract class Control {
    protected JInternalFrame view;
    
@@ -11,14 +11,15 @@ public abstract class Control {
       this.view = view;
    }
    
-   public JInternalFrame getView(){
-      return this.view;
-   }
+      //return this.view;
+      
+   public abstract JInternalFrame getView();
+   public abstract void ModoTeste();
+   public abstract void ModoProducao();
    
-   public void ModoTeste(){
-      if( this.getView() != null )
-         this.getView().setTitle("Modo Teste");
-         
+   public void exibir( JInternalFrame view ){
+      TelaPrincipal.desktop.add( view);
+      view.setVisible( true );
    }
    
 }

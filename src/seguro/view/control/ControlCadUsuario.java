@@ -5,27 +5,34 @@ import seguro.view.secundarios.CadastroCliente;
 /**
  * @author Adston at self
 */
-public class ControlCadUsuario{
-  // private Usuario user;
+public class ControlCadUsuario extends Control{
    private CadastroCliente view;
-   
    
    public void setUsuario( Usuario user ){
   //    this.user = user;
    }
    
    
+   @Override
    public void ModoTeste(){
       if( this.view == null ) 
          this.setView( new CadastroCliente() );
+      
       this.view.setTitle( "Modo Teste" );
       
       this.view.getTextNome().setText( "Teste" );
       this.view.getTextNick().setText( "Teste" );
       this.view.getTextEmail().setText( "Teste" );
-      
    }
    
+   @Override
+   public void ModoProducao(){
+      if( this.view == null)
+         this.setView( new CadastroCliente() );
+      
+      this.view.setTitle( "Cadastro de usuario: " + TelaPrincipal.usuario.getLogin() );
+      this.montaCliente();
+   }
    
    
    public void montaCliente(){
@@ -33,6 +40,8 @@ public class ControlCadUsuario{
          this.view = new CadastroCliente();
       
       this.view.getTextNome().setText( TelaPrincipal.usuario.getNome() );
+      this.view.gettextSobrenome().setText( TelaPrincipal.usuario.getSobrenome() );
+      
       this.view.getTextNick().setText( TelaPrincipal.usuario.getLogin() );
       this.view.getTextEmail().setText( TelaPrincipal.usuario.getEmail() );
       
@@ -74,6 +83,8 @@ public class ControlCadUsuario{
    public void setView( CadastroCliente view ) {
       this.view = view;
    }
+
+  
 
 
 

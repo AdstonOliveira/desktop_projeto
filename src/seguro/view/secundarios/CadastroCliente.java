@@ -1,8 +1,11 @@
 package seguro.view.secundarios;
 
 import com.toedter.calendar.JDateChooser;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import seguro.resources.RSButtonMetro;
 
 public class CadastroCliente extends javax.swing.JInternalFrame {
    /**
@@ -532,6 +535,18 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
    private javax.swing.JTextField textSobrenome;
    // End of variables declaration//GEN-END:variables
 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
    public JPasswordField getConfirmaSenha() {
       return confirmaSenha;
    }
@@ -566,6 +581,13 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
 
    public JTextField getTextNick() {
       return textNick;
+   }
+   public void setTextSobrenome(JTextField sobrenome) {
+      this.textSobrenome = sobrenome;
+   }
+
+   public JTextField gettextSobrenome() {
+      return textSobrenome;
    }
 
    public void setTextNick(JTextField textNick) {

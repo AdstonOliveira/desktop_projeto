@@ -1,12 +1,15 @@
 package seguro.view.secundarios;
 
-import java.text.ParseException;
+import com.toedter.calendar.JCalendar;
 import java.util.Date;
 import java.text.SimpleDateFormat;
-import javax.swing.JOptionPane;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JSpinner;
 import seguro.configuracoes.ConfigBotao;
 import seguro.resources.RSButtonMetro;
+import seguro.view.control.ControlAgendamento;
 /**
  * @author Adston at self
  */
@@ -15,13 +18,24 @@ public class Agendamento extends javax.swing.JInternalFrame {
    SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy HH:mm");
    static public Date dMin;
    ThHora th;
+   ControlAgendamento control;
    
-   public Agendamento() throws ParseException {
+   
+   public Agendamento(){
       initComponents();
+      
       ConfigBotao.btOK( this.btGravar );
       ConfigBotao.btCancela( this.btCancelar );
+      
       this.getRootPane().setDefaultButton(btGravar);
    }
+   
+   public void setControl( ControlAgendamento control ){
+      this.control = control;
+   }
+   
+   
+   
    
    @SuppressWarnings("unchecked")
    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -36,14 +50,15 @@ public class Agendamento extends javax.swing.JInternalFrame {
       jLabel6 = new javax.swing.JLabel();
       jPanel6 = new javax.swing.JPanel();
       jLabel3 = new javax.swing.JLabel();
-      SpinnerHr = new javax.swing.JSpinner();
+      data_hora = new javax.swing.JSpinner();
       jCalendar1 = new com.toedter.calendar.JCalendar();
       jLabel1 = new javax.swing.JLabel();
       jLabel2 = new javax.swing.JLabel();
-      jComboBox1 = new javax.swing.JComboBox<>();
+      equipamentos = new javax.swing.JComboBox<>();
       jPanel3 = new javax.swing.JPanel();
       btGravar = new seguro.resources.RSButtonMetro();
       btCancelar = new seguro.resources.RSButtonMetro();
+      rSButtonMetro1 = new seguro.resources.RSButtonMetro();
 
       jLabel7.setText("jLabel7");
 
@@ -103,14 +118,13 @@ public class Agendamento extends javax.swing.JInternalFrame {
       jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
       jLabel3.setText("Escolha Dia e Horario");
 
-      SpinnerHr.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-      SpinnerHr.setModel(new javax.swing.SpinnerDateModel(new java.util.Date(1541702534489L), null, null, java.util.Calendar.HOUR_OF_DAY));
-      SpinnerHr.setToolTipText("");
-      SpinnerHr.setDoubleBuffered(true);
+      data_hora.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+      data_hora.setModel(new javax.swing.SpinnerDateModel(new java.util.Date(), new java.util.Date(1543258298348L), null, java.util.Calendar.DAY_OF_MONTH));
+      data_hora.setToolTipText("");
+      data_hora.setDoubleBuffered(true);
 
       jCalendar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
       jCalendar1.setToolTipText("Visualização");
-      jCalendar1.setAutoscrolls(true);
       jCalendar1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
       jCalendar1.setMaxSelectableDate(new java.util.Date(1546225304000L));
       jCalendar1.setMinSelectableDate(new java.util.Date(1420081304000L));
@@ -118,14 +132,14 @@ public class Agendamento extends javax.swing.JInternalFrame {
       jCalendar1.setTodayButtonVisible(true);
 
       jLabel1.setFont(new java.awt.Font("Tahoma", 2, 10)); // NOI18N
-      jLabel1.setText("Calendário para Orientação:");
+      jLabel1.setText("Clique na data desejada e em seguida escolher:");
 
       jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
       jLabel2.setText("Equipamento para desligar:");
 
-      jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+      equipamentos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-      jPanel3.setBackground(new java.awt.Color(0, 143, 143));
+      jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
       btGravar.setBackground(new java.awt.Color(0, 204, 51));
       btGravar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -186,6 +200,14 @@ public class Agendamento extends javax.swing.JInternalFrame {
             .addGap(3, 3, 3))
       );
 
+      rSButtonMetro1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+      rSButtonMetro1.setText("Escolher");
+      rSButtonMetro1.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            rSButtonMetro1ActionPerformed(evt);
+         }
+      });
+
       javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
       jPanel6.setLayout(jPanel6Layout);
       jPanel6Layout.setHorizontalGroup(
@@ -193,15 +215,16 @@ public class Agendamento extends javax.swing.JInternalFrame {
          .addGroup(jPanel6Layout.createSequentialGroup()
             .addContainerGap()
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+               .addComponent(rSButtonMetro1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                .addComponent(jCalendar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                   .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                      .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                     .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                     .addComponent(equipamentos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                   .addGap(10, 10, 10)
                   .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                     .addComponent(SpinnerHr)
-                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)))
+                     .addComponent(data_hora)
+                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                .addGroup(jPanel6Layout.createSequentialGroup()
                   .addComponent(jLabel1)
                   .addGap(0, 0, Short.MAX_VALUE))
@@ -217,14 +240,16 @@ public class Agendamento extends javax.swing.JInternalFrame {
                .addComponent(jLabel2))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-               .addComponent(SpinnerHr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-               .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+               .addComponent(data_hora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+               .addComponent(equipamentos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
             .addComponent(jLabel1)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jCalendar1, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+            .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(rSButtonMetro1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addContainerGap())
       );
 
@@ -295,27 +320,24 @@ public class Agendamento extends javax.swing.JInternalFrame {
    }//GEN-LAST:event_btCancelarMouseExited
 
    private void btGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGravarActionPerformed
-      Date teste = (Date) this.SpinnerHr.getValue();
-      
-      JOptionPane.showMessageDialog( this, formatador.format(teste.getTime()) + "\n"+ new Date().getTime() );
-      
-      Agendamento.dMin = teste;
-      ThHora th = new ThHora();
-      
-      th.start();
+      this.control.agendar();
    }//GEN-LAST:event_btGravarActionPerformed
 
    private void btCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarActionPerformed
-      // TODO add your handling code here:
+      this.dispose();
    }//GEN-LAST:event_btCancelarActionPerformed
+
+   private void rSButtonMetro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButtonMetro1ActionPerformed
+      this.data_hora.setValue( this.jCalendar1.getDate() );
+   }//GEN-LAST:event_rSButtonMetro1ActionPerformed
 
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
-   private javax.swing.JSpinner SpinnerHr;
    private seguro.resources.RSButtonMetro btCancelar;
    private seguro.resources.RSButtonMetro btGravar;
+   private javax.swing.JSpinner data_hora;
+   private javax.swing.JComboBox<String> equipamentos;
    private com.toedter.calendar.JCalendar jCalendar1;
-   private javax.swing.JComboBox<String> jComboBox1;
    private javax.swing.JLabel jLabel1;
    private javax.swing.JLabel jLabel2;
    private javax.swing.JLabel jLabel3;
@@ -328,6 +350,7 @@ public class Agendamento extends javax.swing.JInternalFrame {
    private javax.swing.JPanel jPanel4;
    private javax.swing.JPanel jPanel5;
    private javax.swing.JPanel jPanel6;
+   private seguro.resources.RSButtonMetro rSButtonMetro1;
    // End of variables declaration//GEN-END:variables
 
    public ThHora getTh() {
@@ -339,11 +362,11 @@ public class Agendamento extends javax.swing.JInternalFrame {
    }
 
    public JSpinner getSpinnerHr() {
-      return SpinnerHr;
+      return data_hora;
    }
 
    public void setSpinnerHr(JSpinner SpinnerHr) {
-      this.SpinnerHr = SpinnerHr;
+      this.data_hora = SpinnerHr;
    }
 
    
@@ -362,6 +385,142 @@ public class Agendamento extends javax.swing.JInternalFrame {
 
    public void setBtGravar(RSButtonMetro btGravar) {
       this.btGravar = btGravar;
+   }
+
+   public SimpleDateFormat getFormatador() {
+      return formatador;
+   }
+
+   public void setFormatador(SimpleDateFormat formatador) {
+      this.formatador = formatador;
+   }
+
+   public static Date getdMin() {
+      return dMin;
+   }
+
+   public static void setdMin(Date dMin) {
+      Agendamento.dMin = dMin;
+   }
+
+   public JSpinner getData_hora() {
+      return data_hora;
+   }
+
+   public void setData_hora(JSpinner data_hora) {
+      this.data_hora = data_hora;
+   }
+
+   public JComboBox<String> getEquipamentos() {
+      return equipamentos;
+   }
+
+   public void setEquipamentos(JComboBox<String> equipamentos) {
+      this.equipamentos = equipamentos;
+   }
+
+   public JCalendar getjCalendar1() {
+      return jCalendar1;
+   }
+
+   public void setjCalendar1(JCalendar jCalendar1) {
+      this.jCalendar1 = jCalendar1;
+   }
+
+   public JLabel getjLabel1() {
+      return jLabel1;
+   }
+
+   public void setjLabel1(JLabel jLabel1) {
+      this.jLabel1 = jLabel1;
+   }
+
+   public JLabel getjLabel2() {
+      return jLabel2;
+   }
+
+   public void setjLabel2(JLabel jLabel2) {
+      this.jLabel2 = jLabel2;
+   }
+
+   public JLabel getjLabel3() {
+      return jLabel3;
+   }
+
+   public void setjLabel3(JLabel jLabel3) {
+      this.jLabel3 = jLabel3;
+   }
+
+   public JLabel getjLabel4() {
+      return jLabel4;
+   }
+
+   public void setjLabel4(JLabel jLabel4) {
+      this.jLabel4 = jLabel4;
+   }
+
+   public JLabel getjLabel6() {
+      return jLabel6;
+   }
+
+   public void setjLabel6(JLabel jLabel6) {
+      this.jLabel6 = jLabel6;
+   }
+
+   public JLabel getjLabel7() {
+      return jLabel7;
+   }
+
+   public void setjLabel7(JLabel jLabel7) {
+      this.jLabel7 = jLabel7;
+   }
+
+   public JPanel getjPanel1() {
+      return jPanel1;
+   }
+
+   public void setjPanel1(JPanel jPanel1) {
+      this.jPanel1 = jPanel1;
+   }
+
+   public JPanel getjPanel2() {
+      return jPanel2;
+   }
+
+   public void setjPanel2(JPanel jPanel2) {
+      this.jPanel2 = jPanel2;
+   }
+
+   public JPanel getjPanel3() {
+      return jPanel3;
+   }
+
+   public void setjPanel3(JPanel jPanel3) {
+      this.jPanel3 = jPanel3;
+   }
+
+   public JPanel getjPanel4() {
+      return jPanel4;
+   }
+
+   public void setjPanel4(JPanel jPanel4) {
+      this.jPanel4 = jPanel4;
+   }
+
+   public JPanel getjPanel5() {
+      return jPanel5;
+   }
+
+   public void setjPanel5(JPanel jPanel5) {
+      this.jPanel5 = jPanel5;
+   }
+
+   public JPanel getjPanel6() {
+      return jPanel6;
+   }
+
+   public void setjPanel6(JPanel jPanel6) {
+      this.jPanel6 = jPanel6;
    }
 
 

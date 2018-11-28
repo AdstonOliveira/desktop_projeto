@@ -2,12 +2,15 @@ package seguro.DAO;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import seguro.model.Equipamento;
 /**
  * @author Adston at self
  */
 public class DAOEquipamentos extends DAO{
    public DAOEquipamentos(){
-      super.setConexao(super.conexao);
+      super.setConexao( super.conexao );
    }
    
    public DAOEquipamentos( Conexao conexao ){
@@ -18,7 +21,7 @@ public class DAOEquipamentos extends DAO{
       ArrayList<String> equips = null;
       ResultSet rs = this.getComandos().pegarResultadoSQL( SQL );
 
-         if( rs.next() )
+         while( rs.next() )
             equips.add( rs.getString("modelo") );
          
          return equips;
@@ -34,5 +37,6 @@ public class DAOEquipamentos extends DAO{
       System.out.println(d.conexao.getConfig().getURL());
    }
    */
+   
    
 }

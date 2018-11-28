@@ -4,13 +4,26 @@ package seguro.model;
 */
 public class Gerenciador {
    
-   private String id;
+   private int id;
    private String MAC;
    private String IP;
    private String descrição;
-   
 
    
+   
+
+
+
+
+   
+   
+   public int getId() {
+      return id;
+   }
+
+   public void setId(int id) {
+      this.id = id;
+   }
    
    public String getIP() {
       return IP;

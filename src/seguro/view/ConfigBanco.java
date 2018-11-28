@@ -30,15 +30,18 @@ public class ConfigBanco extends javax.swing.JFrame {
         this.conexao.getConfig().setNome_banco( this.JTextBanco.getText() );     
         
         if( !this.userBanco.getText().trim().equalsIgnoreCase("") ){
-            
-            this.conexao.getConfig().setUSUARIO(this.userBanco.getText().trim());
-            String senha = new String (this.userSenha.getPassword());
+            this.conexao.getConfig().setUSUARIO( this.userBanco.getText().trim() );
+            String senha = new String ( this.userSenha.getPassword() );
             this.conexao.getConfig().setSENHA( senha );
         }
         
         this.conexao.getConfig().defineURL();
-        JOptionPane.showMessageDialog( null, "Configuração Salva","Executado",1);
         Seguro.testeConexaoInicial();
+        
+        int i = JOptionPane.showConfirmDialog(this, "Configurações salvas, fechar e voltar a tela de login?","Salvo",0);
+
+        if(i == 0)
+           this.dispose();
     }
     
     public void testa(){

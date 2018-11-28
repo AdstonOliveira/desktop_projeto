@@ -135,22 +135,22 @@ public class login extends javax.swing.JFrame {
          jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(jPanel1Layout.createSequentialGroup()
             .addContainerGap()
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-               .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                .addGroup(jPanel1Layout.createSequentialGroup()
                   .addGap(2, 2, 2)
-                  .addComponent(textLogin)))
+                  .addComponent(textLogin))
+               .addComponent(jLabel2))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-               .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                .addGroup(jPanel1Layout.createSequentialGroup()
                   .addGap(2, 2, 2)
-                  .addComponent(textSenha)))
+                  .addComponent(textSenha))
+               .addComponent(jLabel3))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
             .addComponent(status))
       );
 
-      jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+      jPanel2.setBackground(new java.awt.Color(0, 143, 143));
       jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
       btConecta.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -385,7 +385,6 @@ public class login extends javax.swing.JFrame {
          
          dadosLogin[0] = this.textLogin.getText();
          dadosLogin[1] = new String( this.textSenha.getPassword() );
-         System.out.println("bt" + dadosLogin[1]);
       
          if( this.control.Login( Seguro.conexao, dadosLogin ) ){
             JOptionPane.showMessageDialog( this, "Seja Bem-Vindo " + TelaPrincipal.usuario.getLogin(),"Bem-Vindo",1 );

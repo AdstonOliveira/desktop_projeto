@@ -8,7 +8,7 @@ public enum Abrir {
       DISPOSITIVO("control_cad_dispositivos"),
       GERENCIADOR("control_cad_gerenciador"),
       GERAR_GRAFICOS("control_graficos"),
-      AGENDAR("control_agendamentos"),
+      AGENDAR("control_agendamento"),
       AGENDADOS("control_agendados"),
       HISTORICO_AGENDAMENTOS("control_historico"),
       TOTAIS("control_totais");
@@ -16,7 +16,7 @@ public enum Abrir {
       private String descricao;
       
       
-      Abrir(String descricao){
+      Abrir( String descricao ){
          this.descricao = descricao;
       }
       

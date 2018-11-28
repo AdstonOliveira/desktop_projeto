@@ -11,20 +11,30 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import seguro.configuracoes.ConfigBotao;
 import seguro.resources.RSButtonMetro;
+import seguro.view.control.ControlAgendados;
+import seguro.view.tabela.TableFuturos;
+
+
 
 /**
  *
  * @author Adston at self
  */
 public class ViewAgendados extends javax.swing.JInternalFrame {
-
+   
+   ControlAgendados control;
    /**
     * Creates new form ViewAgendados
     */
    public ViewAgendados() {
       initComponents();
+    
       ConfigBotao.btCancela(excluir_agendado);
       ConfigBotao.btOK(adicionar);
+   }
+
+   public void setControl(ControlAgendados control) {
+      this.control = control;
    }
 
    /**
@@ -40,14 +50,15 @@ public class ViewAgendados extends javax.swing.JInternalFrame {
       jPanel2 = new javax.swing.JPanel();
       jLabel2 = new javax.swing.JLabel();
       jTabbedPane1 = new javax.swing.JTabbedPane();
-      jPanel4 = new javax.swing.JPanel();
-      jScrollPane1 = new javax.swing.JScrollPane();
-      tabela_agendados = new javax.swing.JTable();
+      panelTable = new javax.swing.JPanel();
       jPanel5 = new javax.swing.JPanel();
       jLabel1 = new javax.swing.JLabel();
       jPanel7 = new javax.swing.JPanel();
       adicionar = new seguro.resources.RSButtonMetro();
       excluir_agendado = new seguro.resources.RSButtonMetro();
+      jScrollPane3 = new javax.swing.JScrollPane();
+      jScrollPane1 = new javax.swing.JScrollPane();
+      tabela_agendados = new javax.swing.JTable();
       jPanel3 = new javax.swing.JPanel();
       jPanel6 = new javax.swing.JPanel();
       jLabel3 = new javax.swing.JLabel();
@@ -84,24 +95,9 @@ public class ViewAgendados extends javax.swing.JInternalFrame {
 
       jTabbedPane1.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
 
-      jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-      jPanel4.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 142, 142)));
-
-      tabela_agendados.setModel(new javax.swing.table.DefaultTableModel(
-         new Object [][] {
-            {null, null, null, null},
-            {null, null, null, null},
-            {null, null, null, null},
-            {null, null, null, null}
-         },
-         new String [] {
-            "Title 1", "Title 2", "Title 3", "Title 4"
-         }
-      ));
-      tabela_agendados.setGridColor(new java.awt.Color(0, 153, 153));
-      tabela_agendados.setSelectionBackground(new java.awt.Color(102, 102, 102));
-      tabela_agendados.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-      jScrollPane1.setViewportView(tabela_agendados);
+      panelTable.setBackground(new java.awt.Color(255, 255, 255));
+      panelTable.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 142, 142)));
+      panelTable.setAutoscrolls(true);
 
       jPanel5.setBackground(new java.awt.Color(0, 153, 153));
       jPanel5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -138,6 +134,11 @@ public class ViewAgendados extends javax.swing.JInternalFrame {
          }
          public void mouseExited(java.awt.event.MouseEvent evt) {
             adicionarMouseExited(evt);
+         }
+      });
+      adicionar.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            adicionarActionPerformed(evt);
          }
       });
 
@@ -181,35 +182,51 @@ public class ViewAgendados extends javax.swing.JInternalFrame {
             .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                .addComponent(adicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                .addComponent(excluir_agendado, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addContainerGap())
       );
 
-      javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-      jPanel4.setLayout(jPanel4Layout);
-      jPanel4Layout.setHorizontalGroup(
-         jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(jPanel4Layout.createSequentialGroup()
+      tabela_agendados.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+      tabela_agendados.setModel(new javax.swing.table.DefaultTableModel(
+         new Object [][] {
+
+         },
+         new String [] {
+
+         }
+      ));
+      tabela_agendados.setGridColor(new java.awt.Color(0, 153, 153));
+      tabela_agendados.setSelectionBackground(new java.awt.Color(102, 102, 102));
+      tabela_agendados.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+      jScrollPane1.setViewportView(tabela_agendados);
+
+      jScrollPane3.setViewportView(jScrollPane1);
+
+      javax.swing.GroupLayout panelTableLayout = new javax.swing.GroupLayout(panelTable);
+      panelTable.setLayout(panelTableLayout);
+      panelTableLayout.setHorizontalGroup(
+         panelTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+         .addGroup(panelTableLayout.createSequentialGroup()
             .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(0, 0, Short.MAX_VALUE))
-         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTableLayout.createSequentialGroup()
             .addContainerGap()
-            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-               .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addGroup(panelTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+               .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addContainerGap())
       );
-      jPanel4Layout.setVerticalGroup(
-         jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+      panelTableLayout.setVerticalGroup(
+         panelTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTableLayout.createSequentialGroup()
             .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addContainerGap())
       );
 
-      jTabbedPane1.addTab("Agendados", jPanel4);
+      jTabbedPane1.addTab("Agendados", null, panelTable, "");
 
       jPanel3.setBackground(new java.awt.Color(255, 255, 255));
       jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -316,7 +333,7 @@ public class ViewAgendados extends javax.swing.JInternalFrame {
    }//GEN-LAST:event_excluir_agendadoMouseDragged
 
    private void excluir_agendadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluir_agendadoActionPerformed
-      // TODO add your handling code here:
+      this.control.remove(this.getTabela_agendados().getSelectedRow());
    }//GEN-LAST:event_excluir_agendadoActionPerformed
 
    private void adicionarMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adicionarMouseDragged
@@ -331,6 +348,10 @@ public class ViewAgendados extends javax.swing.JInternalFrame {
       ConfigBotao.evtExited(adicionar);
    }//GEN-LAST:event_adicionarMouseExited
 
+   private void adicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionarActionPerformed
+      System.out.println(this.tabela_agendados.getValueAt(this.tabela_agendados.getSelectedRow(), this.tabela_agendados.getSelectedColumn()));
+   }//GEN-LAST:event_adicionarActionPerformed
+
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
    private seguro.resources.RSButtonMetro adicionar;
@@ -341,14 +362,15 @@ public class ViewAgendados extends javax.swing.JInternalFrame {
    private javax.swing.JPanel jPanel1;
    private javax.swing.JPanel jPanel2;
    private javax.swing.JPanel jPanel3;
-   private javax.swing.JPanel jPanel4;
    private javax.swing.JPanel jPanel5;
    private javax.swing.JPanel jPanel6;
    private javax.swing.JPanel jPanel7;
    private javax.swing.JScrollPane jScrollPane1;
    private javax.swing.JScrollPane jScrollPane2;
+   private javax.swing.JScrollPane jScrollPane3;
    private javax.swing.JTabbedPane jTabbedPane1;
    private javax.swing.JTable jTable1;
+   private javax.swing.JPanel panelTable;
    private javax.swing.JTable tabela_agendados;
    // End of variables declaration//GEN-END:variables
 
@@ -386,11 +408,11 @@ public class ViewAgendados extends javax.swing.JInternalFrame {
 
    
    public JPanel getjPanel4() {
-      return jPanel4;
+      return panelTable;
    }
 
    public void setjPanel4(JPanel jPanel4) {
-      this.jPanel4 = jPanel4;
+      this.panelTable = jPanel4;
    }
 
    public JPanel getjPanel5() {

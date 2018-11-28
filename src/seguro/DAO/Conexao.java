@@ -52,6 +52,13 @@ public final class Conexao {
     }
 
     
+    public String toSave(){
+       //"localhost;3306;gerenciador;adm;kpm0605";
+       return this.config.getIpBanco()+";"+this.getConfig().getPorta()+";"+this.config.getNome_banco()+";"+
+               this.config.getUSUARIO() + ";" + this.config.getSENHA() ;
+    }
+    
+    
 
     
     

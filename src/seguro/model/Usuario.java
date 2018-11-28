@@ -13,11 +13,14 @@ public class Usuario {
    
    private int id;
    private String nome;
+   private String sobrenome;
+
    private String login;
    private Date dt_nasc;
    private Date dt_cadastro;
    private String email;
    private String senha;
+   
 
    public Usuario( String senha, String login ) {
       this.senha = senha;
@@ -30,6 +33,13 @@ public class Usuario {
    }
 
 
+   public String getSobrenome() {
+      return sobrenome;
+   }
+
+   public void setSobrenome(String sobrenome) {
+      this.sobrenome = sobrenome;
+   }
 
    
    

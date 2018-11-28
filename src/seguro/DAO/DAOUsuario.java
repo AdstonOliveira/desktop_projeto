@@ -19,9 +19,13 @@ public class DAOUsuario extends DAO{
          if( montar.getSenha().equals( dados.getString("senha") ) ){
 
             montar.setId( dados.getInt("id") ) ;
+            
             montar.setNome( dados.getString("nome") );
-            montar.setDt_nasc(dados.getDate("dt_nasc") );
+            montar.setSobrenome( dados.getString("sobrenome") );
+            
+            montar.setDt_nasc( dados.getDate("dt_nasc") );
             montar.setDt_cadastro( dados.getDate("dt_cadastro") );
+            
             montar.setEmail( dados.getString("email") );
             
          }
