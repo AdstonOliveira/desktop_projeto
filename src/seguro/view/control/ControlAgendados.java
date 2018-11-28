@@ -2,7 +2,6 @@ package seguro.view.control;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JTable;
 import seguro.DAO.DAODesligamento;
 import seguro.model.Desligamento;
 import seguro.view.TelaPrincipal;
@@ -17,17 +16,12 @@ public class ControlAgendados extends Control{
    private ViewAgendados view;
    private DAODesligamento dao = new DAODesligamento();
    
-   
-   
-   
    @Override
    public void ModoTeste(){
-      this.view = new ViewAgendados();
+      if(this.view == null)
+         this.view = new ViewAgendados();
    }
    
-   
-   
-
    public void exibir(){
       if( this.view == null)
          this.view = new ViewAgendados();
@@ -35,15 +29,6 @@ public class ControlAgendados extends Control{
       TelaPrincipal.desktop.add(this.view);
       this.view.setVisible(true);
    }
-   
-   
-   
-   
-   
-   
-   
-   
-   
    
    
    @Override
@@ -56,26 +41,28 @@ public class ControlAgendados extends Control{
    }
 
    List<Desligamento> list = new ArrayList<>();
-   
+   List<Desligamento> desligados = new ArrayList<>();
    @Override
    public void ModoProducao() {
       if( this.view == null)
          this.view = new ViewAgendados();
       
       this.view.setControl(this);
+      this.list = this.dao.listaDesligamento();
+      this.desligados = this.dao.listaDesligados();
       
-      this.list = dao.listaDesligamento();
-       
-       this.view.getTabela_agendados().setModel(new TableFuturos(list));
-       
+      this.view.getTabela_agendados().setModel( new TableFuturos(list) );
+      this.view.getLista_desligados().setModel( new TableFuturos(desligados) );
    }
    
-   public void remove(int posicao){
-      list.remove(posicao);
-      
-      this.view.getTabela_agendados().repaint();
+   public void removeDB(int posicao){
+       this.dao.delete(posicao);
    }
-
+   public void removeLista(int posicao){
+       this.list.remove(posicao);
+       this.view.getTabela_agendados().updateUI();
+   }
+   
    
    
    

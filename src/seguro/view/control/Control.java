@@ -10,9 +10,7 @@ public abstract class Control {
    public void setView( JInternalFrame view ){
       this.view = view;
    }
-   
       //return this.view;
-      
    public abstract JInternalFrame getView();
    public abstract void ModoTeste();
    public abstract void ModoProducao();

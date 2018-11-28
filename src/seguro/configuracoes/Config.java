@@ -28,8 +28,8 @@ public class Config {
     private String porta;
     private String nome_banco;
     
-    private String USUARIO = "adm";
-    private String SENHA = "kpm0605";
+    private String USUARIO = "root";
+    private String SENHA = "";
     private final String DRIVER = "com.mysql.jdbc.Driver";
     
 

@@ -20,7 +20,7 @@ public class ConfigurarServidor {
    public boolean config_inicial(){
 
       File file = new File(config_bd);
-      String padrao = "localhost;3306;gerenciador;adm;kpm0605";
+      String padrao = "localhost;3306;gerenciador;root; ";
       
          if( !file.exists() ){
             try {
@@ -49,7 +49,7 @@ public class ConfigurarServidor {
             Seguro.conexao.getConfig().setPorta(linha[1]);
             Seguro.conexao.getConfig().setNome_banco(linha[2]);
             Seguro.conexao.getConfig().setUSUARIO(linha[3]);
-            Seguro.conexao.getConfig().setSENHA(linha[4]);
+            Seguro.conexao.getConfig().setSENHA( "" );
             Seguro.conexao.getConfig().defineURL();
          
       } catch (FileNotFoundException ex) {
