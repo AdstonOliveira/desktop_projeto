@@ -13,6 +13,17 @@ public class DAOUsuario extends DAO{
       super.setConexao( conexao );
    }
    
+   public boolean update( Usuario alterar ){
+       String SQL = "update usuario set nome = '" + alterar.getNome() + "', sobrenome = '" + alterar.getSobrenome() 
+               + "', login = '" + alterar.getLogin() + "', dtnasc = '" + alterar.getDt_nasc() + "', email = '" + alterar.getEmail() + 
+               "' where id = " + alterar.getId();
+
+    return this.comandos.executar_comando(SQL);
+   }
+   
+   
+   
+   
    public Usuario montar( Usuario montar, ResultSet dados ) throws SQLException{
       
       if( dados.next() ){

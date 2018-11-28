@@ -1,21 +1,35 @@
 package seguro.view.secundarios;
 
 import com.toedter.calendar.JDateChooser;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import java.sql.Date;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import seguro.resources.RSButtonMetro;
+import seguro.view.TelaPrincipal;
+import seguro.view.control.ControlCadUsuario;
 
 public class CadastroCliente extends javax.swing.JInternalFrame {
    /**
     * Creates new form CadastroCliente
     */
+   private ControlCadUsuario control;
    
    public CadastroCliente() {
       initComponents();
       this.getRootPane().setDefaultButton(this.btSalvar);
    }
+
+   
+   
+   
+   
+   
+    public ControlCadUsuario getControl() {
+        return control;
+    }
+
+    public void setControl(ControlCadUsuario control) {
+        this.control = control;
+    }
 
   
    @SuppressWarnings("unchecked")
@@ -487,7 +501,13 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
    }// </editor-fold>//GEN-END:initComponents
 
    private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
-      // TODO add your handling code here:
+      TelaPrincipal.usuario.setNome(this.getTextNome().getText());
+      TelaPrincipal.usuario.setLogin(this.getTextNick().getText());
+      
+      TelaPrincipal.usuario.setDt_nasc( new Date( this.getDtNasc().getDate().getTime() ));
+      TelaPrincipal.usuario.setSobrenome( this.gettextSobrenome().getText() );
+      TelaPrincipal.usuario.setEmail(this.getTextEmail().getText());
+      
    }//GEN-LAST:event_btSalvarActionPerformed
 
     private void novaSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novaSenhaActionPerformed

@@ -1,4 +1,5 @@
 package seguro.view.control;
+import seguro.DAO.DAOUsuario;
 import seguro.model.Usuario;
 import seguro.view.TelaPrincipal;
 import seguro.view.secundarios.CadastroCliente;
@@ -7,6 +8,7 @@ import seguro.view.secundarios.CadastroCliente;
 */
 public class ControlCadUsuario extends Control{
    private CadastroCliente view;
+   private DAOUsuario dao = new DAOUsuario();
    
    public void setUsuario( Usuario user ){
   //    this.user = user;
@@ -29,6 +31,7 @@ public class ControlCadUsuario extends Control{
    public void ModoProducao(){
       if( this.view == null)
          this.setView( new CadastroCliente() );
+      this.view.setControl(this);
       
       this.view.setTitle( "Cadastro de usuario: " + TelaPrincipal.usuario.getLogin() );
       this.montaCliente();
@@ -57,7 +60,9 @@ public class ControlCadUsuario extends Control{
       
    }
 
-   
+   public boolean update(){
+       return this.dao.update( TelaPrincipal.usuario );
+   }
    
    
    

@@ -2,9 +2,6 @@ package seguro.DAO;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import seguro.model.Equipamento;
 /**
  * @author Adston at self
  */

@@ -20,9 +20,6 @@ public class DAODesligamento extends DAO{
       super.setConexao(conexao);
    }
    
-   
-   
-   
    public boolean agendar( Desligamento agendar ){
       String SQL = "insert into desligamento( equip_id, agendado ) values ("+
          agendar.getEquip_id() + ",'" + agendar.getAgendado() + "');";
@@ -38,8 +35,6 @@ public class DAODesligamento extends DAO{
        
        return false;
    }
-   
-   
    
    public ArrayList<String> listaEquipamentos(){
       ArrayList<String> equipamentos = new ArrayList();
@@ -123,28 +118,6 @@ public class DAODesligamento extends DAO{
       }
       
       return desligamentos;
-      
    }
-   
-   
-   
-   
-   
-   
-   /*public Desligamento monta( String nome ){
-      
-   }*/
-      
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
    
 }
