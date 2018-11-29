@@ -5,6 +5,7 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSpinner;
 import seguro.configuracoes.ConfigBotao;
@@ -320,7 +321,10 @@ public class Agendamento extends javax.swing.JInternalFrame {
    }//GEN-LAST:event_btCancelarMouseExited
 
    private void btGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGravarActionPerformed
-      this.control.agendar();
+      if( !this.equipamentos.getSelectedItem().equals("Sem itens") && this.data_hora.getValue() != null)
+         this.control.agendar();
+      else
+         JOptionPane.showMessageDialog(this, "Nenhuma Operação realizada","Itens inválidos selecionados",0);
    }//GEN-LAST:event_btGravarActionPerformed
 
    private void btCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarActionPerformed

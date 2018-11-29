@@ -18,7 +18,6 @@ public class ControlAgendamento extends Control{
    public ControlAgendamento() {
       this.dao = new DAODesligamento();
    }
-   
    /**
     * Modo Produção 
     * Quando a conexão estiver ok, deve-se utilizar este método
@@ -54,8 +53,6 @@ public class ControlAgendamento extends Control{
       this.setView( new Agendamento() );
       this.view.setControl( this );
    }
-   
-   
    /*
    * Salvar no banco, 
    * Funcionalidade ativa se modo teste OFF
@@ -71,9 +68,12 @@ public class ControlAgendamento extends Control{
             model.setEquip_id( splitText() );
             model.setAgendado( data );
       
-         if( model.agendar(this.dao) )
+         if( model.agendar(this.dao) ){
             JOptionPane.showMessageDialog( this.view,"Agendado" );
-         else
+            if( ControladoraClasses.control_agendados.getView().isShowing() ){
+               ControladoraClasses.control_agendados.atualizar();
+            }
+         }else
             JOptionPane.showMessageDialog( this.view,"OXIIIII \ndeu ruim!!!" );
          }
       }else

@@ -1,1 +1,1 @@
-127.0.0.1;3306;gerenciador;root;
+192.168.0.237;3306;gerenciador;adm;kpm0605

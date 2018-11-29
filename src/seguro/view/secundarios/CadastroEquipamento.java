@@ -1,24 +1,38 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package seguro.view.secundarios;
 
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTabbedPane;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import seguro.resources.RSButtonMetro;
+import seguro.view.ValidadorCampos;
+import seguro.view.control.ControlCadDispos;
 /**
- *
  * @author Adston at self
  */
 public class CadastroEquipamento extends javax.swing.JInternalFrame {
-
    /**
     * Creates new form CadastroEquipamento
     */
+   public ControlCadDispos control;
+   
+   
    public CadastroEquipamento() {
       initComponents();
       this.getRootPane().setDefaultButton(btSalvar);
    }
 
+   
+   
+   
+   
+   
+   
    /**
     * This method is called from within the constructor to initialize the form.
     * WARNING: Do NOT modify this code. The content of this method is always
@@ -38,10 +52,10 @@ public class CadastroEquipamento extends javax.swing.JInternalFrame {
       jLabel10 = new javax.swing.JLabel();
       jPanel9 = new javax.swing.JPanel();
       jScrollPane2 = new javax.swing.JScrollPane();
-      jTable1 = new javax.swing.JTable();
+      lista_equip_cadastrado = new javax.swing.JTable();
       jPanel10 = new javax.swing.JPanel();
-      rSButtonMetro1 = new seguro.resources.RSButtonMetro();
-      rSButtonMetro2 = new seguro.resources.RSButtonMetro();
+      btVisualizar = new seguro.resources.RSButtonMetro();
+      btExcluir = new seguro.resources.RSButtonMetro();
       jPanel6 = new javax.swing.JPanel();
       jPanel3 = new javax.swing.JPanel();
       textConsumo = new javax.swing.JTextField();
@@ -53,7 +67,7 @@ public class CadastroEquipamento extends javax.swing.JInternalFrame {
       jLabel4 = new javax.swing.JLabel();
       jLabel7 = new javax.swing.JLabel();
       jLabel5 = new javax.swing.JLabel();
-      jComboBox1 = new javax.swing.JComboBox<>();
+      lista_gerenciador = new javax.swing.JComboBox<>();
       textNome = new javax.swing.JTextField();
       listaTipo = new javax.swing.JComboBox<>();
       jPanel11 = new javax.swing.JPanel();
@@ -115,7 +129,7 @@ public class CadastroEquipamento extends javax.swing.JInternalFrame {
          .addComponent(jLabel10)
       );
 
-      jTable1.setModel(new javax.swing.table.DefaultTableModel(
+      lista_equip_cadastrado.setModel(new javax.swing.table.DefaultTableModel(
          new Object [][] {
             {null, null, null, null},
             {null, null, null, null},
@@ -126,19 +140,29 @@ public class CadastroEquipamento extends javax.swing.JInternalFrame {
             "Title 1", "Title 2", "Title 3", "Title 4"
          }
       ));
-      jScrollPane2.setViewportView(jTable1);
+      jScrollPane2.setViewportView(lista_equip_cadastrado);
 
       jPanel10.setBackground(new java.awt.Color(0, 142, 142));
 
-      rSButtonMetro1.setBackground(new java.awt.Color(0, 204, 51));
-      rSButtonMetro1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-      rSButtonMetro1.setText("Selecionar");
-      rSButtonMetro1.setColorNormal(new java.awt.Color(0, 204, 51));
+      btVisualizar.setBackground(new java.awt.Color(0, 204, 51));
+      btVisualizar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+      btVisualizar.setText("Selecionar");
+      btVisualizar.setColorNormal(new java.awt.Color(0, 204, 51));
+      btVisualizar.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btVisualizarActionPerformed(evt);
+         }
+      });
 
-      rSButtonMetro2.setBackground(new java.awt.Color(204, 51, 0));
-      rSButtonMetro2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-      rSButtonMetro2.setText("Excluir");
-      rSButtonMetro2.setColorNormal(new java.awt.Color(204, 51, 0));
+      btExcluir.setBackground(new java.awt.Color(204, 51, 0));
+      btExcluir.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+      btExcluir.setText("Excluir");
+      btExcluir.setColorNormal(new java.awt.Color(204, 51, 0));
+      btExcluir.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btExcluirActionPerformed(evt);
+         }
+      });
 
       javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
       jPanel10.setLayout(jPanel10Layout);
@@ -146,9 +170,9 @@ public class CadastroEquipamento extends javax.swing.JInternalFrame {
          jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(jPanel10Layout.createSequentialGroup()
             .addContainerGap()
-            .addComponent(rSButtonMetro1, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+            .addComponent(btVisualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(rSButtonMetro2, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+            .addComponent(btExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
             .addContainerGap())
       );
       jPanel10Layout.setVerticalGroup(
@@ -156,8 +180,8 @@ public class CadastroEquipamento extends javax.swing.JInternalFrame {
          .addGroup(jPanel10Layout.createSequentialGroup()
             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-               .addComponent(rSButtonMetro1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-               .addComponent(rSButtonMetro2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+               .addComponent(btVisualizar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+               .addComponent(btExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
       );
 
@@ -165,7 +189,7 @@ public class CadastroEquipamento extends javax.swing.JInternalFrame {
       jPanel9.setLayout(jPanel9Layout);
       jPanel9Layout.setHorizontalGroup(
          jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 466, Short.MAX_VALUE)
+         .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)
          .addGroup(jPanel9Layout.createSequentialGroup()
             .addContainerGap()
             .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -174,10 +198,10 @@ public class CadastroEquipamento extends javax.swing.JInternalFrame {
       jPanel9Layout.setVerticalGroup(
          jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(jPanel9Layout.createSequentialGroup()
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
             .addGap(18, 18, 18)
             .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGap(24, 24, 24))
+            .addContainerGap())
       );
 
       javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -186,7 +210,7 @@ public class CadastroEquipamento extends javax.swing.JInternalFrame {
          jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
          .addGroup(jPanel7Layout.createSequentialGroup()
             .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(0, 324, Short.MAX_VALUE))
+            .addGap(0, 241, Short.MAX_VALUE))
          .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
       );
       jPanel7Layout.setVerticalGroup(
@@ -226,7 +250,11 @@ public class CadastroEquipamento extends javax.swing.JInternalFrame {
       jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
       jLabel5.setText("Consumo: ");
 
-      jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gerenciador 1" }));
+      listaTipo.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            listaTipoActionPerformed(evt);
+         }
+      });
 
       jPanel11.setBackground(new java.awt.Color(0, 142, 142));
 
@@ -234,6 +262,11 @@ public class CadastroEquipamento extends javax.swing.JInternalFrame {
       btSalvar.setText("Salvar");
       btSalvar.setColorBorde(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
       btSalvar.setColorNormal(new java.awt.Color(0, 204, 51));
+      btSalvar.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            btSalvarActionPerformed(evt);
+         }
+      });
 
       btCancelar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
       btCancelar.setText("Cancelar");
@@ -288,7 +321,7 @@ public class CadastroEquipamento extends javax.swing.JInternalFrame {
                               .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                               .addComponent(jLabel6))
                            .addComponent(jLabel7)
-                           .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                           .addComponent(lista_gerenciador, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                      .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                   .addContainerGap())))
       );
@@ -314,7 +347,7 @@ public class CadastroEquipamento extends javax.swing.JInternalFrame {
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                .addComponent(listaTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-               .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+               .addComponent(lista_gerenciador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jLabel8)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -411,11 +444,48 @@ public class CadastroEquipamento extends javax.swing.JInternalFrame {
       pack();
    }// </editor-fold>//GEN-END:initComponents
 
+   private void btExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirActionPerformed
+      if( this.lista_equip_cadastrado.getRowCount() > 0){
+         if(this.lista_equip_cadastrado.getSelectedRow() >= 0){
+            int i = JOptionPane.showConfirmDialog(this, "Deseja Mesmo excluir este agendandamento?","Exclusão",2);
+
+            if( i == 0 ) {
+              int linha = lista_equip_cadastrado.getSelectedRow();
+              
+              if(this.control.removeDB( (int) lista_equip_cadastrado.getValueAt(linha, 0 ) ))
+                 this.control.removeLista( linha ) ;
+              
+            }
+         }
+      }
+   }//GEN-LAST:event_btExcluirActionPerformed
+
+   private void btVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVisualizarActionPerformed
+      // TODO add your handling code here:
+   }//GEN-LAST:event_btVisualizarActionPerformed
+
+   private void listaTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaTipoActionPerformed
+      // TODO add your handling code here:
+   }//GEN-LAST:event_listaTipoActionPerformed
+
+   private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
+      JTextField[] avaliar = new JTextField[]{this.textNome, this.textConsumo};
+      
+      if( ValidadorCampos.JTextVazio(avaliar) ){
+         JOptionPane.showMessageDialog(this, "Não podem haver campos sem preencher");
+      }
+      
+      
+      
+      
+   }//GEN-LAST:event_btSalvarActionPerformed
+
 
    // Variables declaration - do not modify//GEN-BEGIN:variables
    private seguro.resources.RSButtonMetro btCancelar;
+   private seguro.resources.RSButtonMetro btExcluir;
    private seguro.resources.RSButtonMetro btSalvar;
-   private javax.swing.JComboBox<String> jComboBox1;
+   private seguro.resources.RSButtonMetro btVisualizar;
    private javax.swing.JLabel jLabel1;
    private javax.swing.JLabel jLabel10;
    private javax.swing.JLabel jLabel2;
@@ -439,12 +509,288 @@ public class CadastroEquipamento extends javax.swing.JInternalFrame {
    private javax.swing.JScrollPane jScrollPane1;
    private javax.swing.JScrollPane jScrollPane2;
    private javax.swing.JTabbedPane jTabbedPane1;
-   private javax.swing.JTable jTable1;
    private javax.swing.JTextArea jTextArea1;
    private javax.swing.JComboBox<String> listaTipo;
-   private seguro.resources.RSButtonMetro rSButtonMetro1;
-   private seguro.resources.RSButtonMetro rSButtonMetro2;
+   private javax.swing.JTable lista_equip_cadastrado;
+   private javax.swing.JComboBox<String> lista_gerenciador;
    private javax.swing.JTextField textConsumo;
    private javax.swing.JTextField textNome;
    // End of variables declaration//GEN-END:variables
+
+   public ControlCadDispos getControl() {
+      return control;
+   }
+
+   public void setControl(ControlCadDispos control) {
+      this.control = control;
+   }
+
+   public RSButtonMetro getBtCancelar() {
+      return btCancelar;
+   }
+
+   public void setBtCancelar(RSButtonMetro btCancelar) {
+      this.btCancelar = btCancelar;
+   }
+
+   public RSButtonMetro getBtSalvar() {
+      return btSalvar;
+   }
+
+   public void setBtSalvar(RSButtonMetro btSalvar) {
+      this.btSalvar = btSalvar;
+   }
+
+   public JComboBox<String> getjComboBox1() {
+      return lista_gerenciador;
+   }
+
+   public void setjComboBox1(JComboBox<String> jComboBox1) {
+      this.lista_gerenciador = jComboBox1;
+   }
+
+   public JLabel getjLabel1() {
+      return jLabel1;
+   }
+
+   public void setjLabel1(JLabel jLabel1) {
+      this.jLabel1 = jLabel1;
+   }
+
+   public JLabel getjLabel10() {
+      return jLabel10;
+   }
+
+   public void setjLabel10(JLabel jLabel10) {
+      this.jLabel10 = jLabel10;
+   }
+
+   public JLabel getjLabel2() {
+      return jLabel2;
+   }
+
+   public void setjLabel2(JLabel jLabel2) {
+      this.jLabel2 = jLabel2;
+   }
+
+   public JLabel getjLabel3() {
+      return jLabel3;
+   }
+
+   public void setjLabel3(JLabel jLabel3) {
+      this.jLabel3 = jLabel3;
+   }
+
+   public JLabel getjLabel4() {
+      return jLabel4;
+   }
+
+   public void setjLabel4(JLabel jLabel4) {
+      this.jLabel4 = jLabel4;
+   }
+
+   public JLabel getjLabel5() {
+      return jLabel5;
+   }
+
+   public void setjLabel5(JLabel jLabel5) {
+      this.jLabel5 = jLabel5;
+   }
+
+   public JLabel getjLabel6() {
+      return jLabel6;
+   }
+
+   public void setjLabel6(JLabel jLabel6) {
+      this.jLabel6 = jLabel6;
+   }
+
+   public JLabel getjLabel7() {
+      return jLabel7;
+   }
+
+   public void setjLabel7(JLabel jLabel7) {
+      this.jLabel7 = jLabel7;
+   }
+
+   public JLabel getjLabel8() {
+      return jLabel8;
+   }
+
+   public void setjLabel8(JLabel jLabel8) {
+      this.jLabel8 = jLabel8;
+   }
+
+   public JPanel getjPanel1() {
+      return jPanel1;
+   }
+
+   public void setjPanel1(JPanel jPanel1) {
+      this.jPanel1 = jPanel1;
+   }
+
+   public JPanel getjPanel10() {
+      return jPanel10;
+   }
+
+   public void setjPanel10(JPanel jPanel10) {
+      this.jPanel10 = jPanel10;
+   }
+
+   public JPanel getjPanel11() {
+      return jPanel11;
+   }
+
+   public void setjPanel11(JPanel jPanel11) {
+      this.jPanel11 = jPanel11;
+   }
+
+   public JPanel getjPanel2() {
+      return jPanel2;
+   }
+
+   public void setjPanel2(JPanel jPanel2) {
+      this.jPanel2 = jPanel2;
+   }
+
+   public JPanel getjPanel3() {
+      return jPanel3;
+   }
+
+   public void setjPanel3(JPanel jPanel3) {
+      this.jPanel3 = jPanel3;
+   }
+
+   public JPanel getjPanel4() {
+      return jPanel4;
+   }
+
+   public void setjPanel4(JPanel jPanel4) {
+      this.jPanel4 = jPanel4;
+   }
+
+   public JPanel getjPanel5() {
+      return jPanel5;
+   }
+
+   public void setjPanel5(JPanel jPanel5) {
+      this.jPanel5 = jPanel5;
+   }
+
+   public JPanel getjPanel6() {
+      return jPanel6;
+   }
+
+   public void setjPanel6(JPanel jPanel6) {
+      this.jPanel6 = jPanel6;
+   }
+
+   public JPanel getjPanel7() {
+      return jPanel7;
+   }
+
+   public void setjPanel7(JPanel jPanel7) {
+      this.jPanel7 = jPanel7;
+   }
+
+   public JPanel getjPanel8() {
+      return jPanel8;
+   }
+
+   public void setjPanel8(JPanel jPanel8) {
+      this.jPanel8 = jPanel8;
+   }
+
+   public JPanel getjPanel9() {
+      return jPanel9;
+   }
+
+   public void setjPanel9(JPanel jPanel9) {
+      this.jPanel9 = jPanel9;
+   }
+
+   public JScrollPane getjScrollPane1() {
+      return jScrollPane1;
+   }
+
+   public void setjScrollPane1(JScrollPane jScrollPane1) {
+      this.jScrollPane1 = jScrollPane1;
+   }
+
+   public JScrollPane getjScrollPane2() {
+      return jScrollPane2;
+   }
+
+   public void setjScrollPane2(JScrollPane jScrollPane2) {
+      this.jScrollPane2 = jScrollPane2;
+   }
+
+   public JTabbedPane getjTabbedPane1() {
+      return jTabbedPane1;
+   }
+
+   public void setjTabbedPane1(JTabbedPane jTabbedPane1) {
+      this.jTabbedPane1 = jTabbedPane1;
+   }
+
+   public JTextArea getjTextArea1() {
+      return jTextArea1;
+   }
+
+   public void setjTextArea1(JTextArea jTextArea1) {
+      this.jTextArea1 = jTextArea1;
+   }
+
+   public JComboBox<String> getListaTipo() {
+      return listaTipo;
+   }
+
+   public void setListaTipo(JComboBox<String> listaTipo) {
+      this.listaTipo = listaTipo;
+   }
+
+   public JTable getLista_equip_cadastrado() {
+      return lista_equip_cadastrado;
+   }
+
+   public void setLista_equip_cadastrado(JTable lista_equip_cadastrado) {
+      this.lista_equip_cadastrado = lista_equip_cadastrado;
+   }
+
+   public RSButtonMetro getrSButtonMetro1() {
+      return btVisualizar;
+   }
+
+   public void setrSButtonMetro1(RSButtonMetro rSButtonMetro1) {
+      this.btVisualizar = rSButtonMetro1;
+   }
+
+   public RSButtonMetro getrSButtonMetro2() {
+      return btExcluir;
+   }
+
+   public void setrSButtonMetro2(RSButtonMetro rSButtonMetro2) {
+      this.btExcluir = rSButtonMetro2;
+   }
+
+   public JTextField getTextConsumo() {
+      return textConsumo;
+   }
+
+   public void setTextConsumo(JTextField textConsumo) {
+      this.textConsumo = textConsumo;
+   }
+
+   public JTextField getTextNome() {
+      return textNome;
+   }
+
+   public void setTextNome(JTextField textNome) {
+      this.textNome = textNome;
+   }
+
+
+
+
+
 }

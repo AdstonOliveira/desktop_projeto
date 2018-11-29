@@ -11,7 +11,6 @@ import seguro.view.TelaPrincipal;
 */
 public abstract class ControladoraClasses {
   
-   static ControlAgendamento control_agendamentos;
    static ControlCadDispos control_cad_dispositivos;
    static ControlCadUsuario control_cad_usuario;
    static ControlGerenciador control_gerenciador;
@@ -96,39 +95,39 @@ public abstract class ControladoraClasses {
                
                if( modo_teste )
                   control_agendados.ModoTeste();
-               else{
+               else
                   control_agendados.ModoProducao();
-                  abrir(control_agendados);
-               }
-               /*if( control_agendados.getView() != null )
-                  if( !checaAberta( control_agendados.getView()) )
-                     control_agendados.exibir();*/
+
+               abrir(control_agendados);
             break;
+            
             case "control_cad_dispositivos" :
                if(control_cad_dispositivos == null)
                   control_cad_dispositivos = new ControlCadDispos();
                
                if( modo_teste )
                   control_cad_dispositivos.ModoTeste();
+               else
+                  control_cad_dispositivos.ModoProducao();
                
-               if( control_cad_dispositivos.getView() != null)
-                  if( !checaAberta( control_cad_dispositivos.getView() ) )
-                  control_cad_dispositivos.exibir();
+               abrir(control_cad_dispositivos);
+               
             break;      
+            
             case "control_agendamento" :
                if(control_agendamento == null)
                   control_agendamento = new ControlAgendamento();
 
-               if( modo_teste ){   
+               if( modo_teste )
                   control_agendamento.ModoTeste();
-                  abrir(control_agendamento);
-               }else{
+               else
                   control_agendamento.ModoProducao();
-                  abrir(control_agendamento);
-               }
+               
+               abrir(control_agendamento);
             break;
+            
             default:
-               System.out.println("Sem execução");
+               JOptionPane.showMessageDialog(TelaPrincipal.desktop, "Ocorreu um erro ao executar a abertura da tela");
                break;
                   
          }

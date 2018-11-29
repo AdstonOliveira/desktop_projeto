@@ -6,7 +6,7 @@ import seguro.view.secundarios.ViewGerenciador;
 /**
  * @author Adston at self
  */
-public class ControlGerenciador{
+public class ControlGerenciador extends Control{
    
    private Gerenciador dispositivo_gerenciador;
    private ViewGerenciador view;
@@ -29,6 +29,7 @@ public class ControlGerenciador{
       }
    }
    
+   @Override
    public void ModoTeste(){
       Color cor = new Color(0,153,153);
       this.view.getIP().setText("localhost");
@@ -72,6 +73,11 @@ public class ControlGerenciador{
 
    public void setDispositivo(Gerenciador dispositivo) {
       this.dispositivo_gerenciador = dispositivo;
+   }
+
+   @Override
+   public void ModoProducao() {
+      throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
    }
    
 

@@ -8,13 +8,15 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import seguro.configuracoes.ConfigBotao;
 import seguro.resources.RSButtonMetro;
+import seguro.view.control.ControlGerenciador;
 import seguro.view.control.ControladoraClasses;
 
 /**
  * @author Adston at self
 */
 public class ViewGerenciador extends javax.swing.JInternalFrame {
-
+  private ControlGerenciador control;
+   
    public ViewGerenciador() {
       initComponents();
       this.coresBt();
@@ -83,7 +85,7 @@ public class ViewGerenciador extends javax.swing.JInternalFrame {
       jLabel5.setForeground(new java.awt.Color(255, 255, 255));
       jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
       jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ios.png"))); // NOI18N
-      jLabel5.setText("DISPOSITIVOS");
+      jLabel5.setText("Gerenciadores");
       jLabel5.setIconTextGap(10);
 
       javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -109,7 +111,7 @@ public class ViewGerenciador extends javax.swing.JInternalFrame {
       jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
       jLabel1.setForeground(new java.awt.Color(255, 255, 255));
       jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-      jLabel1.setText("Dispositivo:");
+      jLabel1.setText("Dados:");
 
       javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
       jPanel6.setLayout(jPanel6Layout);
@@ -275,7 +277,7 @@ public class ViewGerenciador extends javax.swing.JInternalFrame {
             .addContainerGap())
       );
 
-      guias.addTab("Dispositivo", jPanel5);
+      guias.addTab("Gerenciador", jPanel5);
 
       jPanel9.setBackground(new java.awt.Color(255, 255, 255));
       jPanel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 142, 142)));
@@ -413,7 +415,7 @@ public class ViewGerenciador extends javax.swing.JInternalFrame {
          .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
       );
 
-      guias.addTab("Meus Dispositivos", jPanel8);
+      guias.addTab("Meus", jPanel8);
 
       javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
       jPanel4.setLayout(jPanel4Layout);

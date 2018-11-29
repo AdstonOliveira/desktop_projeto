@@ -67,8 +67,9 @@ public class TableFuturos extends AbstractTableModel{
     * @return
     */
    @Override
-    public Object getValueAt(int rowIndex, int columnIndex) {
-        Desligamento usuarioSelecionado = agendados.get(rowIndex);
+    public Object getValueAt( int rowIndex, int columnIndex ) {
+
+       Desligamento usuarioSelecionado = agendados.get( rowIndex );
         Object valueObject = null;
         
         switch(columnIndex){

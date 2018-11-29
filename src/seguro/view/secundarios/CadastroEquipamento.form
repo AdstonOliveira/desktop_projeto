@@ -177,7 +177,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="jPanel8" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="324" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="241" max="32767" attributes="0"/>
                           </Group>
                           <Component id="jPanel9" alignment="0" max="32767" attributes="0"/>
                       </Group>
@@ -236,7 +236,7 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane2" pref="466" max="32767" attributes="0"/>
+                              <Component id="jScrollPane2" pref="383" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jPanel10" max="32767" attributes="0"/>
@@ -247,10 +247,10 @@
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jScrollPane2" pref="171" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane2" pref="179" max="32767" attributes="0"/>
                                   <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                                   <Component id="jPanel10" max="32767" attributes="0"/>
-                                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -263,7 +263,7 @@
 
                           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                           <SubComponents>
-                            <Component class="javax.swing.JTable" name="jTable1">
+                            <Component class="javax.swing.JTable" name="lista_equip_cadastrado">
                               <Properties>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                                   <Table columnCount="4" rowCount="4">
@@ -289,9 +289,9 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="rSButtonMetro1" pref="0" max="32767" attributes="0"/>
+                                      <Component id="btVisualizar" pref="0" max="32767" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="rSButtonMetro2" pref="0" max="32767" attributes="0"/>
+                                      <Component id="btExcluir" pref="0" max="32767" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -301,8 +301,8 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="rSButtonMetro1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="rSButtonMetro2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btVisualizar" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btExcluir" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="32767" attributes="0"/>
                                   </Group>
@@ -310,7 +310,7 @@
                             </DimensionLayout>
                           </Layout>
                           <SubComponents>
-                            <Component class="seguro.resources.RSButtonMetro" name="rSButtonMetro1">
+                            <Component class="seguro.resources.RSButtonMetro" name="btVisualizar">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="33" green="cc" red="0" type="rgb"/>
@@ -325,8 +325,11 @@
                                   <Color blue="33" green="cc" red="0" type="rgb"/>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btVisualizarActionPerformed"/>
+                              </Events>
                             </Component>
-                            <Component class="seguro.resources.RSButtonMetro" name="rSButtonMetro2">
+                            <Component class="seguro.resources.RSButtonMetro" name="btExcluir">
                               <Properties>
                                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="0" green="33" red="cc" type="rgb"/>
@@ -341,6 +344,9 @@
                                   <Color blue="0" green="33" red="cc" type="rgb"/>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btExcluirActionPerformed"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -417,7 +423,7 @@
                                                           <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                                                       </Group>
                                                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jComboBox1" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="lista_gerenciador" alignment="0" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                               <Component id="jPanel11" max="32767" attributes="0"/>
@@ -455,7 +461,7 @@
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="listaTipo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lista_gerenciador" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
@@ -534,12 +540,10 @@
                             <Property name="text" type="java.lang.String" value="Consumo: "/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="jComboBox1">
+                        <Component class="javax.swing.JComboBox" name="lista_gerenciador">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="1">
-                                <StringItem index="0" value="Gerenciador 1"/>
-                              </StringArray>
+                              <StringArray count="0"/>
                             </Property>
                           </Properties>
                           <AuxValues>
@@ -554,6 +558,9 @@
                               <StringArray count="0"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="listaTipoActionPerformed"/>
+                          </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
@@ -608,6 +615,9 @@
                                   <Color blue="33" green="cc" red="0" type="rgb"/>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btSalvarActionPerformed"/>
+                              </Events>
                             </Component>
                             <Component class="seguro.resources.RSButtonMetro" name="btCancelar">
                               <Properties>

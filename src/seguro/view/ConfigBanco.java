@@ -33,8 +33,11 @@ public class ConfigBanco extends javax.swing.JFrame {
             this.conexao.getConfig().setUSUARIO( this.userBanco.getText().trim() );
             String senha = new String ( this.userSenha.getPassword() );
             this.conexao.getConfig().setSENHA( senha );
+        }else{
+            this.conexao.getConfig().setUSUARIO( "root" );
+            this.conexao.getConfig().setSENHA( "" );
         }
-        
+           
         this.conexao.getConfig().defineURL();
         Seguro.testeConexaoInicial();
         

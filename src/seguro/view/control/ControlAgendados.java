@@ -31,17 +31,11 @@ public class ControlAgendados extends Control{
    }
    
    
-   @Override
-   public ViewAgendados getView() {
-      return view;
-   }
-
-   public void setView(ViewAgendados view) {
-      this.view = view;
-   }
+  
 
    List<Desligamento> list = new ArrayList<>();
    List<Desligamento> desligados = new ArrayList<>();
+   
    @Override
    public void ModoProducao() {
       if( this.view == null)
@@ -55,15 +49,37 @@ public class ControlAgendados extends Control{
       this.view.getLista_desligados().setModel( new TableFuturos(desligados) );
    }
    
-   public void removeDB(int posicao){
-       this.dao.delete(posicao);
+   public void atualizar(){
+      this.list = this.dao.listaDesligamento();
+      this.desligados = this.dao.listaDesligados();
+      this.view.getTabela_agendados().setModel( new TableFuturos(list) );
+      this.view.getLista_desligados().setModel( new TableFuturos(desligados) );
+   }
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   public boolean removeDB(int posicao){
+       return this.dao.delete(posicao);
    }
    public void removeLista(int posicao){
        this.list.remove(posicao);
        this.view.getTabela_agendados().updateUI();
    }
    
-   
+    @Override
+   public ViewAgendados getView() {
+      return view;
+   }
+
+   public void setView(ViewAgendados view) {
+      this.view = view;
+   }
    
    
    

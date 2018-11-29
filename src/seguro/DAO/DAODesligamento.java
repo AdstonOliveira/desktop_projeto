@@ -15,9 +15,11 @@ public class DAODesligamento extends DAO{
 
    public DAODesligamento() {
       super.setConexao(super.conexao);
+      this.tabela = "desligamento";
    }
    public DAODesligamento( Conexao conexao ) {
       super.setConexao(conexao);
+      this.tabela = "desligamento";
    }
    
    public boolean agendar( Desligamento agendar ){
